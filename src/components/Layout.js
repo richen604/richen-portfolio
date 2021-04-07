@@ -29,23 +29,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={site.siteMetadata?.title || `richen.dev`} />
-      <div
+      <main>{children}</main>
+      <footer
+        id="footer"
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          marginTop: `2rem`,
         }}
       >
-        <main>{children}</main>
-        <footer
-          id="footer"
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()} {site.siteMetadata?.author.name}
-        </footer>
-      </div>
+        © {new Date().getFullYear()} {site.siteMetadata?.author.name}
+      </footer>
     </>
   )
 }

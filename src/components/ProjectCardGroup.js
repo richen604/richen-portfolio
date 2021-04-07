@@ -5,10 +5,9 @@ import {
   CardTitle,
   CardImg,
   CardText,
-  CardGroup,
-  CardSubtitle,
   CardBody,
 } from "reactstrap"
+import "./ProjectCardGroup.css"
 
 const ProjectCardGroup = () => {
   const projectCardData = [
@@ -85,23 +84,59 @@ const ProjectCardGroup = () => {
   ]
 
   return (
-    <CardGroup>
+    <div id="pcg-container">
       {projectCardData.map(project => (
-        <Card key={project.title}>
-          <CardImg src={project?.src} alt={project?.alt} />
+        <Card
+          className="pcg-card"
+          id={`${project.title}-card`}
+          key={project.title}
+        >
+          <div
+            className="pcg-title-container"
+            id={`${project.title}-title-container`}
+          >
+            <Button
+              color="info"
+              size="sm"
+              className="pcg-button"
+              href={project.github}
+            >
+              Github
+            </Button>
+            <CardTitle className="pcg-title" id={`${project.title}-title`}>
+              {project?.title}
+            </CardTitle>
+            {project.live ? (
+              <Button
+                color="info"
+                size="sm"
+                className="pcg-button"
+                href={project?.live}
+              >
+                Live
+              </Button>
+            ) : (
+              <Button className="pcg-button-placeholder" href={project?.live}>
+                Live
+              </Button>
+            )}
+          </div>
 
-          <CardBody>
-            <CardTitle tag="h5">{project?.title}</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
-              Card subtitle
-            </CardSubtitle>
-            <CardText>{project?.text}</CardText>
-            <Button href={project?.live}>Live</Button>
-            <Button href={project.github}>Github</Button>
+          <CardImg
+            className="pcg-img"
+            id={`${project.title}-img`}
+            src={project?.src}
+            alt={project?.alt}
+          />
+
+          <CardBody className="pcg-body" id={`${project.title}-body`}>
+            <CardText className="pcg-text" id={`${project.title}-text`}>
+              {project?.text}
+            </CardText>
           </CardBody>
         </Card>
       ))}
-    </CardGroup>
+    </div>
   )
 }
 

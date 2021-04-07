@@ -1,0 +1,79 @@
+@media only screen and (max-width: 400px) {
+  .pcg-card {
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .pcg-card {
+    max-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .pcg-card {
+    max-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1048px) {
+  .pcg-card {
+    max-width: 200px;
+  }
+}
+
+#pcg-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#RateRepo-img,
+#Patientor-img,
+#PhoneBook-img {
+  padding: 10px;
+}
+
+.pcg-card {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  margin: 10px;
+  max-width: 400px;
+}
+
+.pcg-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.pcg-button,
+.pcg-button-placeholder {
+  margin: 20px;
+}
+
+.pcg-button-placeholder {
+  background-color: white;
+  border: white;
+}
+
+.pcg-title {
+}
+
+.pcg-img {
+  margin: 0;
+}
+
+.pcg-body {
+  padding: 0 10px;
+}
+
+.pcg-text {
+  font-size: smaller;
+  text-align: center;
+  padding-bottom: 5px;
+}
