@@ -15,9 +15,11 @@
     "gatsby-plugin-react-helmet": "^4.2.0",
     "gatsby-plugin-sharp": "^3.2.0",
     "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-spring": "^9.0.0",
@@ -42,7 +44,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/richen-ghpages/richen-ghpages.github.io.git",
+    "deploy": "gatsby build && cp ./CNAME ./public && gh-pages -d public -b master -r https://github.com/richen-ghpages/richen-ghpages.github.io.git",
     "lint": "eslint --fix ."
   },
   "repository": {
