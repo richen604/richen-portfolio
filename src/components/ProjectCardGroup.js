@@ -24,15 +24,17 @@ const ProjectCardGroup = () => {
       title: "Library",
       src: `library-mockup.png`,
       alt: "Library App Mockup",
-      text: "",
-      live: "",
+      text:
+        "List your favourite books! Authenticated and secure, this application was built using NodeJS, ReactJS, MongoDB, Apollo GraphQL, and ExpressJS. It shows knowledge of Apollo GraphQL Queries, Mutations, Subscriptions, Fragments, and Error Handling. This application also outlines User Authentication, State Management, and Production Pipelines.",
+      live: "https://richen-library.herokuapp.com/",
       github: "https://github.com/richen604/richen-library",
     },
     {
       title: "RateRepo",
       src: `raterepo-mockup.png`,
       alt: "RateRepo App Mockup",
-      text: "",
+      text:
+        "Work in healthcare? Organize your patients and list diagnosis with this web app! This application was built using NodeJS, ReactJS, Typescript, and ExpressJS. It shows knowledge of Typescript features such as Types, Enums, and Interfaces. This application also outlines Form Validation, Proofing Express Requests, State Management and CI/CD Pipelines.",
       live: "",
       github: "https://github.com/richen604/richen-raterepo-app",
     },
@@ -51,7 +53,7 @@ const ProjectCardGroup = () => {
       alt: "Anecdotes App Mockup",
       text:
         "List your favourite anecdotes in this single-page app! This application was built using NodeJS, ReactJS, MongoDB, ReduxJS, ExpressJS, and many more packages! It shows knowledge of Flux-Architecture, managing States with Reducers, Redux Devtools, Asynchronous Action Creators, and Production Pipelines",
-      live: "",
+      live: "https://richen-anecdotes.herokuapp.com/",
       github: "https://github.com/richen604/richen-anecdotes",
     },
 

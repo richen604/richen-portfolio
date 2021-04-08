@@ -29,18 +29,24 @@
   flex-wrap: wrap;
 }
 
-#RateRepo-img,
+#RateRepo-img {
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
 #Patientor-img,
 #PhoneBook-img {
   padding: 10px;
+  padding-bottom: 45px;
+  padding-top: 25px;
 }
 
 .pcg-card {
   display: flex;
   align-items: center;
   padding: 3px;
-  margin: 10px;
-  max-width: 400px;
+  margin: 35px;
+  max-width: 300px;
 }
 
 .pcg-title-container {

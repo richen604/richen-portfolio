@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
+//import ContactForm from "../components/ContactForm"
 
 import ProjectCardGroup from "../components/ProjectCardGroup"
 //import ProjectCarousel from "../components/ProjectCarousel"
