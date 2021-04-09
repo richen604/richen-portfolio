@@ -1,0 +1,31 @@
+#sg-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  margin: 15px;
+  width: 100%;
+  height: auto;
+}
+
+.sg-card {
+  width: 150px;
+  border: none;
+  margin: 20px 20px;
+}
+
+.sg-text {
+  font-size: small;
+  padding: 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+.sg-img {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+}

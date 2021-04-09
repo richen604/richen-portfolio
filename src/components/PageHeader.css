@@ -1,0 +1,7 @@
+#pageHeader-container {
+  display: flex;
+  padding: 40px;
+  margin: 0;
+  background-color: #fafafa;
+  width: 100%;
+}

@@ -7,6 +7,7 @@ import {
   CardText,
   CardBody,
 } from "reactstrap"
+import { Link } from "gatsby"
 import "./ProjectCardGroup.css"
 
 const ProjectCardGroup = () => {
@@ -123,13 +124,14 @@ const ProjectCardGroup = () => {
               </Button>
             )}
           </div>
-
-          <CardImg
-            className="pcg-img"
-            id={`${project.title}-img`}
-            src={project?.src}
-            alt={project?.alt}
-          />
+          <Link to={project?.live}>
+            <CardImg
+              className="pcg-img"
+              id={`${project.title}-img`}
+              src={project?.src}
+              alt={project?.alt}
+            />
+          </Link>
 
           <CardBody className="pcg-body" id={`${project.title}-body`}>
             <CardText className="pcg-text" id={`${project.title}-text`}>

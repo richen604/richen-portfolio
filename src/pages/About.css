@@ -1,0 +1,32 @@
+#about-content h1 {
+}
+
+#about-content h5 {
+}
+
+#about-content p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#about-pageHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+#about-pageHeader-intro {
+  margin: 40px;
+  max-width: 460px;
+}
+
+#about-content-text {
+  padding: 50px;
+  padding-bottom: 20px;
+}
+
+#about-footer {
+  margin-top: 50px;
+  font-size: smaller;
+  text-align: end;
+}

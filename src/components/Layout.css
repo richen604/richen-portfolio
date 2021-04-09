@@ -1,16 +1,50 @@
+:root {
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1000px) {
+  #layout-container {
+    flex-direction: column;
+  }
+  #layout-children-container {
+    width: calc(100vw - 25px);
+  }
+
+  #layout-nav {
+    width: 100vw;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #layout-container {
+    flex-direction: row;
+  }
+
+  #layout-nav {
+    min-width: 280px;
+    max-width: 280px;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+  #layout-children-container {
+    width: calc(100vw - 305px);
+  }
+}
+
 #layout-container {
   display: flex;
-  flex-direction: row;
 }
 
 #layout-nav {
-  width: 750px;
-  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 #layout-children-container {
-  padding: 50px;
   height: 100vh;
-  overflow-y: auto;
   overflow-y: scroll;
 }
