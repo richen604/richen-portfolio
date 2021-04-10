@@ -18,16 +18,12 @@ const AboutHeaderContent = () => (
         Proident veniam et dolor nostrud. Ipsum cillum sunt elit Lorem elit est
         nisi ea. Eu est qui non tempor commodo cillum in eiusmod minim.
       </p>
-      <Button className="index-intro-button-primary">
-        <Link to="/portfolio" className="index-intro-button-link">
-          View Portfolio
-        </Link>
-      </Button>
-      <Button className="index-intro-button-secondary">
-        <Link to="/resume" className="index-intro-button-link">
-          View Resume
-        </Link>
-      </Button>
+      <Link to="/portfolio" className="index-intro-button-link">
+        <Button className="index-intro-button-primary">View Portfolio</Button>
+      </Link>
+      <Link to="/resume" className="index-intro-button-link">
+        <Button className="index-intro-button-secondary">View Resume</Button>
+      </Link>
     </div>
     <div id="about-pageHeader-img-container"></div>
   </>
@@ -58,7 +54,7 @@ const AboutContent = () => (
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="About Me" />
       <div id="about-container">
         <PageHeader>
           <AboutHeaderContent />

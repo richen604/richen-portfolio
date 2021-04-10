@@ -9,7 +9,7 @@ import ProjectCardGroup from "../components/ProjectCardGroup"
 function Portfolio() {
   return (
     <Layout>
-      <SEO title="portfolio" />
+      <SEO title="Portfolio" />
       <PageHeader>
         <div id="portfolio-intro-container">
           <h2>Portfolio</h2>

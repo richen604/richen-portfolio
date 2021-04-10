@@ -7,7 +7,7 @@ import PageHeader from "../components/PageHeader"
 function Resume() {
   return (
     <Layout>
-      <SEO title="resume" />
+      <SEO title="Resume" />
       <PageHeader>
         <div id="resume-header-intro">
           <h2>Resume</h2>

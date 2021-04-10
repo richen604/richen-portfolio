@@ -7,7 +7,7 @@ import PageHeader from "../components/PageHeader"
 function Contact() {
   return (
     <Layout>
-      <SEO title="contact" />
+      <SEO title="Contact Me" />
       <PageHeader>
         <div id="contact-header-intro">
           <h2>Contact Me</h2>
