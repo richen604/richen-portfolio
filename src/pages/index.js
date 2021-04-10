@@ -5,7 +5,7 @@ import SEO from "../components/Seo"
 import PageHeader from "../components/PageHeader"
 import { Link } from "gatsby"
 import { Button } from "reactstrap"
-import "./About.css"
+import "./index.css"
 import SkillsGroup from "../components/SkillsGroup"
 import ProjectCarousel from "../components/ProjectCarousel"
 
@@ -18,11 +18,15 @@ const AboutHeaderContent = () => (
         Proident veniam et dolor nostrud. Ipsum cillum sunt elit Lorem elit est
         nisi ea. Eu est qui non tempor commodo cillum in eiusmod minim.
       </p>
-      <Button>
-        <Link>View Portfolio</Link>
+      <Button className="index-intro-button-primary">
+        <Link to="/portfolio" className="index-intro-button-link">
+          View Portfolio
+        </Link>
       </Button>
-      <Button>
-        <Link>View Resume</Link>
+      <Button className="index-intro-button-secondary">
+        <Link to="/resume" className="index-intro-button-link">
+          View Resume
+        </Link>
       </Button>
     </div>
     <div id="about-pageHeader-img-container"></div>
@@ -37,11 +41,11 @@ const AboutContent = () => (
         Velit nulla culpa qui consequat elit ex in cillum. Ut magna ea deserunt
         excepteur labore incididunt. Quis occaecat cupidatat sit sit sit cillum
         amet. Check out my{" "}
-        <Link className="layout-text-link" to="/resume">
+        <Link className="index-text-link" to="/resume">
           online resume
         </Link>{" "}
         and{" "}
-        <Link className="layout-text-link" to="/portfolio">
+        <Link className="index-text-link" to="/portfolio">
           projects
         </Link>
         .
@@ -60,7 +64,9 @@ const IndexPage = () => {
           <AboutHeaderContent />
         </PageHeader>
         <AboutContent id="about-content" />
-        <ProjectCarousel />
+        <div id="index-carousel-wrapper">
+          <ProjectCarousel />
+        </div>
       </div>
       <div id="about-footer">
         Icons provided by{" "}

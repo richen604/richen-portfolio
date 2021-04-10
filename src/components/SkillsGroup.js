@@ -1,6 +1,5 @@
 import React from "react"
 import { Card, CardTitle, CardImg, CardText } from "reactstrap"
-import { Link } from "gatsby"
 import "./SkillsGroup.css"
 
 const SkillsGroup = () => {
@@ -76,7 +75,7 @@ const SkillsGroup = () => {
     <div id="sg-container">
       {skillsCardData.map(skill => (
         <Card className="sg-card" id={`${skill.title}-card`} key={skill.title}>
-          <Link to={skill?.live}>
+          <div>
             {skill.icons.map(icon => (
               <CardImg
                 key={icon.alt}
@@ -85,7 +84,7 @@ const SkillsGroup = () => {
                 src={icon.src}
               />
             ))}
-          </Link>
+          </div>
           <CardTitle className="sg-title" id={`${skill.title}-title`}>
             {skill?.title}
           </CardTitle>

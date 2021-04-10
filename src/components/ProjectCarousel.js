@@ -1,3 +1,5 @@
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
 import {
   CarouselItem,
@@ -15,6 +17,7 @@ const items = [
     caption: "Slide 1",
     header: "BlogList",
     key: "1",
+    github: "https://github.com/richen604/richen-bloglist",
   },
   {
     src: `raterepo-mockup.png`,
@@ -22,6 +25,7 @@ const items = [
     caption: "Slide 2",
     header: "RateRepo",
     key: "2",
+    github: "https://github.com/richen604/richen-raterepo-app",
   },
   {
     src: `library-mockup.png`,
@@ -29,6 +33,7 @@ const items = [
     caption: "Slide 3",
     header: "Library",
     key: "3",
+    github: "https://github.com/richen604/richen-library",
   },
 ]
 
@@ -60,8 +65,11 @@ const ProjectCarousel = () => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img className="carousel-img" src={item.src} alt={item.altText} />
+        <a href={item.github}>
+          <img className="carousel-img" src={item.src} alt={item.altText} />
+        </a>
         <CarouselCaption
+          id={`${item.header}-details`}
           className="carousel-details"
           captionHeader={item.header}
         />
@@ -90,7 +98,11 @@ const ProjectCarousel = () => {
           direction="next"
           directionText="Next"
           onClickHandler={next}
-        />
+        >
+          <span className="carousel-indicator-next-icon">
+            <FontAwesomeIcon icon={faAngleDoubleRight} />
+          </span>
+        </CarouselControl>
       </Carousel>
     </div>
   )
