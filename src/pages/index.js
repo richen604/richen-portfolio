@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import { Button } from "reactstrap"
 import "./About.css"
 import SkillsGroup from "../components/SkillsGroup"
+import ProjectCarousel from "../components/ProjectCarousel"
 
 const AboutHeaderContent = () => (
   <>
@@ -59,6 +60,7 @@ const IndexPage = () => {
           <AboutHeaderContent />
         </PageHeader>
         <AboutContent id="about-content" />
+        <ProjectCarousel />
       </div>
       <div id="about-footer">
         Icons provided by{" "}

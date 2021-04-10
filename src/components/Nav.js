@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import {
   Navbar,
-  NavbarBrand,
   Nav as NavBookStrap,
   NavbarText,
   Collapse,
@@ -93,11 +92,9 @@ const Nav = () => {
         <Button id="nav-toggle" onClick={toggleNavbar} />
         <NavbarText id="nav-bar-name">Richard Henninger</NavbarText>
       </div>
-      <NavbarBrand id="nav-brand">
-        <Link className="nav-link" to="/">
-          {site.siteMetadata.title}
-        </Link>
-      </NavbarBrand>
+      <Link id="nav-brand" className="nav-link-container-link" to="/">
+        {site.siteMetadata.title}
+      </Link>
       <Collapse id="nav-bar-container" isOpen={!collapsed} navbar>
         <NavContent site={site} />
       </Collapse>

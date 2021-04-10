@@ -14,7 +14,7 @@ const SkillsGroup = () => {
         { src: `icons8-typescript.svg`, alt: "TypeScript Icon" },
       ],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Building efficient, scalable, and tested backend applications and API's using popular frameworks such as NodeJS, MongoDB, GraphQL, and TypeScript.",
     },
     {
       title: "Frontend Development",
@@ -24,7 +24,7 @@ const SkillsGroup = () => {
         { src: "icons8-apollo.svg", alt: "ApolloJS Icon" },
       ],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Building clear and tested frontend components using ReactJS utilizing state management frameworks and query languages such as ReduxJS and Apollo.",
     },
     {
       title: "Unit & End to End Testing",
@@ -34,20 +34,20 @@ const SkillsGroup = () => {
         { src: "react-testing-library.png", alt: "React Testing Library Logo" },
       ],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Keeping deployments well maintained across all components and functions using testing frameworks such as React Testing Library, Jest, and Cypress.",
     },
 
     {
       title: "CI / CD and Dev Ops",
       icons: [{ src: "icons8-github.svg", alt: "Github Icon" }],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Building deployment and development pipelines to keep up with the best practices in continuous deployment and continuous integration.",
     },
     {
       title: "Mobile Development",
       icons: [{ src: "icons8-react-native.svg", alt: "React Native Icon" }],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Building full stack mobile applications using React Native to meet all customer expectations of the mobile architecture environment including routing to API's.",
     },
     {
       title: "Version Control & Tooling",
@@ -57,7 +57,7 @@ const SkillsGroup = () => {
         { src: "icons8-bash.svg", alt: "Bash Icon" },
       ],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Keeping versions and packages consistent and maintained on a variety of applications using tooling like NPM, Git, Github, Bash, and Shell.",
     },
     {
       title: "Frontend Design",
@@ -68,7 +68,7 @@ const SkillsGroup = () => {
         { src: "icons8-adobe-xd.svg", alt: "Adobe XD Icon" },
       ],
       text:
-        "Ea occaecat irure tempor qui. Do aliquip ad exercitation tempor amet et excepteur magna magna eiusmod culpa. Aliqua laboris tempor tempor irure deserunt id fugiat est veniam tempor consequat ea adipisicing.",
+        "Building mockup designs for applications in Adobe XD and fulfilling them to customer expectations using languages like HTML5, CSS3, and JavaScript.",
     },
   ]
 
