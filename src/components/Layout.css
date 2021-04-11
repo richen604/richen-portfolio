@@ -12,7 +12,6 @@
 
   #layout-nav {
     width: 100vw;
-    height: auto;
     padding: 0;
     margin: 0;
   }
@@ -24,11 +23,13 @@
   }
 
   #layout-nav {
+    justify-content: center;
+    align-items: flex-start;
     min-width: 280px;
     max-width: 280px;
-    height: 100vh;
     padding: 0;
     margin: 0;
+    height: 100vh;
   }
   #layout-children-container {
     width: calc(100vw - 305px);
@@ -48,4 +49,5 @@
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  scrollbar-width: thin;
 }

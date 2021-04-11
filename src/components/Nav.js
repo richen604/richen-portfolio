@@ -10,6 +10,16 @@ import {
 } from "reactstrap"
 
 import "./Nav.css"
+import Socials from "./Socials"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faFileAlt,
+  faLaptopCode,
+  faPaperPlane,
+  faUser,
+  faEnvelopeOpenText,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons"
 
 const NavContent = ({ site }) => (
   <>
@@ -21,7 +31,6 @@ const NavContent = ({ site }) => (
           alt="Richard Henninger Portrait Image"
         />
       </Link>
-
       <p id="nav-intro-text">Full Stack JavaScript Developer</p>
       <p id="nav-intro-subtext">
         Take a look at{" "}
@@ -34,28 +43,37 @@ const NavContent = ({ site }) => (
         </Link>{" "}
         for a <strong className="nav-strongtext">free quote</strong>!
       </p>
+      <Socials colorProp="lightBorder" />
       <div className="nav-divider" />
     </div>
-
     <NavBookStrap id="nav-link-container">
       <Link className="nav-link-container-link" to="/">
-        About Me
+        <FontAwesomeIcon id="user" className="nav-icon" icon={faUser} /> About
+        Me
       </Link>
       <Link className="nav-link-container-link" to="/portfolio">
+        <FontAwesomeIcon id="laptop" className="nav-icon" icon={faLaptopCode} />{" "}
         Portfolio
       </Link>
       <Link className="nav-link-container-link" to="/resume">
+        <FontAwesomeIcon id="file" className="nav-icon" icon={faFileAlt} />{" "}
         Resume
       </Link>
       <Link className="nav-link-container-link" to="/contact">
+        <FontAwesomeIcon
+          id="envelope"
+          className="nav-icon"
+          icon={faEnvelopeOpenText}
+        />{" "}
         Contact
       </Link>
-      <Button id="nav-hireme">
-        <Link id="nav-hireme-link" to="/contact">
-          Hire Me!
-        </Link>
-      </Button>
     </NavBookStrap>
+    <Button id="nav-hireme">
+      <Link id="nav-hireme-link" to="/contact">
+        <FontAwesomeIcon id="plane" className="nav-icon" icon={faPaperPlane} />{" "}
+        Hire Me!
+      </Link>
+    </Button>
 
     <div className="nav-divider" />
     <footer id="nav-footer">
@@ -89,16 +107,25 @@ const Nav = () => {
   return (
     <Navbar id="nav-container">
       <div>
-        <Button id="nav-toggle" onClick={toggleNavbar} />
+        <Button
+          id="nav-toggle"
+          className="nav-collapse-button"
+          onClick={toggleNavbar}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </Button>
         <NavbarText id="nav-bar-name">Richard Henninger</NavbarText>
       </div>
-      <Link id="nav-brand" className="nav-link-container-link" to="/">
+      <Link id="nav-bar-brand" className="nav-link-bar-link" to="/">
         {site.siteMetadata.title}
       </Link>
       <Collapse id="nav-bar-container" isOpen={!collapsed} navbar>
         <NavContent site={site} />
       </Collapse>
       <div id="nav-content-container">
+        <Link id="nav-brand" className="nav-link-nav-link" to="/">
+          {site.siteMetadata.title}
+        </Link>
         <NavContent site={site} />
       </div>
     </Navbar>

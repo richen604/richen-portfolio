@@ -8,21 +8,39 @@ import { Button } from "reactstrap"
 import "./index.css"
 import SkillsGroup from "../components/SkillsGroup"
 import ProjectCarousel from "../components/ProjectCarousel"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faArrowCircleRight,
+  faFileAlt,
+} from "@fortawesome/free-solid-svg-icons"
 
 const AboutHeaderContent = () => (
   <>
     <div id="about-pageHeader-intro">
-      <h2 id="about-pageHeader-intro-h2">Richard Henninger</h2>
-      <h5 id="about-pageHeader-intro-h5">Full Stack JavaScript Developer</h5>
+      <div id="about-pageHeader-intro-h1">Richard Henninger</div>
+      <div id="about-pageHeader-intro-h5">Full Stack JavaScript Developer</div>
       <p id="about-pageHeader-intro-body">
-        Proident veniam et dolor nostrud. Ipsum cillum sunt elit Lorem elit est
-        nisi ea. Eu est qui non tempor commodo cillum in eiusmod minim.
+        I&apos;m a software engineer specialised in frontend and backend
+        development for complex scalable web apps. Check out my project
+        portfolio and online resume.
       </p>
       <Link to="/portfolio" className="index-intro-button-link">
-        <Button className="index-intro-button-primary">View Portfolio</Button>
+        <Button className="index-intro-button-primary">
+          <FontAwesomeIcon
+            className="index-intro-button-icon"
+            icon={faArrowCircleRight}
+          />
+          View Portfolio
+        </Button>
       </Link>
       <Link to="/resume" className="index-intro-button-link">
-        <Button className="index-intro-button-secondary">View Resume</Button>
+        <Button className="index-intro-button-secondary">
+          <FontAwesomeIcon
+            className="index-intro-button-icon"
+            icon={faFileAlt}
+          />
+          View Resume
+        </Button>
       </Link>
     </div>
     <div id="about-pageHeader-img-container"></div>
@@ -34,9 +52,9 @@ const AboutContent = () => (
     <div id="about-content-text">
       <h2>What I Do</h2>
       <p>
-        Velit nulla culpa qui consequat elit ex in cillum. Ut magna ea deserunt
-        excepteur labore incididunt. Quis occaecat cupidatat sit sit sit cillum
-        amet. Check out my{" "}
+        Below is a quick overview of my main technical skill sets and
+        technologies I use. Want to find out more about my experience? Check out
+        my online resume and project portfolio.{" "}
         <Link className="index-text-link" to="/resume">
           online resume
         </Link>{" "}

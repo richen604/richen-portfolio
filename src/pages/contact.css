@@ -1,3 +1,31 @@
+@media only screen and (max-width: 715px) {
+  #contact-input-container-1 {
+    flex-direction: column;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 715px) {
+  #contact-input-container-1 {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+#contact-header-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 20px 0 20px;
+}
+
+#contact-header-intro-text {
+  margin: 0;
+}
+
 #contact-container {
   display: flex;
   flex-direction: column;
@@ -7,6 +35,7 @@
 }
 
 #contact-container-heading {
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -16,20 +45,18 @@
 
 #contact-input-container-1 {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 #contact-input-name,
 #contact-input-email {
   width: 100%;
-  height: 75px;
+  height: 60px;
   display: flex;
   flex-direction: column;
 }
 
 #contact-input-subject {
-  height: 75px;
+  height: 70px;
 }
 
 #contact-input-name,
@@ -40,7 +67,7 @@
 }
 
 #contact-input-message {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .contact-error {
@@ -49,4 +76,16 @@
 }
 #contact-input-message .contact-input {
   height: 150px;
+}
+
+#contact-form-button {
+  border-color: #54b689;
+  background-color: #54b689;
+  margin: 10px;
+  width: 97%;
+}
+
+#contact-form-button:hover {
+  border-color: #44a076;
+  background-color: #44a076;
 }

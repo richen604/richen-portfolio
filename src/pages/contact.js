@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
@@ -6,18 +6,35 @@ import PageHeader from "../components/PageHeader"
 import { Form, Input, Button } from "reactstrap"
 import { Formik } from "formik"
 import "./contact.css"
+import Socials from "../components/Socials"
+import { postContact } from "../services/contact"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-function Contact() {
+const Contact = () => {
+  const [formSuccess, setFormSuccess] = useState(false)
+
+  const handleFormSuccess = () => {
+    setFormSuccess(true)
+    setTimeout(() => {
+      setFormSuccess(false)
+    }, 1500)
+  }
   return (
     <Layout>
       <SEO title="Contact Me" />
       <PageHeader>
         <div id="contact-header-intro">
           <h2>Contact Me</h2>
-          <p>
-            sifdjsdoijfds fsdf dsi fjsdf dsfoiusj sidfjoids jfdsfdsf sdiufd fds
-            fsd fsdsfdsfds
+          <p id="contact-header-intro-text">
+            Interested in hiring me for your project or just want to say hi? You
+            can fill in the contact form below or send me an email to{" "}
+            <OutboundLink href="mailto:richard@richen.dev">
+              richard@richen.dev
+            </OutboundLink>{" "}
+            <br /> <br />
+            Want to get connected? Follow me on the social channels below.
           </p>
+          <Socials id="" colorProp="dark" />
         </div>
       </PageHeader>
       <div id="contact-container">
@@ -44,7 +61,9 @@ function Contact() {
             }
             return errors
           }}
-          onSubmit={(values, { setSubmitting }) => {
+          onSubmit={async (values, { setSubmitting }) => {
+            await postContact(values)
+            handleFormSuccess()
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2))
               setSubmitting(false)
@@ -60,7 +79,7 @@ function Contact() {
             handleSubmit,
             isSubmitting,
           }) => (
-            <Form id="contact-form" onSubmit={handleSubmit} action="">
+            <Form id="contact-form" onSubmit={handleSubmit}>
               <div id="contact-input-container-1">
                 <div id="contact-input-name">
                   <Input
@@ -127,9 +146,32 @@ function Contact() {
                   <p className="contact-error"> </p>
                 )}
               </div>
-              <Button type="submit" disabled={isSubmitting}>
-                Submit
+
+              <Button
+                id="contact-form-button"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                Send Now
               </Button>
+              {formSuccess ? (
+                <div
+                  style={{
+                    color: "green",
+                    paddingLeft: "10px",
+                    textAlign: "center",
+                  }}
+                >
+                  Thank You! Your message will be replied to shortly!
+                </div>
+              ) : (
+                <div
+                  style={{
+                    color: "green",
+                    padding: "14px",
+                  }}
+                />
+              )}
             </Form>
           )}
         </Formik>

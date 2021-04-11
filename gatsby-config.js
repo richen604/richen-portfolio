@@ -7,6 +7,15 @@ module.exports = {
       name: "Richard Henninger",
       email: "richard@richen.dev",
     },
+    socials: {
+      twitter: "",
+      linkedin: "",
+      github: "",
+      instagram: "",
+      stackoverflow: "",
+      medium: "",
+      codepen: "",
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
