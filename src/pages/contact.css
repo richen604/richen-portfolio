@@ -1,0 +1,52 @@
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-container-heading {
+  text-align: center;
+}
+
+#contact-form {
+  width: 80%;
+}
+
+#contact-input-container-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#contact-input-name,
+#contact-input-email {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-input-subject {
+  height: 75px;
+}
+
+#contact-input-name,
+#contact-input-email,
+#contact-input-subject,
+#contact-input-message {
+  margin: 10px;
+}
+
+#contact-input-message {
+  margin-bottom: 50px;
+}
+
+.contact-error {
+  margin: 4px;
+  color: red;
+}
+#contact-input-message .contact-input {
+  height: 150px;
+}

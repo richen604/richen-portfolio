@@ -45,8 +45,11 @@
   display: flex;
   align-items: center;
   padding: 3px;
-  margin: 35px;
+  margin: 25px;
   max-width: 300px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .pcg-title-container {
@@ -60,6 +63,7 @@
 .pcg-button,
 .pcg-button-placeholder {
   margin: 20px;
+  width: 80px;
 }
 
 .pcg-button-placeholder {
@@ -68,10 +72,12 @@
 }
 
 .pcg-title {
+  margin-top: 15px;
 }
 
 .pcg-img {
   margin: 0;
+  margin-top: -10px;
 }
 
 .pcg-body {
@@ -81,5 +87,5 @@
 .pcg-text {
   font-size: smaller;
   text-align: center;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
