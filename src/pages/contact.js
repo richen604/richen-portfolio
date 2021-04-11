@@ -28,7 +28,10 @@ const Contact = () => {
           <p id="contact-header-intro-text">
             Interested in hiring me for your project or just want to say hi? You
             can fill in the contact form below or send me an email to{" "}
-            <OutboundLink href="mailto:richard@richen.dev">
+            <OutboundLink
+              className="index-text-link"
+              href="mailto:richard@richen.dev"
+            >
               richard@richen.dev
             </OutboundLink>{" "}
             <br /> <br />

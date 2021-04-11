@@ -64,6 +64,13 @@
 .pcg-button-placeholder {
   margin: 20px;
   width: 80px;
+  background-color: #54b689;
+  border-color: #54b689;
+}
+
+.pcg-button:hover {
+  background-color: #44a076;
+  border-color: #44a076;
 }
 
 .pcg-button-placeholder {
