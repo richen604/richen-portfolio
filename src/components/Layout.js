@@ -32,7 +32,10 @@ const Layout = ({ children }) => {
       <div id="layout-nav">
         <Nav siteTitle={site.siteMetadata?.title || `richen.dev`} />
       </div>
-      <main id="layout-children-container">{children}</main>
+      <main id="layout-children-container">
+        {children}
+        <div id="layout-children-spacer" />
+      </main>
     </div>
   )
 }
