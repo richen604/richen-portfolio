@@ -50,8 +50,8 @@ const AboutHeaderContent = () => (
 const AboutContent = () => (
   <>
     <div id="about-content-text">
-      <h2>What I Do</h2>
-      <p>
+      <h2 id="about-content-text-title">What I Do</h2>
+      <p id="about-content-text-text">
         Below is a quick overview of my main technical skill sets and
         technologies I use. Want to find out more about my experience? Check out
         my online resume and project portfolio.{" "}

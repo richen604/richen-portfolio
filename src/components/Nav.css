@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap");
 
 @media only screen and (max-width: 1000px) {
   #nav-container {
@@ -50,14 +50,17 @@
     align-self: start;
     justify-self: start;
     justify-content: flex-start;
-    height: 100vh;
+    height: auto;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #347155 #54b689;
   }
   #nav-bar-container {
     display: none;
   }
 
   #nav-content-container {
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,7 +162,7 @@
 }
 
 #nav-intro-text {
-  font-family: "PT Serif", serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   line-height: 16px;
   font-style: italic;
@@ -169,7 +172,7 @@
 }
 
 #nav-intro-subtext {
-  font-family: "PT Serif", serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   line-height: 18px;
   letter-spacing: 0.5px;

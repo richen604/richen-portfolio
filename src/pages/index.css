@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap");
+
 #about-pageHeader-intro-h1 {
   text-align: left;
   margin: 5px 13px;
-  font-family: "Segoe UI";
+  font-family: "Roboto", sans-serif;
   font-size: 3rem;
   line-height: 1.2;
   font-weight: 700;
@@ -9,7 +11,7 @@
 
 #about-pageHeader-intro-h5 {
   margin: 5px 15px;
-  font-family: "Segoe UI";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   line-height: 36px;
   font-weight: 300;
@@ -17,7 +19,7 @@
 
 #about-pageHeader-intro-body {
   margin: 15px 16px;
-  font-family: "Segoe UI";
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -31,7 +33,7 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
-  font-family: "Segoe UI";
+  font-family: "Roboto", sans-serif;
   border-color: #54b689;
   background-color: #54b689;
   margin: 5px 15px;
@@ -41,7 +43,7 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
-  font-family: "Segoe UI";
+  font-family: "Roboto", sans-serif;
   border-color: #494949;
   background-color: #494949;
   margin: 10px;
@@ -80,6 +82,22 @@
 #about-content-text {
   padding: 50px 90px;
   padding-bottom: 20px;
+}
+
+#about-content-text-title {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+#about-content-text-text {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .index-text-link {

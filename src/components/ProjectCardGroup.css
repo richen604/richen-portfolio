@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap");
+
 @media only screen and (max-width: 400px) {
   .pcg-card {
     max-width: 400px;
@@ -45,7 +47,7 @@
   display: flex;
   align-items: center;
   padding: 3px;
-  margin: 25px;
+  margin: 15px;
   max-width: 300px;
   border: none;
   border-radius: 10px;
@@ -53,6 +55,7 @@
 }
 
 .pcg-title-container {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -62,6 +65,7 @@
 
 .pcg-button,
 .pcg-button-placeholder {
+  font-family: "Roboto", sans-serif;
   margin: 20px;
   width: 80px;
   background-color: #54b689;
@@ -79,6 +83,10 @@
 }
 
 .pcg-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
   margin-top: 15px;
 }
 
@@ -92,7 +100,10 @@
 }
 
 .pcg-text {
-  font-size: smaller;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  line-height: 21px;
+  font-weight: 400;
   text-align: center;
   padding-bottom: 10px;
 }

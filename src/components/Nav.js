@@ -32,17 +32,6 @@ const NavContent = ({ site }) => (
         />
       </Link>
       <p id="nav-intro-text">Full Stack JavaScript Developer</p>
-      <p id="nav-intro-subtext">
-        Take a look at{" "}
-        <Link className="nav-text-link" to="/contact">
-          my work
-        </Link>{" "}
-        or feel free to{" "}
-        <Link className="nav-text-link" to="/contact">
-          contact me
-        </Link>{" "}
-        for a <strong className="nav-strongtext">free quote</strong>!
-      </p>
       <Socials colorProp="lightBorder" />
       <div className="nav-divider" />
     </div>
@@ -71,7 +60,7 @@ const NavContent = ({ site }) => (
     <Button id="nav-hireme">
       <Link id="nav-hireme-link" to="/contact">
         <FontAwesomeIcon id="plane" className="nav-icon" icon={faPaperPlane} />{" "}
-        Hire Me!
+        Hire Me
       </Link>
     </Button>
 

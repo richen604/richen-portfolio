@@ -24,7 +24,7 @@ const Contact = () => {
       <SEO title="Contact Me" />
       <PageHeader>
         <div id="contact-header-intro">
-          <h2>Contact Me</h2>
+          <h2 id="contact-header-title">Contact Me</h2>
           <p id="contact-header-intro-text">
             Interested in hiring me for your project or just want to say hi? You
             can fill in the contact form below or send me an email to{" "}

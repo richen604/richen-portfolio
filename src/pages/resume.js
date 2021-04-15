@@ -12,17 +12,15 @@ function Resume() {
       <SEO title="Resume" />
       <PageHeader>
         <div id="resume-header-intro">
-          <h2>Resume</h2>
-          <p>
-            sifdjsdoijfds fsdf dsi fjsdf dsfoiusj sidfjoids jfdsfdsf sdiufd fds
-            fsd fsdsfdsfds
-          </p>
-          <Button href={`Richard Henninger Resume.pdf`}>
+          <h2 id="resume-header-title">Resume</h2>
+          <Button
+            className="index-intro-button-primary"
+            href={`Richard Henninger Resume.pdf`}
+          >
             Download PDF Version
           </Button>
         </div>
       </PageHeader>
-      <div>This is where i will put my resume</div>
       <div id="resume-content-wrapper">
         <img
           id="resume-img"

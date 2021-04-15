@@ -2,6 +2,8 @@
   overflow: hidden;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap");
+
 @media only screen and (max-width: 1000px) {
   #layout-container {
     flex-direction: column;

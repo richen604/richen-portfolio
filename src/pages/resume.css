@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap");
+
 #resume-content-wrapper {
   display: flex;
   width: 100%;
@@ -5,9 +7,29 @@
   justify-content: center;
 }
 
+#resume-header-intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+#resume-header-title {
+  padding: 10px;
+  text-align: center;
+  margin: 5px 13px;
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
 #resume-img {
   width: 90%;
   -webkit-box-shadow: 9px 9px 50px 14px rgba(89, 89, 89, 0.18);
   box-shadow: 9px 9px 50px 14px rgba(89, 89, 89, 0.18);
+  margin-top: 50px;
   margin-bottom: 100px;
 }
