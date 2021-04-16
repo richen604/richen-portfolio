@@ -20,7 +20,7 @@ const AboutHeaderContent = () => (
       <div id="about-pageHeader-intro-h1">Richard Henninger</div>
       <div id="about-pageHeader-intro-h5">Full Stack JavaScript Developer</div>
       <p id="about-pageHeader-intro-body">
-        I&apos;m a software engineer specialised in frontend and backend
+        I&apos;m a software engineer specialized in frontend and backend
         development for complex scalable web apps. Check out my project
         portfolio and online resume.
       </p>

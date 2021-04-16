@@ -2,7 +2,7 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `richen.dev`,
-    description: `From Construction to Software Development`,
+    description: `I'm a software engineer specialized in frontend and backend development for complex scalable web apps. Check out my project portfolio and online resume!`,
     author: {
       name: "Richard Henninger",
       email: "richard@richen.dev",

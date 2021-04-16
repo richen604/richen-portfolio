@@ -36,7 +36,7 @@ const ProjectCardGroup = () => {
       alt: "RateRepo App Mockup",
       text:
         "A mobile application for rating Github repositories built using NodeJS, React Native, GraphQL, Apollo Client, and Expo. This application outlines knowledge of Mobile Development, User Authentication, Unit Testing, Form Validation, State Management, and Infinite Scrolling. ",
-      live: "",
+      live: null,
       github: "https://github.com/richen604/richen-raterepo-app",
     },
     {
@@ -80,7 +80,8 @@ const ProjectCardGroup = () => {
       title: "richen.dev",
       src: "",
       alt: "richen.dev Mockup",
-      text: "",
+      text:
+        "My portfolio website built with GatsbyJS, ReactJS, NodeJS, and GraphQL. A static website outlining client and server Form Validation, communicating with Express servers, Sanitization, and Validation.",
       live: "/",
       github: "https://github.com/richen604/richen-portfolio",
     },
