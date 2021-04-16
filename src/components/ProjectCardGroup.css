@@ -36,6 +36,10 @@
   padding-bottom: 30px;
 }
 
+#Anecdotes-img {
+  margin-bottom: 13px;
+}
+
 #Patientor-img,
 #PhoneBook-img {
   padding: 10px;
@@ -45,10 +49,13 @@
 
 .pcg-card {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 3px;
   margin: 15px;
   max-width: 300px;
+  height: auto;
   border: none;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -59,14 +66,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  width: 80%;
   margin: 0;
 }
 
 .pcg-button,
 .pcg-button-placeholder {
   font-family: "Roboto", sans-serif;
-  margin: 20px;
+  margin: 15px 5px;
   width: 80px;
   background-color: #54b689;
   border-color: #54b689;
@@ -80,22 +88,32 @@
 .pcg-button-placeholder {
   background-color: white;
   border: white;
+  cursor: default;
+}
+
+.pcg-button-placeholder:hover {
+  background-color: white;
+  border: white;
+  cursor: default;
 }
 
 .pcg-title {
+  text-align: left;
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 700;
-  margin-top: 15px;
+  margin: 0 5px;
 }
 
 .pcg-img {
   margin: 0;
   margin-top: -10px;
+  margin-bottom: auto;
 }
 
 .pcg-body {
+  margin-bottom: auto;
   padding: 0 10px;
 }
 

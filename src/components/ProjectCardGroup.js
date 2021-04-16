@@ -35,7 +35,7 @@ const ProjectCardGroup = () => {
       src: `raterepo-mockup.png`,
       alt: "RateRepo App Mockup",
       text:
-        "Work in healthcare? Organize your patients and list diagnosis with this web app! This application was built using NodeJS, ReactJS, Typescript, and ExpressJS. It shows knowledge of Typescript features such as Types, Enums, and Interfaces. This application also outlines Form Validation, Proofing Express Requests, State Management and CI/CD Pipelines.",
+        "A mobile application for rating Github repositories built using NodeJS, React Native, GraphQL, Apollo Client, and Expo. This application outlines knowledge of Mobile Development, User Authentication, Unit Testing, Form Validation, State Management, and Infinite Scrolling. ",
       live: "",
       github: "https://github.com/richen604/richen-raterepo-app",
     },
@@ -73,7 +73,7 @@ const ProjectCardGroup = () => {
       alt: "Eskobot App Mockup",
       text:
         "A discord bot for use with moderation, logging, games, and much more! Built to support multiple servers, local development, and production deployment. This application outlines the knowledge of building an application based on user feedback. Technologies used are NodeJS, Event Listeners, Refactoring, Sequelize, ES6 Array Methods",
-      live: "",
+      live: null,
       github: "https://github.com/richen604/Eskobot",
     },
     {
@@ -98,6 +98,10 @@ const ProjectCardGroup = () => {
             className="pcg-title-container"
             id={`${project.title}-title-container`}
           >
+            <CardTitle className="pcg-title" id={`${project.title}-title`}>
+              {project?.title}
+            </CardTitle>
+
             <Button
               color="info"
               size="sm"
@@ -106,9 +110,6 @@ const ProjectCardGroup = () => {
             >
               Github
             </Button>
-            <CardTitle className="pcg-title" id={`${project.title}-title`}>
-              {project?.title}
-            </CardTitle>
             {project.live ? (
               <Button
                 color="info"
@@ -118,11 +119,7 @@ const ProjectCardGroup = () => {
               >
                 Live
               </Button>
-            ) : (
-              <Button className="pcg-button-placeholder" href={project?.live}>
-                Live
-              </Button>
-            )}
+            ) : null}
           </div>
           <Link to={project?.live}>
             <CardImg

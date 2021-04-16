@@ -92,6 +92,15 @@
   font-weight: 700;
 }
 
+#about-featured-title {
+  margin-left: 90px;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
 #about-content-text-text {
   text-align: left;
   font-family: "Roboto", sans-serif;

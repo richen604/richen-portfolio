@@ -78,6 +78,7 @@ const IndexPage = () => {
           <AboutHeaderContent />
         </PageHeader>
         <AboutContent id="about-content" />
+        <h2 id="about-featured-title">Featured Projects</h2>
         <div id="index-carousel-wrapper">
           <ProjectCarousel />
         </div>
