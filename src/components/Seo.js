@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `og:image`,
-          content: `richen-image.png`,
+          content: site.siteMetadata.image,
         },
         {
           name: `twitter:card`,
@@ -78,7 +78,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: `richen-image.png`,
+          content: site.siteMetadata.image,
         },
       ].concat(meta)}
     />
