@@ -69,7 +69,7 @@ const ProjectCardGroup = () => {
     },
     {
       title: "Eskobot",
-      src: "",
+      src: `discord-mockup.svg`,
       alt: "Eskobot App Mockup",
       text:
         "A discord bot for use with moderation, logging, games, and much more! Built to support multiple servers, local development, and production deployment. This application outlines the knowledge of building an application based on user feedback. Technologies used are NodeJS, Event Listeners, Refactoring, Sequelize, ES6 Array Methods",
@@ -78,7 +78,7 @@ const ProjectCardGroup = () => {
     },
     {
       title: "richen.dev",
-      src: "",
+      src: `richen-image.png`,
       alt: "richen.dev Mockup",
       text:
         "My portfolio website built with GatsbyJS, ReactJS, NodeJS, and GraphQL. A static website outlining client and server Form Validation, communicating with Express servers, Sanitization, and Validation.",

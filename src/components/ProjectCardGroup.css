@@ -47,6 +47,11 @@
   padding-top: 25px;
 }
 
+#richen\.dev-img {
+  margin: 20px 0;
+  margin-bottom: 32px;
+}
+
 .pcg-card {
   display: flex;
   flex-direction: column;
@@ -122,6 +127,6 @@
   font-size: 0.875rem;
   line-height: 21px;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   padding-bottom: 10px;
 }
