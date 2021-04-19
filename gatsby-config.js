@@ -8,6 +8,7 @@ module.exports = {
       email: "richard@richen.dev",
     },
     image: `richen-image.png`,
+    url: `https://www.richen.dev/`,
     socials: {
       twitter: "https://twitter.com/_richenn",
       linkedin: "https://www.linkedin.com/in/richenn/",

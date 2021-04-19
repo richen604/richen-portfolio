@@ -23,6 +23,7 @@ function SEO({ description, lang, meta, title }) {
               email
             }
             image
+            url
           }
         }
       }
@@ -42,7 +43,7 @@ function SEO({ description, lang, meta, title }) {
       meta={[
         {
           name: `image`,
-          content: site.siteMetadata.image,
+          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
         },
         {
           name: `description`,
@@ -62,7 +63,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `og:image`,
-          content: site.siteMetadata.image,
+          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
+        },
+        {
+          name: `og:url`,
+          content: site.siteMetadata.url,
         },
         {
           name: `twitter:card`,
@@ -82,7 +87,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: site.siteMetadata.image,
+          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
         },
       ].concat(meta)}
     />
