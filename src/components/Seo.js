@@ -89,6 +89,10 @@ function SEO({ description, lang, meta, title }) {
           property: `twitter:image`,
           content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
         },
+        {
+          property: `twitter:card`,
+          content: `summary_large_image`,
+        },
       ].concat(meta)}
     />
   )
