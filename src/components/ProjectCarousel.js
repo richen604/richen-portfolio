@@ -15,6 +15,7 @@ const items = [
     src: `bloglist-mockup.png`,
     altText: "BlogList App Mockup",
     caption: "Slide 1",
+    captionText: "",
     header: "BlogList",
     key: "1",
     github: "https://github.com/richen604/richen-bloglist",
@@ -23,6 +24,7 @@ const items = [
     src: `raterepo-mockup.png`,
     altText: "RateRepo App Mockup",
     caption: "Slide 2",
+    captionText: "",
     header: "RateRepo",
     key: "2",
     github: "https://github.com/richen604/richen-raterepo-app",
@@ -31,6 +33,7 @@ const items = [
     src: `library-mockup.png`,
     altText: "Library App Mockup",
     caption: "Slide 3",
+    captionText: "",
     header: "Library",
     key: "3",
     github: "https://github.com/richen604/richen-library",
@@ -72,6 +75,7 @@ const ProjectCarousel = () => {
           id={`${item.header}-details`}
           className="carousel-details"
           captionHeader={item.header}
+          captionText={""}
         />
       </CarouselItem>
     )

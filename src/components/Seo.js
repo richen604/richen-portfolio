@@ -41,6 +41,10 @@ function SEO({ description, lang, meta, title }) {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
+          name: `image`,
+          content: site.siteMetadata.image,
+        },
+        {
           name: `description`,
           content: metaDescription,
         },

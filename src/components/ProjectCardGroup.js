@@ -7,8 +7,8 @@ import {
   CardText,
   CardBody,
 } from "reactstrap"
-import { Link } from "gatsby"
 import "./ProjectCardGroup.css"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const ProjectCardGroup = () => {
   const projectCardData = [
@@ -122,14 +122,14 @@ const ProjectCardGroup = () => {
               </Button>
             ) : null}
           </div>
-          <Link to={project?.live}>
+          <OutboundLink href={project?.live}>
             <CardImg
               className="pcg-img"
               id={`${project.title}-img`}
               src={project?.src}
               alt={project?.alt}
             />
-          </Link>
+          </OutboundLink>
 
           <CardBody className="pcg-body" id={`${project.title}-body`}>
             <CardText className="pcg-text" id={`${project.title}-text`}>
