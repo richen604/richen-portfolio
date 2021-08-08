@@ -8,8 +8,9 @@ import ProjectCardGroup from '../components/ProjectCardGroup';
 import PageMain from '../components/PageMain';
 import {
   TTextPrimary,
-  TLocalLink,
   TOutboundLinkText,
+  TNextLinkWrapper,
+  TLink,
 } from '../components/ThemedComponents';
 import { siteMetadata } from '../constants';
 
@@ -58,7 +59,11 @@ function Portfolio() {
             </TOutboundLinkText>
             .<br />
             If you want and application or website similar to what you see, feel
-            free to contact me <TLocalLink href="/contact">here</TLocalLink>.
+            free to contact me{' '}
+            <TNextLinkWrapper href="/contact" Component={TLink}>
+              here
+            </TNextLinkWrapper>
+            .
           </SPortfolioIntroText>
         </SPortfolioIntro>
       </PageHeader>

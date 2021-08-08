@@ -9,7 +9,11 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
-import { TSocialsBorder, TSocialsIcon } from './ThemedComponents';
+import {
+  TSocialsBorder,
+  TSocialsIcon,
+  TOutBoundLink,
+} from './ThemedComponents';
 import { siteMetadata } from '../constants';
 
 interface SocialsProp {
@@ -54,41 +58,62 @@ const SSocialsIcon = styled(TSocialsIcon)`
 
 const Socials: React.FC<SocialsProp> = ({ isnav }: SocialsProp) => (
   <SSocialsContainer isnav={isnav}>
-    <a href={siteMetadata.socials.github}>
+    <TOutBoundLink
+      eventLabel="outbound-github"
+      to={siteMetadata.socials.github}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faGithub} />
       </SSocialsBorder>
-    </a>
-    <a href={siteMetadata.socials.linkedin}>
+    </TOutBoundLink>
+    <TOutBoundLink
+      eventLabel="outbound-linkedin"
+      to={siteMetadata.socials.linkedin}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faLinkedin} />
       </SSocialsBorder>
-    </a>
-    <a href={siteMetadata.socials.medium}>
+    </TOutBoundLink>
+    <TOutBoundLink
+      eventLabel="outbound-medium"
+      to={siteMetadata.socials.medium}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faMediumM} />
       </SSocialsBorder>
-    </a>
-    <a href={siteMetadata.socials.stackoverflow}>
+    </TOutBoundLink>
+    <TOutBoundLink
+      eventLabel="outbound-stackoverflow"
+      to={siteMetadata.socials.stackoverflow}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faStackOverflow} />
       </SSocialsBorder>
-    </a>
-    <a href={siteMetadata.socials.codepen}>
+    </TOutBoundLink>
+    <TOutBoundLink
+      eventLabel="outbound-codepen"
+      to={siteMetadata.socials.codepen}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faCodepen} />
       </SSocialsBorder>
-    </a>
-    <a href={siteMetadata.socials.twitter}>
+    </TOutBoundLink>
+    <TOutBoundLink
+      eventLabel="outbound-twitter"
+      to={siteMetadata.socials.twitter}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faTwitter} />
       </SSocialsBorder>
-    </a>
-    <a href={siteMetadata.socials.instagram}>
+    </TOutBoundLink>
+    <TOutBoundLink
+      eventLabel="outbound-instagram"
+      to={siteMetadata.socials.instagram}
+    >
       <SSocialsBorder>
         <SSocialsIcon icon={faInstagram} />
       </SSocialsBorder>
-    </a>
+    </TOutBoundLink>
   </SSocialsContainer>
 );
 

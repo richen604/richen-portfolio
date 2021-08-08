@@ -2,12 +2,10 @@ import ReactGA from 'react-ga';
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 export const initGA = () => {
-  console.log('GA init');
   ReactGA.initialize(GA_TRACKING_ID);
 };
 
 export const logPageView = url => {
-  console.log(`Logging pageview for ${url}`);
   ReactGA.set({ page: url });
   ReactGA.pageview(url);
 };

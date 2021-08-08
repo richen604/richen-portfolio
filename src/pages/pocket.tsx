@@ -2,8 +2,7 @@ import React from 'react';
 import PocketFeed from '../components/PocketFeed';
 import SEO from '../components/Seo';
 
-interface Props {}
-const pocket = (props: Props) => (
+const pocket = () => (
   <>
     <SEO title="Pocket" />
     <PocketFeed />

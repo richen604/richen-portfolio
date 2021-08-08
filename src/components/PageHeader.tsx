@@ -16,8 +16,6 @@ const SPageHeaderContainer = styled.div<ThemeProps<DefaultTheme>>`
 
 const PageHeader: React.FC<PageHeaderProps> = ({
   children,
-}: PageHeaderProps) => {
-  return <SPageHeaderContainer>{children}</SPageHeaderContainer>;
-};
+}: PageHeaderProps) => <SPageHeaderContainer>{children}</SPageHeaderContainer>;
 
 export default PageHeader;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MDBContainer, MDBBtnGroup } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
@@ -18,10 +18,10 @@ const SThemeChanger = styled(MDBContainer)<{ isnav: boolean }>`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 640px) {
-    display: ${(props) => (props.isnav ? 'flex' : 'none !important')};
+    display: ${props => (props.isnav ? 'flex' : 'none !important')};
   }
   @media only screen and (min-width: 1000px) {
-    display: ${(props) => (props.isnav ? 'flex' : 'none !important')};
+    display: ${props => (props.isnav ? 'flex' : 'none !important')};
     margin-top: 5px;
   }
   @media only screen and (max-width: 1000px) {
@@ -34,7 +34,7 @@ const SButton = styled(TButtonPrimary)`
   min-height: 30px;
   max-width: 80px;
   width: 80px;
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC: {
         return props.active
@@ -74,14 +74,7 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
   const dispatch = useDispatch();
   const { theme } = useSelector((state: RootState) => state);
 
-  const [buttonTheme, setButtonTheme] = useState({
-    light: {},
-    dark: {},
-    mono: {},
-    primary: theme.palette.primary,
-  });
-
-  const handleThemeChange = (evt) => {
+  const handleThemeChange = evt => {
     dispatch(changeTheme(evt.target.value));
   };
 
@@ -93,7 +86,7 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
           active={theme.name === THEME.LIGHT}
           id="theme-light"
           value={THEME.LIGHT}
-          onClick={(evt) => handleThemeChange(evt)}
+          onClick={evt => handleThemeChange(evt)}
         >
           Light
         </SButton>
@@ -101,7 +94,7 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
           active={theme.name === THEME.DARK}
           id="theme-dark"
           value={THEME.DARK}
-          onClick={(evt) => handleThemeChange(evt)}
+          onClick={evt => handleThemeChange(evt)}
         >
           Dark
         </SButton>
@@ -109,7 +102,7 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
           active={theme.name === THEME.MONOCHROMATIC}
           id="theme-light"
           value={THEME.MONOCHROMATIC}
-          onClick={(evt) => handleThemeChange(evt)}
+          onClick={evt => handleThemeChange(evt)}
         >
           Mono
         </SButton>

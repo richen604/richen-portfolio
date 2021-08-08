@@ -15,8 +15,8 @@ const SPageMain = styled(TPageMain)`
   height: 100%;
 `;
 
-const PageMain: React.FunctionComponent<Props> = ({ children }: Props) => {
-  return <SPageMain>{children}</SPageMain>;
-};
+const PageMain: React.FunctionComponent<Props> = ({ children }: Props) => (
+  <SPageMain>{children}</SPageMain>
+);
 
 export default PageMain;

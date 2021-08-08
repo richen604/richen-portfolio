@@ -2,7 +2,14 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { siteMetadata } from '../constants';
 
-function SEO({ description, lang, meta, title }) {
+interface ISEO {
+  description?: string;
+  lang?: string;
+  meta?: Array<any>;
+  title: string;
+}
+
+const SEO: React.FC<ISEO> = ({ description, lang, meta, title }: ISEO) => {
   const metaDescription = description || siteMetadata.description;
   const defaultTitle = siteMetadata?.title;
 
@@ -57,7 +64,7 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     />
   );
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,

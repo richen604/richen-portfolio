@@ -1,8 +1,8 @@
 import React from 'react';
-import { MDBCardImage, MDBContainer } from 'mdb-react-ui-kit';
+import { MDBContainer } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
-import { TCard, TCardTitle, TCardBody } from './ThemedComponents';
 import Image from 'next/image';
+import { TCard, TCardTitle, TCardBody } from './ThemedComponents';
 
 import node from '../images/icons8-nodejs.svg';
 import mongo from '../images/icons8-mongodb.svg';
@@ -90,8 +90,6 @@ const skillsCardData = [
   },
 ];
 
-interface SkillsGroupProps {}
-
 const SCardGroup = styled(MDBContainer)`
   display: flex;
   flex-direction: row;
@@ -133,28 +131,26 @@ const SCardText = styled(TCardBody)`
   width: 100%;
 `;
 
-const SkillsGroup: React.FC = () => {
-  return (
-    <SCardGroup>
-      {skillsCardData.map((skill) => (
-        <SCard key={skill.title}>
-          <SCardImageContainer>
-            {skill.icons.map((icon) => (
-              <Image
-                key={icon.alt}
-                width={30}
-                height={30}
-                src={icon.src}
-                alt={icon.alt}
-              />
-            ))}
-          </SCardImageContainer>
-          <SCardTitle>{skill?.title}</SCardTitle>
-          <SCardText>{skill?.text}</SCardText>
-        </SCard>
-      ))}
-    </SCardGroup>
-  );
-};
+const SkillsGroup: React.FC = () => (
+  <SCardGroup>
+    {skillsCardData.map(skill => (
+      <SCard key={skill.title}>
+        <SCardImageContainer>
+          {skill.icons.map(icon => (
+            <Image
+              key={icon.alt}
+              width={30}
+              height={30}
+              src={icon.src}
+              alt={icon.alt}
+            />
+          ))}
+        </SCardImageContainer>
+        <SCardTitle>{skill?.title}</SCardTitle>
+        <SCardText>{skill?.text}</SCardText>
+      </SCard>
+    ))}
+  </SCardGroup>
+);
 
 export default SkillsGroup;

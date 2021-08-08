@@ -4,9 +4,7 @@ import SEO from '../components/Seo';
 import Particle from '../components/Particle';
 import PageMain from '../components/PageMain';
 
-interface Props {}
-
-const particle = (props: Props) => (
+const particle = () => (
   <>
     <SEO title="Particle" />
     <PageHeader />

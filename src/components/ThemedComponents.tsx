@@ -1,3 +1,6 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -181,7 +184,7 @@ export const TLink = styled.a`
 `;
 
 interface INextLinkWrapper {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   href: string;
   Component?: React.FunctionComponent;
 }
@@ -193,12 +196,6 @@ export const TNextLinkWrapper = ({
 }: INextLinkWrapper) => (
   <Link href={href} passHref>
     {Component ? <Component>{children}</Component> : <a>{children}</a>}
-  </Link>
-);
-
-export const TLocalLink = ({ children, href }) => (
-  <Link href={href} passHref>
-    <TLink>{children}</TLink>
   </Link>
 );
 

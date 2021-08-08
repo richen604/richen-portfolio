@@ -17,6 +17,7 @@ import {
   TButtonLink,
   TOutboundLinkText,
   TNextLinkWrapper,
+  TLink,
 } from '../components/ThemedComponents';
 
 const SAboutHeaderIntro = styled(MDBContainer)`
@@ -121,8 +122,14 @@ const AboutContent = () => (
         Below is a quick overview of my main technical skill sets and
         technologies I use. Want to find out more about my experience? Check out
         my online resume and project portfolio.{' '}
-        <TNextLinkWrapper href="/resume">online resume</TNextLinkWrapper> and{' '}
-        <TNextLinkWrapper href="/portfolio">projects</TNextLinkWrapper>.
+        <TNextLinkWrapper href="/resume" Component={TLink}>
+          online resume{' '}
+        </TNextLinkWrapper>
+        and{' '}
+        <TNextLinkWrapper href="/portfolio" Component={TLink}>
+          projects
+        </TNextLinkWrapper>
+        .
       </SAboutContentSubtext>
     </SAboutContentText>
     <SkillsGroup />

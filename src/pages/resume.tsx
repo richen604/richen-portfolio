@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import SEO from '../components/Seo';
 import PageHeader from '../components/PageHeader';
 import PageMain from '../components/PageMain';
-import { TTextPrimary, TButtonPrimary } from '../components/ThemedComponents';
+import { TTextPrimary } from '../components/ThemedComponents';
 import resume from '../images/Richard Henninger Resume.svg';
 
 const SResumeHeaderContainer = styled(MDBContainer)`
@@ -16,10 +16,6 @@ const SResumeHeaderContainer = styled(MDBContainer)`
 `;
 
 const SResumeHeaderH2 = styled(TTextPrimary)``;
-
-const SPrimaryButton = styled(TButtonPrimary)`
-  min-width: 250px;
-`;
 
 const SResumeContainer = styled.div`
   object-fit: contain;
