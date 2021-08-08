@@ -1,4 +1,5 @@
 import React from 'react';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { AppProps } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { NextComponentType, NextPageContext } from 'next';
@@ -22,7 +23,6 @@ export default function App({ Component, pageProps }: MyAppProps) {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <GlobalStyles />
         <Layout>
           <Component {...pageProps} />
         </Layout>

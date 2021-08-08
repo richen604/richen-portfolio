@@ -18,6 +18,7 @@ import {
   TLocalLink,
   TButtonLink,
   TOutboundLinkText,
+  TNextLinkWrapper,
 } from '../components/ThemedComponents';
 
 const SAboutHeaderIntro = styled(MDBContainer)`
@@ -78,10 +79,16 @@ const SAboutContentSubtext = styled(TTextPrimary)`
 `;
 
 const SAboutFooter = styled.footer`
+  display: flex;
   margin-top: 50px;
+  justify-content: end;
+  width: 100%;
   font-size: smaller;
-  text-align: end;
   color: white;
+`;
+
+const SAboutFooterText = styled(TTextPrimary)`
+  margin-right: 8px;
 `;
 
 const AboutHeaderContent = () => {
@@ -96,18 +103,18 @@ const AboutHeaderContent = () => {
         development for complex scalable web apps. Check out my project
         portfolio and online resume.
       </SAboutIntroP>
-      {/*       <TButtonLink to="/portfolio">
+      <TNextLinkWrapper href="/portfolio" Component={TButtonLink}>
         <TButtonPrimary>
           <SAboutButtonIcon icon={faArrowCircleRight} />
           View Portfolio
         </TButtonPrimary>
-      </TButtonLink>
-      <TButtonLink to="/resume">
+      </TNextLinkWrapper>
+      <TNextLinkWrapper href="/resume" Component={TButtonLink}>
         <TButtonSecondary>
           <SAboutButtonIcon icon={faFileAlt} />
           View Resume
         </TButtonSecondary>
-      </TButtonLink> */}
+      </TNextLinkWrapper>
     </SAboutHeaderIntro>
   );
 };
@@ -140,8 +147,10 @@ const IndexPage = () => {
       <PageMain>
         <AboutContent />
         <SAboutFooter>
-          Icons provided by{' '}
-          <TOutboundLinkText href="icons8.com">icons8.com</TOutboundLinkText>
+          <SAboutFooterText>Icons provided by </SAboutFooterText>
+          <TOutboundLinkText href="https://icons8.com/">
+            icons8.com
+          </TOutboundLinkText>
         </SAboutFooter>
       </PageMain>
     </Layout>

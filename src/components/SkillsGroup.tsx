@@ -2,63 +2,89 @@ import React from 'react';
 import { MDBCardImage, MDBContainer } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
 import { TCard, TCardTitle, TCardBody } from './ThemedComponents';
+import Image from 'next/image';
+
+import node from '../images/icons8-nodejs.svg';
+import mongo from '../images/icons8-mongodb.svg';
+import graphql from '../images/icons8-graphql.svg';
+import typescript from '../images/icons8-typescript.svg';
+
+import react from '../images/icons8-react.svg';
+import redux from '../images/icons8-redux.svg';
+import apollo from '../images/icons8-apollo.svg';
+
+import cypress from '../images/cypress-logo.svg';
+import jest from '../images/jest-logo.svg';
+import reacttesting from '../images/react-testing-library.png';
+
+import github from '../images/icons8-github.svg';
+
+import reactnative from '../images/icons8-react-native.svg';
+
+import npm from '../images/icons8-npm.svg';
+import bash from '../images/icons8-bash.svg';
+
+import html from '../images/icons8-html-5.svg';
+import css from '../images/icons8-css3.svg';
+import javascript from '../images/icons8-javascript.svg';
+import adobexd from '../images/icons8-adobe-xd.svg';
 
 const skillsCardData = [
   {
     title: 'Backend Development',
     icons: [
-      { src: `icons8-nodejs.svg`, alt: 'NodeJS Icon' },
-      { src: `icons8-mongodb.svg`, alt: 'MongoDB Icon' },
-      { src: `icons8-graphql.svg`, alt: 'GraphQL Icon' },
-      { src: `icons8-typescript.svg`, alt: 'TypeScript Icon' },
+      { src: node, alt: 'NodeJS Icon' },
+      { src: mongo, alt: 'MongoDB Icon' },
+      { src: graphql, alt: 'GraphQL Icon' },
+      { src: typescript, alt: 'TypeScript Icon' },
     ],
     text: "Building efficient, scalable, and tested backend applications and API's using popular frameworks such as NodeJS, MongoDB, GraphQL, and TypeScript.",
   },
   {
     title: 'Frontend Development',
     icons: [
-      { src: 'icons8-react.svg', alt: 'ReactJS Icon' },
-      { src: 'icons8-redux.svg', alt: 'ReduxJS Icon' },
-      { src: 'icons8-apollo.svg', alt: 'ApolloJS Icon' },
+      { src: react, alt: 'ReactJS Icon' },
+      { src: redux, alt: 'ReduxJS Icon' },
+      { src: apollo, alt: 'ApolloJS Icon' },
     ],
     text: 'Building clear and tested frontend components using ReactJS utilizing state management frameworks and query languages such as ReduxJS and Apollo.',
   },
   {
     title: 'Unit & End to End Testing',
     icons: [
-      { src: 'cypress-logo.svg', alt: 'Cypress Logo' },
-      { src: 'jest-logo.svg', alt: 'Jest Logo' },
-      { src: 'react-testing-library.png', alt: 'React Testing Library Logo' },
+      { src: cypress, alt: 'Cypress Logo' },
+      { src: jest, alt: 'Jest Logo' },
+      { src: reacttesting, alt: 'React Testing Library Logo' },
     ],
     text: 'Keeping deployments well maintained across all components and functions using testing frameworks such as React Testing Library, Jest, and Cypress.',
   },
 
   {
     title: 'CI / CD and Dev Ops',
-    icons: [{ src: 'icons8-github.svg', alt: 'Github Icon' }],
+    icons: [{ src: github, alt: 'Github Icon' }],
     text: 'Building deployment and development pipelines to keep up with the best practices in continuous deployment and continuous integration.',
   },
   {
     title: 'Mobile Development',
-    icons: [{ src: 'icons8-react-native.svg', alt: 'React Native Icon' }],
+    icons: [{ src: reactnative, alt: 'React Native Icon' }],
     text: "Building full stack mobile applications using React Native to meet all customer expectations of the mobile architecture environment including routing to API's.",
   },
   {
     title: 'Version Control & Tooling',
     icons: [
-      { src: 'icons8-npm.svg', alt: 'Npm Icon' },
-      { src: 'icons8-github.svg', alt: 'Github Icon' },
-      { src: 'icons8-bash.svg', alt: 'Bash Icon' },
+      { src: npm, alt: 'Npm Icon' },
+      { src: github, alt: 'Github Icon' },
+      { src: bash, alt: 'Bash Icon' },
     ],
     text: 'Keeping versions and packages consistent and maintained on a variety of applications using tooling like NPM, Git, Github, Bash, and Shell.',
   },
   {
     title: 'Frontend Design',
     icons: [
-      { src: 'icons8-html-5.svg', alt: 'Html 5 Icon' },
-      { src: 'icons8-javascript.svg', alt: 'JavaScript Icon' },
-      { src: 'icons8-css3.svg', alt: 'CSS 3 Icon' },
-      { src: 'icons8-adobe-xd.svg', alt: 'Adobe XD Icon' },
+      { src: html, alt: 'Html 5 Icon' },
+      { src: javascript, alt: 'JavaScript Icon' },
+      { src: css, alt: 'CSS 3 Icon' },
+      { src: adobexd, alt: 'Adobe XD Icon' },
     ],
     text: 'Building mockup designs for applications in Adobe XD and fulfilling them to customer expectations using languages like HTML5, CSS3, and JavaScript.',
   },
@@ -80,7 +106,7 @@ const SCardGroup = styled(MDBContainer)`
 
 const SCard = styled(TCard)`
   width: 250px;
-  height: 230px;
+  height: 250px;
   margin: 10px;
   padding: 20px;
 `;
@@ -98,13 +124,6 @@ const SCardImageContainer = styled(MDBContainer)`
   padding: 0;
 `;
 
-const SCardImage = styled(MDBCardImage)`
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin-bottom: 3px;
-`;
-
 const SCardText = styled(TCardBody)`
   font-family: 'Roboto' sans-serif;
   font-size: 0.875rem;
@@ -117,11 +136,17 @@ const SCardText = styled(TCardBody)`
 const SkillsGroup: React.FC = () => {
   return (
     <SCardGroup>
-      {skillsCardData.map(skill => (
+      {skillsCardData.map((skill) => (
         <SCard key={skill.title}>
           <SCardImageContainer>
-            {skill.icons.map(icon => (
-              <SCardImage key={icon.alt} src={icon.src} />
+            {skill.icons.map((icon) => (
+              <Image
+                key={icon.alt}
+                width={30}
+                height={30}
+                src={icon.src}
+                alt={icon.alt}
+              />
             ))}
           </SCardImageContainer>
           <SCardTitle>{skill?.title}</SCardTitle>

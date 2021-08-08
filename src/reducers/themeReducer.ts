@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import { THEME } from '../styled';
+import { THEME } from '../styled.d';
 
 import {
   darkDefaultTheme,

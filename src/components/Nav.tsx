@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -21,7 +22,10 @@ import {
   TNavFooter,
   TNavLink,
   TNavToggle,
+  TNextLinkWrapper,
 } from './ThemedComponents';
+import Socials from './Socials';
+import portrait from '../images/display-portrait.png';
 
 // TODO Fix Socials Alignment
 
@@ -74,9 +78,11 @@ const SNavBrand = styled(SNavLink)`
 
 const SNavBarBrand = styled(SNavLink)`
   font-weight: bold;
-  margin: 0 10px;
   @media only screen and (min-width: 1000px) {
     display: none;
+  }
+  @media only screen and (max-width: 640px) {
+    margin-right: 20px;
   }
 `;
 
@@ -87,7 +93,7 @@ const SNavProfileContainer = styled.div`
   width: 100%;
 `;
 
-const SNavPortraitImage = styled.img`
+const SNavPortraitImage = styled(Image)`
   padding: 0 10px;
   width: 10rem;
   margin: 10px;
@@ -282,37 +288,43 @@ const Sidebar = () => {
   return (
     <>
       <SNavProfileContainer>
-        <Link href="/">
-          <SNavPortraitImage
-            src="display-portrait.png"
-            alt="Richard Henninger Portrait"
-          />
+        <Link href="/" passHref>
+          <a>
+            <Image
+              src={portrait}
+              width={200}
+              height={200}
+              alt="Richard Henninger Portrait"
+            />
+          </a>
         </Link>
+
         <SNavIntroText>Full Stack JavaScript Developer</SNavIntroText>
+        <Socials isnav />
         <SNavDivider />
       </SNavProfileContainer>
       <SNavLinkContainer>
-        <TLocalLink href="/">
+        <TNextLinkWrapper href="/" Component={SNavLinkContainerLink}>
           <SUserIcon icon={faUser} /> About Me
-        </TLocalLink>
-        <TLocalLink href="/portfolio">
+        </TNextLinkWrapper>
+        <TNextLinkWrapper href="/portfolio" Component={SNavLinkContainerLink}>
           <SLaptopIcon icon={faLaptopCode} /> Portfolio
-        </TLocalLink>
-        <TLocalLink href="/resume">
+        </TNextLinkWrapper>
+        <TNextLinkWrapper href="/resume" Component={SNavLinkContainerLink}>
           <SFileIcon icon={faFileAlt} /> Resume
-        </TLocalLink>
-        <TLocalLink href="/contact">
+        </TNextLinkWrapper>
+        <TNextLinkWrapper href="/contact" Component={SNavLinkContainerLink}>
           <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
-        </TLocalLink>
+        </TNextLinkWrapper>
       </SNavLinkContainer>
       <SHireMeButton>
-        <SHireMeLink href="/contact">
+        <TNextLinkWrapper href="/contact" Component={SHireMeLink}>
           <SPlaneIcon icon={faPaperPlane} /> Hire Me
-        </SHireMeLink>
+        </TNextLinkWrapper>
       </SHireMeButton>
 
       <SNavDivider />
-      <ThemeChanger isNav />
+      <ThemeChanger isnav />
       <SNavFooter>© {new Date().getFullYear()} Richard Henninger</SNavFooter>
     </>
   );
@@ -334,14 +346,18 @@ const Navbar = () => {
 
       <SNavBarRightContainer>
         <ThemeChanger />
-        <SNavBarBrand href="/">richen.dev</SNavBarBrand>
+        <TNextLinkWrapper href="/" Component={SNavBarBrand}>
+          richen.dev
+        </TNextLinkWrapper>
       </SNavBarRightContainer>
 
       <SNavBarContainer show={!collapsed} navbar>
         <Sidebar />
       </SNavBarContainer>
       <SNavContentContainer>
-        <SNavBrand href="/">richen.dev</SNavBrand>
+        <TNextLinkWrapper href="/" Component={SNavBrand}>
+          richen.dev
+        </TNextLinkWrapper>
         <Sidebar />
       </SNavContentContainer>
     </SNavContainer>

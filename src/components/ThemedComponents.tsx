@@ -38,6 +38,7 @@ export const GlobalStyle = createGlobalStyle<ThemeProps<DefaultTheme>>`
 // TODO change dark theme outline
 export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   margin: 10px;
+  min-height: 35px;
   padding: 5px 10px;
   max-width: 150px;
   max-height: 36px;
@@ -73,6 +74,7 @@ export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
 // TODO change Secondary Color for themes
 export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   margin: 10px;
+  min-height: 30px;
   padding: 5px 10px;
   max-width: 150px;
   max-height: 36px;
@@ -177,6 +179,22 @@ export const TLink = styled.a`
   }}
 `;
 
+interface INextLinkWrapper {
+  children?: React.ReactNode;
+  href: string;
+  Component?: React.FunctionComponent;
+}
+
+export const TNextLinkWrapper = ({
+  children,
+  href,
+  Component,
+}: INextLinkWrapper) => (
+  <Link href={href} passHref>
+    <Component>{children}</Component>
+  </Link>
+);
+
 export const TLocalLink = ({ children, href }) => (
   <Link href={href} passHref>
     <TLink>{children}</TLink>
@@ -189,7 +207,7 @@ export const TOutboundLinkText = ({ children, href }) => (
   </Link>
 );
 
-export const TButtonLink = styled(Link)<ThemeProps<DefaultTheme>>`
+export const TButtonLink = styled.a<ThemeProps<DefaultTheme>>`
   &:hover {
     text-decoration: none;
     ${(props) => {
@@ -219,7 +237,7 @@ export const TButtonLink = styled(Link)<ThemeProps<DefaultTheme>>`
 
 // Nav Components
 
-export const TNavLinkWrapper = styled.a<ThemeProps<DefaultTheme>>`
+export const TNavLink = styled.a<ThemeProps<DefaultTheme>>`
   color: ${(props) => props.theme.palette.common.white};
   &:hover {
     text-decoration: none;
@@ -237,12 +255,6 @@ export const TNavLinkWrapper = styled.a<ThemeProps<DefaultTheme>>`
   }
 `;
 
-export const TNavLink = ({ children, href }) => (
-  <Link href={href} passHref>
-    <TNavLinkWrapper>{children}</TNavLinkWrapper>
-  </Link>
-);
-
 export const TNavDivider = styled.div<ThemeProps<DefaultTheme>>`
   ${(props) => {
     switch (props.theme.name) {
@@ -256,7 +268,7 @@ export const TNavDivider = styled.div<ThemeProps<DefaultTheme>>`
   }}
 `;
 
-export const THireMeLinkWrapper = styled(Link)<ThemeProps<DefaultTheme>>`
+export const THireMeLink = styled.a<ThemeProps<DefaultTheme>>`
   &:hover {
     text-decoration: none;
     ${(props) => {
@@ -283,12 +295,6 @@ export const THireMeLinkWrapper = styled(Link)<ThemeProps<DefaultTheme>>`
     }
   }}
 `;
-
-export const THireMeLink = ({ children, href }) => (
-  <Link href={href} passHref>
-    <TLink>{children}</TLink>
-  </Link>
-);
 
 export const TNavFooter = styled.footer<ThemeProps<DefaultTheme>>`
   color: ${(props) => props.theme.palette.common.white};

@@ -7,7 +7,7 @@ import { THEME } from '../styled.d';
 import { RootState } from '../store';
 import { TButtonPrimary, TTextSecondary } from './ThemedComponents';
 
-const SThemeChanger = styled(MDBContainer)`
+const SThemeChanger = styled(MDBContainer)<{ isnav: boolean }>`
   min-width: 250px;
   width: 250px;
   background-color: transparent;
@@ -18,10 +18,10 @@ const SThemeChanger = styled(MDBContainer)`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 640px) {
-    display: ${(props) => (props.isNav ? 'flex' : 'none !important')};
+    display: ${(props) => (props.isnav ? 'flex' : 'none !important')};
   }
   @media only screen and (min-width: 1000px) {
-    display: ${(props) => (props.isNav ? 'flex' : 'none !important')};
+    display: ${(props) => (props.isnav ? 'flex' : 'none !important')};
     margin-top: 5px;
   }
   @media only screen and (max-width: 1000px) {
@@ -31,6 +31,7 @@ const SThemeChanger = styled(MDBContainer)`
 
 const SButton = styled(TButtonPrimary)`
   margin: 0;
+  min-height: 30px;
   max-width: 80px;
   width: 80px;
   ${(props) => {
@@ -64,11 +65,11 @@ const SThemeText = styled(TTextSecondary)`
 `;
 
 interface ThemeChangerProps {
-  isNav?: boolean;
+  isnav?: boolean;
 }
 
 const ThemeChanger: React.FC<ThemeChangerProps> = ({
-  isNav,
+  isnav,
 }: ThemeChangerProps) => {
   const dispatch = useDispatch();
   const { theme } = useSelector((state: RootState) => state);
@@ -85,8 +86,8 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
   };
 
   return (
-    <SThemeChanger isNav={isNav}>
-      {isNav && <SThemeText variant="p">pssst... select theme here</SThemeText>}
+    <SThemeChanger isnav={isnav}>
+      {isnav && <SThemeText variant="p">pssst... select theme here</SThemeText>}
       <MDBBtnGroup>
         <SButton
           active={theme.name === THEME.LIGHT}
@@ -118,7 +119,7 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
 };
 
 ThemeChanger.defaultProps = {
-  isNav: false,
+  isnav: false,
 };
 
 export default ThemeChanger;
