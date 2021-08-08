@@ -1,10 +1,9 @@
 {
-  "author": "Benjamin Akar",
-  "license": "MIT",
-  "repository": "https://github.com/benja/nextjs-redux.git",
-  "name": "nextjs-redux",
-  "version": "0.1.0",
+  "name": "richen-portfolio",
   "private": true,
+  "description": "",
+  "version": "2.0.0",
+  "author": "Richard Henninger",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
