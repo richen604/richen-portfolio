@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Formik } from 'formik';
-import styled from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import { MDBContainer, MDBInput, MDBTypography } from 'mdb-react-ui-kit';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
@@ -15,6 +15,7 @@ import {
   TPageMain,
 } from '../components/ThemedComponents';
 import PageMain from '../components/PageMain';
+import { THEME } from '../styled.d';
 
 const SPageMain = styled(PageMain)`
   height: 1000px;
@@ -68,6 +69,32 @@ const SForm = styled.form`
 const SInputContainer1 = styled.div`
   display: flex;
   justify-content: space-between;
+  label {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return ` color: ${props.theme.palette.common.white} !important;`;
+        case THEME.DARK:
+          return ` color: ${props.theme.palette.primary.main} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
+  :focus-within .form-outline .form-control ~ .form-notch div {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `border-color: ${props.theme.palette.common.white} !important;`;
+        case THEME.DARK:
+          return `border-color: ${props.theme.palette.primary.darker} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `border-color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
 `;
 
 const SContactInput = styled(MDBInput)`
@@ -81,8 +108,64 @@ const SContactInput1 = styled.div`
   flex-direction: column;
 `;
 
-const SContactInput1Input = styled(MDBInput)`
-  width: 80%;
+const SContactInputWrapperSubject = styled.div<ThemeProps<DefaultTheme>>`
+  min-height: 100px;
+  label {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return ` color: ${props.theme.palette.common.white} !important;`;
+        case THEME.DARK:
+          return ` color: ${props.theme.palette.primary.main} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
+  :focus-within .form-outline .form-control ~ .form-notch div {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `border-color: ${props.theme.palette.common.white} !important;`;
+        case THEME.DARK:
+          return `border-color: ${props.theme.palette.primary.darker} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `border-color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
+`;
+
+const SContactInputWrapperMessage = styled.div<ThemeProps<DefaultTheme>>`
+  min-height: 200px;
+  label {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return ` color: ${props.theme.palette.common.white} !important;`;
+        case THEME.DARK:
+          return ` color: ${props.theme.palette.primary.main} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
+  :focus-within .form-outline .form-control ~ .form-notch div {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `border-color: ${props.theme.palette.common.white} !important;`;
+        case THEME.DARK:
+          return `border-color: ${props.theme.palette.primary.darker} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `border-color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
 `;
 
 const SContactInputSubject = styled(SContactInput)`
@@ -91,6 +174,7 @@ const SContactInputSubject = styled(SContactInput)`
 
 const SContactInputMessage = styled(SContactInput)`
   margin-bottom: 10px;
+  margin-top: 30px;
   height: 150px;
 `;
 
@@ -99,8 +183,9 @@ const SContactButton = styled(TButtonPrimary)`
 `;
 
 const SContactError = styled(MDBTypography)`
-  margin: 4px;
-  color: red;
+  margin: 10px 4px;
+  color: #ff4066d5;
+  font-size: smaller;
 `;
 
 interface FormErrors {
@@ -142,7 +227,7 @@ const Contact = () => {
           <SContactH3 variant="h3">Get In Touch</SContactH3>
           <Formik
             initialValues={{ name: '', email: '', subject: '', message: '' }}
-            validate={(values) => {
+            validate={values => {
               const errors: FormErrors = {
                 name: '',
                 email: '',
@@ -171,7 +256,6 @@ const Contact = () => {
               await postContact(values);
               handleFormSuccess();
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);
               }, 400);
             }}
@@ -207,6 +291,8 @@ const Contact = () => {
                   <SContactInput1>
                     <SContactInput
                       label="Email"
+                      labelClass="form-label"
+                      wrapperClass="input-group"
                       type="text"
                       name="email"
                       value={values.email}
@@ -222,38 +308,42 @@ const Contact = () => {
                     )}
                   </SContactInput1>
                 </SInputContainer1>
-                <SContactInputSubject
-                  label="Enter your subject"
-                  type="text"
-                  name="subject"
-                  value={values.subject}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                {errors.subject && touched.subject ? (
-                  <SContactError className="contact-error">
-                    {errors.subject}
-                  </SContactError>
-                ) : (
-                  <SContactError className="contact-error"> </SContactError>
-                )}
-                <SContactInputMessage
-                  textarea
-                  rows={6}
-                  label="Enter your message"
-                  type="text"
-                  name="message"
-                  value={values.message}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                {errors.message && touched.message ? (
-                  <SContactError className="contact-error">
-                    {errors.message}
-                  </SContactError>
-                ) : (
-                  <SContactError className="contact-error"> </SContactError>
-                )}
+                <SContactInputWrapperSubject>
+                  <SContactInputSubject
+                    label="Enter your subject"
+                    type="text"
+                    name="subject"
+                    value={values.subject}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.subject && touched.subject ? (
+                    <SContactError className="contact-error">
+                      {errors.subject}
+                    </SContactError>
+                  ) : (
+                    <SContactError className="contact-error"> </SContactError>
+                  )}
+                </SContactInputWrapperSubject>
+                <SContactInputWrapperMessage>
+                  <SContactInputMessage
+                    textarea
+                    rows={6}
+                    label="Enter your message"
+                    type="text"
+                    name="message"
+                    value={values.message}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.message && touched.message ? (
+                    <SContactError className="contact-error">
+                      {errors.message}
+                    </SContactError>
+                  ) : (
+                    <SContactError className="contact-error"> </SContactError>
+                  )}
+                </SContactInputWrapperMessage>
 
                 <SContactButton type="submit" disabled={isSubmitting}>
                   Send Now

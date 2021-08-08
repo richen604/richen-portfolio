@@ -20,8 +20,8 @@ import { THEME } from '../styled.d';
 // Common Components
 
 export const GlobalStyle = createGlobalStyle<ThemeProps<DefaultTheme>>`
- html {
-    ${(props) => {
+ html, body {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `background-color: ${props.theme.palette.common.black};`;
@@ -42,7 +42,7 @@ export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   padding: 5px 10px;
   max-width: 150px;
   max-height: 36px;
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
@@ -54,7 +54,7 @@ export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
     }
   }}
   &:hover {
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
@@ -78,7 +78,7 @@ export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   padding: 5px 10px;
   max-width: 150px;
   max-height: 36px;
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
@@ -90,7 +90,7 @@ export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
     }
   }}
   &:hover {
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
@@ -108,7 +108,7 @@ export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
 `;
 
 export const TTextPrimary = styled(MDBTypography)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white};`;
@@ -122,7 +122,7 @@ export const TTextPrimary = styled(MDBTypography)`
 `;
 
 export const TTextMuted = styled(MDBTypography)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.textMuted};`;
@@ -137,7 +137,7 @@ export const TTextMuted = styled(MDBTypography)`
 
 // TODO change color for themes
 export const TTextSecondary = styled(MDBTypography)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white};`;
@@ -154,7 +154,7 @@ export const TTextSecondary = styled(MDBTypography)`
 export const TLink = styled.a`
   &:hover {
     text-decoration: none;
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.white};`;
@@ -166,7 +166,7 @@ export const TLink = styled.a`
       }
     }}
   }
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white};`;
@@ -210,7 +210,7 @@ export const TOutboundLinkText = ({ children, href }) => (
 export const TButtonLink = styled.a<ThemeProps<DefaultTheme>>`
   &:hover {
     text-decoration: none;
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black};`;
@@ -222,7 +222,7 @@ export const TButtonLink = styled.a<ThemeProps<DefaultTheme>>`
       }
     }}
   }
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.black};`;
@@ -238,10 +238,10 @@ export const TButtonLink = styled.a<ThemeProps<DefaultTheme>>`
 // Nav Components
 
 export const TNavLink = styled.a<ThemeProps<DefaultTheme>>`
-  color: ${(props) => props.theme.palette.common.white};
+  color: ${props => props.theme.palette.common.white};
   &:hover {
     text-decoration: none;
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: #b8b8b8`;
@@ -256,7 +256,7 @@ export const TNavLink = styled.a<ThemeProps<DefaultTheme>>`
 `;
 
 export const TNavDivider = styled.div<ThemeProps<DefaultTheme>>`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `background-color: ${props.theme.palette.common.white}`;
@@ -271,7 +271,7 @@ export const TNavDivider = styled.div<ThemeProps<DefaultTheme>>`
 export const THireMeLink = styled.a<ThemeProps<DefaultTheme>>`
   &:hover {
     text-decoration: none;
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black};`;
@@ -283,7 +283,7 @@ export const THireMeLink = styled.a<ThemeProps<DefaultTheme>>`
       }
     }}
   }
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.black};`;
@@ -297,7 +297,7 @@ export const THireMeLink = styled.a<ThemeProps<DefaultTheme>>`
 `;
 
 export const TNavFooter = styled.footer<ThemeProps<DefaultTheme>>`
-  color: ${(props) => props.theme.palette.common.white};
+  color: ${props => props.theme.palette.common.white};
 `;
 
 export const THireMeButton = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
@@ -308,7 +308,7 @@ export const THireMeButton = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
@@ -320,7 +320,7 @@ export const THireMeButton = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
     }
   }}
   &:hover {
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
@@ -338,7 +338,7 @@ export const THireMeButton = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
 `;
 
 export const TNavContainer = styled(MDBNavbar)<ThemeProps<DefaultTheme>>`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white}; background-color: ${props.theme.palette.common.black}; border-color: ${props.theme.palette.common.black};`;
@@ -350,7 +350,7 @@ export const TNavContainer = styled(MDBNavbar)<ThemeProps<DefaultTheme>>`
     }
   }}
   @media only screen and (min-width: 1000px) {
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `scrollbar-color: ${props.theme.palette.common.black} ${props.theme.palette.common.white};`;
@@ -372,7 +372,7 @@ export const TNavToggle = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
@@ -384,7 +384,7 @@ export const TNavToggle = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
     }
   }}
   &:hover {
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
@@ -405,7 +405,7 @@ export const TNavToggle = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
 
 export const TSocialsBorder = styled.div`
   &:hover {
-    ${(props) => {
+    ${props => {
       switch (props.theme.name) {
         case THEME.MONOCHROMATIC:
         case THEME.DARK:
@@ -418,7 +418,7 @@ export const TSocialsBorder = styled.div`
 `;
 
 export const TSocialsIcon = styled(FontAwesomeIcon)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.black};`;
@@ -434,15 +434,15 @@ export const TSocialsIcon = styled(FontAwesomeIcon)`
 // Layout Components
 
 export const TLayoutChildrenSpacer = styled.div<ThemeProps<DefaultTheme>>`
-  background-color: ${(props) => props.theme.palette.common.pageBackground};
+  background-color: ${props => props.theme.palette.common.pageBackground};
 `;
 
 export const TPageHeader = styled.div<ThemeProps<DefaultTheme>>`
-  background-color: ${(props) => props.theme.palette.common.pageBackgroundAlt};
+  background-color: ${props => props.theme.palette.common.pageBackgroundAlt};
 `;
 
 export const TPageMain = styled.div<ThemeProps<DefaultTheme>>`
-  background-color: ${(props) => props.theme.palette.common.pageBackground};
+  background-color: ${props => props.theme.palette.common.pageBackground};
 `;
 
 // Pocket Feed Components
@@ -450,11 +450,11 @@ export const TPageMain = styled.div<ThemeProps<DefaultTheme>>`
 // SkillsGroup / ProjectCardGroup Component
 
 export const TCard = styled(MDBCard)`
-  background-color: ${(props) => props.theme.palette.common.pageBackgroundAlt};
+  background-color: ${props => props.theme.palette.common.pageBackgroundAlt};
 `;
 
 export const TCardTitle = styled(MDBCardTitle)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white};`;
@@ -468,7 +468,7 @@ export const TCardTitle = styled(MDBCardTitle)`
 `;
 
 export const TCardBody = styled(MDBCardBody)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white};`;
@@ -482,7 +482,7 @@ export const TCardBody = styled(MDBCardBody)`
 `;
 
 export const TCardText = styled(MDBCardText)`
-  ${(props) => {
+  ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `color: ${props.theme.palette.common.white};`;
