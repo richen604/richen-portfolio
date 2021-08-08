@@ -62,7 +62,9 @@ const SEO: React.FC<ISEO> = ({ description, lang, meta, title }: ISEO) => {
           content: siteMetadata.image,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="icon" href="/favicon.png" />
+    </Helmet>
   );
 };
 
