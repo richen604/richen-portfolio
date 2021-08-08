@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { RootState } from '../store';
 import Nav from '../components/Nav';
 import { TLayoutChildrenSpacer } from '../components/ThemedComponents';
+import { THEME } from '../styled.d';
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -20,16 +21,33 @@ const SLayoutContainer = styled.div`
   @media only screen and (min-width: 1000px) {
     flex-direction: row;
   }
+  ${props => {
+    switch (props.theme.name) {
+      case THEME.MONOCHROMATIC:
+        return `background-color: ${props.theme.palette.common.black};`;
+      case THEME.DARK:
+        return `background-color: ${props.theme.palette.primary.darkest};`;
+      case THEME.LIGHT:
+      default:
+        return `background-color: ${props.theme.palette.primary.main};`;
+    }
+  }}
 `;
 
 const SLayoutNav = styled.div`
   padding: 0;
   margin: 0;
+  
   @media only screen and (max-width: 1000px) {
     width: 100vw;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   @media only screen and (min-width: 1000px) {

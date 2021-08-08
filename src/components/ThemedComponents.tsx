@@ -9,6 +9,7 @@ import {
   MDBNavbar,
   MDBTypography,
 } from 'mdb-react-ui-kit';
+import ReactGA from 'react-ga';
 import styled, {
   ThemeProps,
   DefaultTheme,
@@ -74,7 +75,7 @@ export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
 // TODO change Secondary Color for themes
 export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   margin: 10px;
-  min-height: 30px;
+  min-height: 35px;
   padding: 5px 10px;
   max-width: 150px;
   max-height: 36px;
@@ -191,7 +192,7 @@ export const TNextLinkWrapper = ({
   Component,
 }: INextLinkWrapper) => (
   <Link href={href} passHref>
-    <Component>{children}</Component>
+    {Component ? <Component>{children}</Component> : <a>{children}</a>}
   </Link>
 );
 
@@ -201,11 +202,35 @@ export const TLocalLink = ({ children, href }) => (
   </Link>
 );
 
-export const TOutboundLinkText = ({ children, href }) => (
-  <Link href={href} passHref>
-    <TLink>{children}</TLink>
-  </Link>
-);
+export const TOutboundLinkText = styled(ReactGA.OutboundLink)`
+  &:hover {
+    text-decoration: none;
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.white};`;
+        case THEME.DARK:
+          return `color: ${props.theme.palette.primary.darkest};`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darkest};`;
+      }
+    }}
+  }
+  ${props => {
+    switch (props.theme.name) {
+      case THEME.MONOCHROMATIC:
+        return `color: ${props.theme.palette.common.white};`;
+      case THEME.DARK:
+        return `color: ${props.theme.palette.primary.darker};`;
+      case THEME.LIGHT:
+      default:
+        return `color: ${props.theme.palette.primary.darker};`;
+    }
+  }}
+`;
+
+export const TOutBoundLink = styled(ReactGA.OutboundLink)``;
 
 export const TButtonLink = styled.a<ThemeProps<DefaultTheme>>`
   &:hover {

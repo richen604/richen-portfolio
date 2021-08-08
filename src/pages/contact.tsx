@@ -17,7 +17,7 @@ import PageMain from '../components/PageMain';
 import { THEME } from '../styled.d';
 
 const SPageMain = styled(PageMain)`
-  height: 1000px;
+  height: 1200px;
 `;
 
 const SContactHeaderContainer = styled(MDBContainer)`
@@ -212,7 +212,10 @@ const Contact = () => {
           <SContactHeaderText variant="p">
             Interested in hiring me for your project or just want to say hi? You
             can fill in the contact form below or send me an email to{' '}
-            <TOutboundLinkText href="mailto:richard@richen.dev">
+            <TOutboundLinkText
+              eventLabel="outbound-email"
+              to="mailto:richard@richen.dev"
+            >
               richard@richen.dev
             </TOutboundLinkText>{' '}
             <br /> <br />
@@ -292,7 +295,7 @@ const Contact = () => {
                       label="Email"
                       labelClass="form-label"
                       wrapperClass="input-group"
-                      type="text"
+                      type="email"
                       name="email"
                       value={values.email}
                       onChange={handleChange}

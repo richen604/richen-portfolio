@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MDBCardImage, MDBContainer } from 'mdb-react-ui-kit';
+import { MDBContainer } from 'mdb-react-ui-kit';
+import Image from 'next/image';
 import {
   TCard,
   TCardTitle,
@@ -9,7 +10,6 @@ import {
   TCardBody,
   TOutboundLinkText,
 } from './ThemedComponents';
-import Image from 'next/image';
 import bloglistImage from '../images/bloglist-mockup.png';
 import libraryImage from '../images/library-mockup.png';
 import raterepoImage from '../images/raterepo-mockup.png';
@@ -139,8 +139,6 @@ const SCardButton = styled(TButtonPrimary)`
   width: 80px;
 `;
 
-const SCardButtonPlaceholder = styled(TButtonPrimary)``;
-
 const SCardBody = styled(TCardBody)`
   padding-top: 0;
 `;
@@ -152,51 +150,52 @@ const SCardText = styled(TCardText)`
   font-weight: 400;
 `;
 
-const ProjectCardGroup = () => {
-  return (
-    <SProjectContainer>
-      {projectCardData.map((project) => (
-        <SCard key={project.title}>
-          {project.live ? (
-            <TOutboundLinkText href={project.live}>
-              <Image
-                quality={100}
-                width={500}
-                height={300}
-                objectFit="contain"
-                src={project?.src}
-                alt={project?.alt}
-              />
-            </TOutboundLinkText>
-          ) : (
+const ProjectCardGroup = () => (
+  <SProjectContainer>
+    {projectCardData.map(project => (
+      <SCard key={project.title}>
+        {project.live ? (
+          <TOutboundLinkText
+            eventLabel={`outbound-${project.alt}`}
+            to={project.live}
+          >
             <Image
               quality={100}
-              objectFit="contain"
               width={500}
               height={300}
+              objectFit="contain"
               src={project?.src}
               alt={project?.alt}
             />
-          )}
+          </TOutboundLinkText>
+        ) : (
+          <Image
+            quality={100}
+            objectFit="contain"
+            width={500}
+            height={300}
+            src={project?.src}
+            alt={project?.alt}
+          />
+        )}
 
-          <SCardBody>
-            <SCardTitleContainer>
-              <SCardTitle>{project?.title}</SCardTitle>
-              {project.live ? (
-                <>
-                  <SCardButton href={project?.live}>Live</SCardButton>
-                </>
-              ) : null}
-              <SCardButton href={project.github}>Github</SCardButton>
-            </SCardTitleContainer>
+        <SCardBody>
+          <SCardTitleContainer>
+            <SCardTitle>{project?.title}</SCardTitle>
+            {project.live ? (
+              <>
+                <SCardButton href={project?.live}>Live</SCardButton>
+              </>
+            ) : null}
+            <SCardButton href={project.github}>Github</SCardButton>
+          </SCardTitleContainer>
 
-            <br />
-            <SCardText>{project?.text}</SCardText>
-          </SCardBody>
-        </SCard>
-      ))}
-    </SProjectContainer>
-  );
-};
+          <br />
+          <SCardText>{project?.text}</SCardText>
+        </SCardBody>
+      </SCard>
+    ))}
+  </SProjectContainer>
+);
 
 export default ProjectCardGroup;

@@ -16,7 +16,6 @@ import ThemeChanger from './ThemeChanger';
 import {
   THireMeButton,
   THireMeLink,
-  TLocalLink,
   TNavContainer,
   TNavDivider,
   TNavFooter,
@@ -93,12 +92,6 @@ const SNavProfileContainer = styled.div`
   width: 100%;
 `;
 
-const SNavPortraitImage = styled(Image)`
-  padding: 0 10px;
-  width: 10rem;
-  margin: 10px;
-  height: auto;
-`;
 const SNavIntroText = styled.p`
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -225,7 +218,11 @@ const SNavContainer = styled(TNavContainer)`
     justify-self: start;
     justify-content: flex-start;
     overflow-y: scroll;
-    scrollbar-width: thin;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 `;
 
@@ -284,51 +281,50 @@ const SNavBarRightContainer = styled.div`
   }
 `;
 
-const Sidebar = () => {
-  return (
-    <>
-      <SNavProfileContainer>
-        <Link href="/" passHref>
-          <a>
-            <Image
-              src={portrait}
-              width={200}
-              height={200}
-              alt="Richard Henninger Portrait"
-            />
-          </a>
-        </Link>
+const Sidebar = () => (
+  <>
+    <SNavProfileContainer>
+      <Link href="/" passHref>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a>
+          <Image
+            src={portrait}
+            width={200}
+            height={200}
+            alt="Richard Henninger Portrait"
+          />
+        </a>
+      </Link>
 
-        <SNavIntroText>Full Stack JavaScript Developer</SNavIntroText>
-        <Socials isnav />
-        <SNavDivider />
-      </SNavProfileContainer>
-      <SNavLinkContainer>
-        <TNextLinkWrapper href="/" Component={SNavLinkContainerLink}>
-          <SUserIcon icon={faUser} /> About Me
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="/portfolio" Component={SNavLinkContainerLink}>
-          <SLaptopIcon icon={faLaptopCode} /> Portfolio
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="/resume" Component={SNavLinkContainerLink}>
-          <SFileIcon icon={faFileAlt} /> Resume
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="/contact" Component={SNavLinkContainerLink}>
-          <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
-        </TNextLinkWrapper>
-      </SNavLinkContainer>
-      <SHireMeButton>
-        <TNextLinkWrapper href="/contact" Component={SHireMeLink}>
-          <SPlaneIcon icon={faPaperPlane} /> Hire Me
-        </TNextLinkWrapper>
-      </SHireMeButton>
-
+      <SNavIntroText>Full Stack JavaScript Developer</SNavIntroText>
+      <Socials isnav />
       <SNavDivider />
-      <ThemeChanger isnav />
-      <SNavFooter>© {new Date().getFullYear()} Richard Henninger</SNavFooter>
-    </>
-  );
-};
+    </SNavProfileContainer>
+    <SNavLinkContainer>
+      <TNextLinkWrapper href="/" Component={SNavLinkContainerLink}>
+        <SUserIcon icon={faUser} /> About Me
+      </TNextLinkWrapper>
+      <TNextLinkWrapper href="/portfolio" Component={SNavLinkContainerLink}>
+        <SLaptopIcon icon={faLaptopCode} /> Portfolio
+      </TNextLinkWrapper>
+      <TNextLinkWrapper href="/resume" Component={SNavLinkContainerLink}>
+        <SFileIcon icon={faFileAlt} /> Resume
+      </TNextLinkWrapper>
+      <TNextLinkWrapper href="/contact" Component={SNavLinkContainerLink}>
+        <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
+      </TNextLinkWrapper>
+    </SNavLinkContainer>
+    <SHireMeButton>
+      <TNextLinkWrapper href="/contact" Component={SHireMeLink}>
+        <SPlaneIcon icon={faPaperPlane} /> Hire Me
+      </TNextLinkWrapper>
+    </SHireMeButton>
+
+    <SNavDivider />
+    <ThemeChanger isnav />
+    <SNavFooter>© {new Date().getFullYear()} Richard Henninger</SNavFooter>
+  </>
+);
 
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(true);

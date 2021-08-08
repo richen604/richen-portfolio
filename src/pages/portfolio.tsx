@@ -50,7 +50,10 @@ function Portfolio() {
           <SPortfolioIntroText>
             Welcome to my portfolio. All of these projects can be seen on my
             github{' '}
-            <TOutboundLinkText href={siteMetadata.socials.github}>
+            <TOutboundLinkText
+              eventLabel="outbound-github"
+              to={siteMetadata.socials.github}
+            >
               here
             </TOutboundLinkText>
             .<br />

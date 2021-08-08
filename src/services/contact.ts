@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const postContact = async values => {
   const result = await axios
-    .post('https://richen-emailer.herokuapp.com/contact', values)
+    .post(process.env.NEXT_PUBLIC_CONTACT_URL, values)
     .catch(error => console.log(error));
   return result;
 };

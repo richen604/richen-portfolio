@@ -14,7 +14,6 @@ import {
   TTextPrimary,
   TButtonPrimary,
   TButtonSecondary,
-  TLocalLink,
   TButtonLink,
   TOutboundLinkText,
   TNextLinkWrapper,
@@ -122,8 +121,8 @@ const AboutContent = () => (
         Below is a quick overview of my main technical skill sets and
         technologies I use. Want to find out more about my experience? Check out
         my online resume and project portfolio.{' '}
-        <TLocalLink href="/resume">online resume</TLocalLink> and{' '}
-        <TLocalLink href="/portfolio">projects</TLocalLink>.
+        <TNextLinkWrapper href="/resume">online resume</TNextLinkWrapper> and{' '}
+        <TNextLinkWrapper href="/portfolio">projects</TNextLinkWrapper>.
       </SAboutContentSubtext>
     </SAboutContentText>
     <SkillsGroup />
@@ -140,7 +139,10 @@ const IndexPage = () => (
       <AboutContent />
       <SAboutFooter>
         <SAboutFooterText>Icons provided by </SAboutFooterText>
-        <TOutboundLinkText href="https://icons8.com/">
+        <TOutboundLinkText
+          eventLabel="outbound-icons8"
+          to="https://icons8.com/"
+        >
           icons8.com
         </TOutboundLinkText>
       </SAboutFooter>
