@@ -6,7 +6,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { MDBContainer } from 'mdb-react-ui-kit';
-import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import SkillsGroup from '../components/SkillsGroup';
 import PageHeader from '../components/PageHeader';
@@ -91,70 +90,62 @@ const SAboutFooterText = styled(TTextPrimary)`
   margin-right: 8px;
 `;
 
-const AboutHeaderContent = () => {
-  return (
-    <SAboutHeaderIntro>
-      <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
-      <SAboutIntroH5 variant="h5">
-        Full Stack JavaScript Developer
-      </SAboutIntroH5>
-      <SAboutIntroP variant="p">
-        I&apos;m a software engineer specialized in frontend and backend
-        development for complex scalable web apps. Check out my project
-        portfolio and online resume.
-      </SAboutIntroP>
-      <TNextLinkWrapper href="/portfolio" Component={TButtonLink}>
-        <TButtonPrimary>
-          <SAboutButtonIcon icon={faArrowCircleRight} />
-          View Portfolio
-        </TButtonPrimary>
-      </TNextLinkWrapper>
-      <TNextLinkWrapper href="/resume" Component={TButtonLink}>
-        <TButtonSecondary>
-          <SAboutButtonIcon icon={faFileAlt} />
-          View Resume
-        </TButtonSecondary>
-      </TNextLinkWrapper>
-    </SAboutHeaderIntro>
-  );
-};
+const AboutHeaderContent = () => (
+  <SAboutHeaderIntro>
+    <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
+    <SAboutIntroH5 variant="h5">Full Stack JavaScript Developer</SAboutIntroH5>
+    <SAboutIntroP variant="p">
+      I&apos;m a software engineer specialized in frontend and backend
+      development for complex scalable web apps. Check out my project portfolio
+      and online resume.
+    </SAboutIntroP>
+    <TNextLinkWrapper href="/portfolio" Component={TButtonLink}>
+      <TButtonPrimary>
+        <SAboutButtonIcon icon={faArrowCircleRight} />
+        View Portfolio
+      </TButtonPrimary>
+    </TNextLinkWrapper>
+    <TNextLinkWrapper href="/resume" Component={TButtonLink}>
+      <TButtonSecondary>
+        <SAboutButtonIcon icon={faFileAlt} />
+        View Resume
+      </TButtonSecondary>
+    </TNextLinkWrapper>
+  </SAboutHeaderIntro>
+);
 
-const AboutContent = () => {
-  return (
-    <>
-      <SAboutContentText>
-        <SAboutContentTitle variant="h2">What I Do</SAboutContentTitle>
-        <SAboutContentSubtext variant="p">
-          Below is a quick overview of my main technical skill sets and
-          technologies I use. Want to find out more about my experience? Check
-          out my online resume and project portfolio.{' '}
-          <TLocalLink href="/resume">online resume</TLocalLink> and{' '}
-          <TLocalLink href="/portfolio">projects</TLocalLink>.
-        </SAboutContentSubtext>
-      </SAboutContentText>
-      <SkillsGroup />
-    </>
-  );
-};
+const AboutContent = () => (
+  <>
+    <SAboutContentText>
+      <SAboutContentTitle variant="h2">What I Do</SAboutContentTitle>
+      <SAboutContentSubtext variant="p">
+        Below is a quick overview of my main technical skill sets and
+        technologies I use. Want to find out more about my experience? Check out
+        my online resume and project portfolio.{' '}
+        <TLocalLink href="/resume">online resume</TLocalLink> and{' '}
+        <TLocalLink href="/portfolio">projects</TLocalLink>.
+      </SAboutContentSubtext>
+    </SAboutContentText>
+    <SkillsGroup />
+  </>
+);
 
-const IndexPage = () => {
-  return (
-    <Layout>
-      <SEO title="About Me" />
-      <PageHeader>
-        <AboutHeaderContent />
-      </PageHeader>
-      <PageMain>
-        <AboutContent />
-        <SAboutFooter>
-          <SAboutFooterText>Icons provided by </SAboutFooterText>
-          <TOutboundLinkText href="https://icons8.com/">
-            icons8.com
-          </TOutboundLinkText>
-        </SAboutFooter>
-      </PageMain>
-    </Layout>
-  );
-};
+const IndexPage = () => (
+  <>
+    <SEO title="About Me" />
+    <PageHeader>
+      <AboutHeaderContent />
+    </PageHeader>
+    <PageMain>
+      <AboutContent />
+      <SAboutFooter>
+        <SAboutFooterText>Icons provided by </SAboutFooterText>
+        <TOutboundLinkText href="https://icons8.com/">
+          icons8.com
+        </TOutboundLinkText>
+      </SAboutFooter>
+    </PageMain>
+  </>
+);
 
 export default IndexPage;

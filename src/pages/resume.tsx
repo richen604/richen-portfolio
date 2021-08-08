@@ -2,7 +2,6 @@ import React from 'react';
 import { MDBContainer } from 'mdb-react-ui-kit';
 import Image from 'next/image';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import PageHeader from '../components/PageHeader';
 import PageMain from '../components/PageMain';
@@ -34,7 +33,7 @@ const SResume = styled(Image)``;
 
 function Resume() {
   return (
-    <Layout>
+    <>
       <SEO title="Resume" />
       <PageHeader>
         <SResumeHeaderContainer>
@@ -52,7 +51,7 @@ function Resume() {
           <SResume src={resume} alt="Richard Henninger Resume" />
         </SResumeContainer>
       </PageMain>
-    </Layout>
+    </>
   );
 }
 

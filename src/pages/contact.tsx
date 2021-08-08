@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Formik } from 'formik';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import { MDBContainer, MDBInput, MDBTypography } from 'mdb-react-ui-kit';
-import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import PageHeader from '../components/PageHeader';
 import Socials from '../components/Socials';
@@ -75,10 +74,10 @@ const SInputContainer1 = styled.div`
         case THEME.MONOCHROMATIC:
           return ` color: ${props.theme.palette.common.white} !important;`;
         case THEME.DARK:
-          return ` color: ${props.theme.palette.primary.main} !important;`;
+          return ` color: ${props.theme.palette.common.textMuted} !important;`;
         case THEME.LIGHT:
         default:
-          return `color: ${props.theme.palette.primary.darker} !important;`;
+          return `color: ${props.theme.palette.common.black} !important;`;
       }
     }}
   }
@@ -116,10 +115,10 @@ const SContactInputWrapperSubject = styled.div<ThemeProps<DefaultTheme>>`
         case THEME.MONOCHROMATIC:
           return ` color: ${props.theme.palette.common.white} !important;`;
         case THEME.DARK:
-          return ` color: ${props.theme.palette.primary.main} !important;`;
+          return ` color: ${props.theme.palette.common.textMuted} !important;`;
         case THEME.LIGHT:
         default:
-          return `color: ${props.theme.palette.primary.darker} !important;`;
+          return `color: ${props.theme.palette.common.black} !important;`;
       }
     }}
   }
@@ -146,10 +145,10 @@ const SContactInputWrapperMessage = styled.div<ThemeProps<DefaultTheme>>`
         case THEME.MONOCHROMATIC:
           return ` color: ${props.theme.palette.common.white} !important;`;
         case THEME.DARK:
-          return ` color: ${props.theme.palette.primary.main} !important;`;
+          return ` color: ${props.theme.palette.common.textMuted} !important;`;
         case THEME.LIGHT:
         default:
-          return `color: ${props.theme.palette.primary.darker} !important;`;
+          return `color: ${props.theme.palette.common.black} !important;`;
       }
     }}
   }
@@ -205,7 +204,7 @@ const Contact = () => {
     }, 1500);
   };
   return (
-    <Layout>
+    <>
       <SEO title="Contact Me" />
       <PageHeader>
         <SContactHeaderContainer>
@@ -371,7 +370,7 @@ const Contact = () => {
           </Formik>
         </SContactContainer>
       </SPageMain>
-    </Layout>
+    </>
   );
 };
 

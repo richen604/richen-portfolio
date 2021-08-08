@@ -2,7 +2,6 @@ import React from 'react';
 
 import { MDBContainer } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import PageHeader from '../components/PageHeader';
 import ProjectCardGroup from '../components/ProjectCardGroup';
@@ -43,7 +42,7 @@ const SPortfolioIntroText = styled(TTextPrimary)`
 
 function Portfolio() {
   return (
-    <Layout>
+    <>
       <SEO title="Portfolio" />
       <PageHeader>
         <SPortfolioIntro>
@@ -63,7 +62,7 @@ function Portfolio() {
       <PageMain>
         <ProjectCardGroup />
       </PageMain>
-    </Layout>
+    </>
   );
 }
 

@@ -1,11 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import { AppProps } from 'next/app';
-import { createGlobalStyle } from 'styled-components';
 import { NextComponentType, NextPageContext } from 'next';
 import { Provider } from 'react-redux';
-import ThemeProvider from '../layouts/ThemeProvider';
 import configureStore from '../store';
+import Layout from '../layouts/Layout';
 
 interface MyAppProps extends AppProps {
   Component: {
@@ -16,53 +16,13 @@ interface MyAppProps extends AppProps {
 }
 
 export default function App({ Component, pageProps }: MyAppProps) {
-  const Layout = Component.Layout || React.Fragment;
-
   const { store } = configureStore();
 
   return (
     <Provider store={store}>
-      <ThemeProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }
-
-// Reset default browser styling
-const GlobalStyles = createGlobalStyle`
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  }
-
-  input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-
-  html {
-    min-height: 100vh;
-  }
-
-  body {
-    min-height: 100vh;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  #__next {
-    min-height: 100vh;
-  }
-`;

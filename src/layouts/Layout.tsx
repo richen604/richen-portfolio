@@ -3,8 +3,8 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
 import { RootState } from '../store';
-import Nav from './Nav';
-import { GlobalStyle, TLayoutChildrenSpacer } from './ThemedComponents';
+import Nav from '../components/Nav';
+import { TLayoutChildrenSpacer } from '../components/ThemedComponents';
 
 interface LayoutProps {
   children?: React.ReactNode;
