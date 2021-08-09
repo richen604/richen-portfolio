@@ -1,4 +1,12 @@
 {
+<<<<<<< HEAD
   "arrowParens": "avoid",
   "semi": false
 }
+=======
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true
+}
+>>>>>>> c3a8c1b (init commit, working initial portfolio with some styled components, typescript, and redux)
