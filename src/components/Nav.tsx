@@ -90,6 +90,11 @@ const SNavProfileContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  @media only screen and (min-width: 1000px) {
+  }
+  @media only screen and (max-width: 1000px) {
+    margin-top: 35px;
+  }
 `;
 
 const SNavIntroText = styled.p`
@@ -143,10 +148,6 @@ const SPlaneIcon = styled(SNavIcon)`
   right: 4px;
 `;
 
-const SHireMeLink = styled(THireMeLink)`
-  font-family: 'Montserrat', sans-serif;
-`;
-
 const SNavFooter = styled(TNavFooter)`
   font-weight: lighter;
   font-size: smaller;
@@ -184,7 +185,7 @@ const SHireMeButton = styled(THireMeButton)`
   justify-self: center;
   align-self: center;
   margin: 10px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   @media only screen and (max-width: 1000px) {
     min-width: 80%;
     min-height: 38px;
@@ -206,6 +207,7 @@ const SNavContainer = styled(TNavContainer)`
   width: 100%;
   height: 100%;
   align-items: center;
+  z-index: 100;
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     flex-direction: row;
@@ -257,6 +259,7 @@ const SNavBarContainer = styled(MDBCollapse)`
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 100000;
 
   @media only screen and (min-width: 1000px) {
     display: none;
@@ -281,7 +284,16 @@ const SNavBarRightContainer = styled.div`
   }
 `;
 
-const Sidebar = () => (
+interface INavbar {
+  sidebarCollapsed?: boolean;
+}
+
+// TODO Conditionally render new components for collapsed sidenav
+// TODO Create handling collapsed prop for all styled components
+// TODO Create menu Socials component
+const Sidebar: React.FunctionComponent<INavbar> = ({
+  sidebarCollapsed,
+}: INavbar) => (
   <>
     <SNavProfileContainer>
       <Link href="/" passHref>
@@ -314,11 +326,9 @@ const Sidebar = () => (
         <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
       </TNextLinkWrapper>
     </SNavLinkContainer>
-    <SHireMeButton>
-      <TNextLinkWrapper href="/contact" Component={SHireMeLink}>
-        <SPlaneIcon icon={faPaperPlane} /> Hire Me
-      </TNextLinkWrapper>
-    </SHireMeButton>
+    <TNextLinkWrapper href="/contact" Component={SHireMeButton}>
+      <SPlaneIcon icon={faPaperPlane} /> Hire Me
+    </TNextLinkWrapper>
 
     <SNavDivider />
     <ThemeChanger isnav />
@@ -326,13 +336,19 @@ const Sidebar = () => (
   </>
 );
 
-const Navbar = () => {
+Sidebar.defaultProps = {
+  sidebarCollapsed: false,
+};
+
+const Navbar: React.FunctionComponent<INavbar> = ({
+  sidebarCollapsed,
+}: INavbar) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <SNavContainer sticky>
+    <SNavContainer>
       <SNavbarLeftContainer>
         <SNavToggle onClick={toggleNavbar}>
           <FontAwesomeIcon icon={faBars} />
@@ -354,10 +370,14 @@ const Navbar = () => {
         <TNextLinkWrapper href="/" Component={SNavBrand}>
           richen.dev
         </TNextLinkWrapper>
-        <Sidebar />
+        <Sidebar sidebarCollapsed={sidebarCollapsed} />
       </SNavContentContainer>
     </SNavContainer>
   );
+};
+
+Navbar.defaultProps = {
+  sidebarCollapsed: false,
 };
 
 export default Navbar;

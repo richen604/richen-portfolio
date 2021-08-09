@@ -90,6 +90,16 @@ const SAboutFooterText = styled(TTextPrimary)`
   margin-right: 8px;
 `;
 
+const SAboutHeaderBtnPrimary = styled(TButtonPrimary)`
+  width: 144.8px;
+  height: 35px;
+`;
+
+const SAboutHeaderBtnSecondary = styled(TButtonSecondary)`
+  width: 144.8px;
+  height: 35px;
+`;
+
 const AboutHeaderContent = () => (
   <SAboutHeaderIntro>
     <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
@@ -97,19 +107,19 @@ const AboutHeaderContent = () => (
     <SAboutIntroP variant="p">
       I&apos;m a software engineer specialized in frontend and backend
       development for complex scalable web apps. Check out my project portfolio
-      and online resume.
+      and online resume for more!
     </SAboutIntroP>
     <TNextLinkWrapper href="/portfolio" Component={TButtonLink}>
-      <TButtonPrimary>
+      <SAboutHeaderBtnPrimary>
         <SAboutButtonIcon icon={faArrowCircleRight} />
         View Portfolio
-      </TButtonPrimary>
+      </SAboutHeaderBtnPrimary>
     </TNextLinkWrapper>
     <TNextLinkWrapper href="/resume" Component={TButtonLink}>
-      <TButtonSecondary>
+      <SAboutHeaderBtnSecondary>
         <SAboutButtonIcon icon={faFileAlt} />
         View Resume
-      </TButtonSecondary>
+      </SAboutHeaderBtnSecondary>
     </TNextLinkWrapper>
   </SAboutHeaderIntro>
 );
@@ -121,7 +131,7 @@ const AboutContent = () => (
       <SAboutContentSubtext variant="p">
         Below is a quick overview of my main technical skill sets and
         technologies I use. Want to find out more about my experience? Check out
-        my online resume and project portfolio.{' '}
+        my{' '}
         <TNextLinkWrapper href="/resume" Component={TLink}>
           online resume{' '}
         </TNextLinkWrapper>

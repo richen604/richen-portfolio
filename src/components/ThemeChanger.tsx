@@ -80,7 +80,9 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
 
   return (
     <SThemeChanger isnav={isnav}>
-      {isnav && <SThemeText variant="p">pssst... select theme here</SThemeText>}
+      {isnav && (
+        <SThemeText variant="p">pssst... select a theme here</SThemeText>
+      )}
       <MDBBtnGroup>
         <SButton
           active={theme.name === THEME.LIGHT}

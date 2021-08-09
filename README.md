@@ -6,6 +6,9 @@ TODO:
 
 - [x] Migrated from gatsby to next
 - [x] Added themes and theme state management with redux
+- [] Nav
+  - [] Collapsible
+  - [] Active Link
 - [] ColorPicker component for changing theme accent colors
 - [] PocketFeed component
 - [] Gallery component
