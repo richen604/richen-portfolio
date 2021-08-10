@@ -1,19 +1,9 @@
-/* eslint-disable react/require-default-props */
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import styled, { ThemeProvider } from 'styled-components';
 import { MDBBtn } from 'mdb-react-ui-kit';
-import { RootState } from '../store';
+import styled, { ThemeProps, DefaultTheme } from 'styled-components';
+import { TLayoutChildrenSpacer } from '../ThemedComponents';
+import { THEME } from '../../styled.d';
 
-import Navbar from '../components/Nav';
-import { TLayoutChildrenSpacer } from '../components/ThemedComponents';
-import { THEME } from '../styled.d';
-
-interface LayoutProps {
-  children?: React.ReactNode;
-}
-
-const SLayoutContainer = styled.div`
+export const SLayoutContainer = styled.div<ThemeProps<DefaultTheme>>`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap');
 
   display: flex;
@@ -37,7 +27,7 @@ const SLayoutContainer = styled.div`
   }}
 `;
 
-const SLayoutNav = styled.div<{ collapse: boolean }>`
+export const SLayoutNav = styled.div<{ collapse: boolean }>`
   padding: 0;
   margin: 0;
   transition: 0.5s;
@@ -69,7 +59,7 @@ const SLayoutNav = styled.div<{ collapse: boolean }>`
   }
 `;
 
-const SLayoutChildrenContainer = styled.main<{ collapse: boolean }>`
+export const SLayoutChildrenContainer = styled.main<{ collapse: boolean }>`
   display: flex;
   flex-direction: column;
   align-self: normal;
@@ -88,12 +78,12 @@ const SLayoutChildrenContainer = styled.main<{ collapse: boolean }>`
   }
 `;
 
-const SLayoutChildrenSpacer = styled(TLayoutChildrenSpacer)`
+export const SLayoutChildrenSpacer = styled(TLayoutChildrenSpacer)`
   width: 100%;
   height: 20px;
 `;
 
-const SCollapseButton = styled(MDBBtn)<{ collapse: boolean }>`
+export const SCollapseButton = styled(MDBBtn)<{ collapse: boolean }>`
   transition: 0.5s ease-in-out;
   position: fixed;
   z-index: 2;
@@ -103,30 +93,3 @@ const SCollapseButton = styled(MDBBtn)<{ collapse: boolean }>`
     display: none;
   }
 `;
-
-const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
-  const { theme } = useSelector((state: RootState) => state);
-  const [collapse, setCollapse] = useState(false);
-
-  return (
-    <ThemeProvider theme={theme}>
-      <SLayoutContainer>
-        <SLayoutNav collapse={collapse}>
-          <Navbar sidebarCollapsed={collapse} />
-        </SLayoutNav>
-        <SCollapseButton
-          collapse={collapse}
-          onClick={() => setCollapse(!collapse)}
-        >
-          Collapse
-        </SCollapseButton>
-        <SLayoutChildrenContainer collapse={collapse}>
-          {children}
-          <SLayoutChildrenSpacer />
-        </SLayoutChildrenContainer>
-      </SLayoutContainer>
-    </ThemeProvider>
-  );
-};
-
-export default Layout;

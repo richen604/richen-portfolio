@@ -8,8 +8,8 @@ import styled from 'styled-components';
 import { MDBContainer } from 'mdb-react-ui-kit';
 import SEO from '../components/Seo';
 import SkillsGroup from '../components/SkillsGroup';
-import PageHeader from '../components/PageHeader';
-import PageMain from '../components/PageMain';
+import PageHeader from '../components/Page/PageHeader';
+import { PageMain } from '../components/Page';
 import {
   TTextPrimary,
   TButtonPrimary,

@@ -3,8 +3,8 @@ import { MDBContainer } from 'mdb-react-ui-kit';
 import Image from 'next/image';
 import styled from 'styled-components';
 import SEO from '../components/Seo';
-import PageHeader from '../components/PageHeader';
-import PageMain from '../components/PageMain';
+import PageHeader from '../components/Page/PageHeader';
+import { PageMain } from '../components/Page';
 import { TTextPrimary } from '../components/ThemedComponents';
 import resume from '../images/Richard Henninger Resume.svg';
 

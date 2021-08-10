@@ -8,53 +8,10 @@ import {
   faStackOverflow,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import styled from 'styled-components';
-import {
-  TSocialsBorder,
-  TSocialsIcon,
-  TOutBoundLink,
-} from './ThemedComponents';
-import { siteMetadata } from '../constants';
-
-interface SocialsProp {
-  isnav?: boolean;
-}
-const SSocialsContainer = styled.div<SocialsProp>`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-
-  margin: 15px 1px;
-  @media only screen and (max-width: 1000px) {
-    max-width: 400px;
-    width: 400px;
-  }
-  @media only screen and (min-width: 1000px) {
-    max-width: ${props => (props.isnav ? '200px' : '400px')};
-    width: ${props => (props.isnav ? '200px' : '400px')};
-  }
-`;
-
-const SSocialsBorder = styled(TSocialsBorder)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  margin: 5px 5px;
-  background-color: white;
-  z-index: 0;
-`;
-
-const SSocialsIcon = styled(TSocialsIcon)`
-  font-size: larger;
-  margin: 3px 3px;
-  z-index: 1;
-`;
+import { TOutBoundLink } from '../ThemedComponents';
+import { SSocialsContainer, SSocialsBorder, SSocialsIcon } from './styles';
+import { SocialsProp } from './types';
+import { siteMetadata } from '../../constants';
 
 const Socials: React.FC<SocialsProp> = ({ isnav }: SocialsProp) => (
   <SSocialsContainer isnav={isnav}>

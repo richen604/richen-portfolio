@@ -3,9 +3,9 @@ import React from 'react';
 import { MDBContainer } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
 import SEO from '../components/Seo';
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../components/Page/PageHeader';
 import ProjectCardGroup from '../components/ProjectCardGroup';
-import PageMain from '../components/PageMain';
+import { PageMain } from '../components/Page';
 import {
   TTextPrimary,
   TOutboundLinkText,

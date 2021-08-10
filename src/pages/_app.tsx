@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { useRouter } from 'next/router';
 import { initGA, logPageView } from '../utils/analytics';
 import configureStore from '../store';
-import Layout from '../layouts/Layout';
+import Layout from '../components/Layout';
 
 interface MyAppProps extends AppProps {
   Component: {

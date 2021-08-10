@@ -4,8 +4,8 @@ import { Formik } from 'formik';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import { MDBContainer, MDBInput, MDBTypography } from 'mdb-react-ui-kit';
 import SEO from '../components/Seo';
-import PageHeader from '../components/PageHeader';
-import Socials from '../components/Socials';
+import PageHeader from '../components/Page/PageHeader';
+import Socials from '../components/Socials/Socials';
 import { postContact } from '../services/contact';
 import {
   TButtonPrimary,
@@ -13,7 +13,7 @@ import {
   TOutboundLinkText,
   TPageMain,
 } from '../components/ThemedComponents';
-import PageMain from '../components/PageMain';
+import { PageMain } from '../components/Page';
 import { THEME } from '../styled.d';
 
 const SPageMain = styled(PageMain)`
