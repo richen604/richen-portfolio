@@ -39,7 +39,6 @@ export const GlobalStyle = createGlobalStyle<ThemeProps<DefaultTheme>>`
 }
 `;
 
-// TODO change dark theme outline
 export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   margin: 10px;
   min-height: 35px;

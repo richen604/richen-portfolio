@@ -16,8 +16,8 @@ export const SSocialsContainer = styled.div<SocialsProp>`
     width: 400px;
   }
   @media only screen and (min-width: 1000px) {
-    max-width: ${props => (props.isnav ? '200px' : '400px')};
-    width: ${props => (props.isnav ? '200px' : '400px')};
+    max-width: ${props => (props.isnav ? '200px' : '320px')};
+    width: ${props => (props.isnav ? '200px' : '320px')};
   }
 `;
 

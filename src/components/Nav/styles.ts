@@ -10,6 +10,8 @@ import {
   TNavToggle,
 } from '../ThemedComponents';
 
+// TODO Separate Nav / SideNav / Etc
+
 export const SNavContentContainer = styled.div`
   @media only screen and (max-width: 1000px) {
     display: none;
@@ -177,7 +179,6 @@ export const SNavContainer = styled(TNavContainer)`
   width: 100%;
   height: 100%;
   align-items: center;
-  z-index: 100;
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     flex-direction: row;
@@ -229,10 +230,10 @@ export const SNavBarContainer = styled(MDBCollapse)`
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 100000;
 
   @media only screen and (min-width: 1000px) {
     display: none;
+    z-index: 1 !important;
   }
 `;
 

@@ -9,6 +9,8 @@ export const SLayoutContainer = styled.div<ThemeProps<DefaultTheme>>`
   display: flex;
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
+    width: 100vw;
+    max-width: 100%;
   }
 
   @media only screen and (min-width: 1000px) {
@@ -35,7 +37,6 @@ export const SLayoutNav = styled.div<{ collapse: boolean }>`
 
   @media only screen and (max-width: 1000px) {
     width: 100vw;
-    padding: 0;
     margin: 0;
     overflow-x: hidden;
     ::-webkit-scrollbar {

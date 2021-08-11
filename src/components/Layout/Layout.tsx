@@ -11,7 +11,7 @@ import {
   SCollapseButton,
 } from './styles';
 
-import Nav from '../Nav';
+import { Nav } from '../Nav';
 
 interface LayoutProps {
   children?: React.ReactNode;
