@@ -20,6 +20,7 @@ import styled, {
 } from 'styled-components';
 import Link from 'next/link';
 import { THEME } from '../styled.d';
+import { useRouter } from 'next/router';
 
 // Common Components
 
@@ -180,23 +181,50 @@ export const TLink = styled.a`
         return `color: ${props.theme.palette.primary.darker};`;
     }
   }}
+  &.navActive i {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.textMuted} !important;`;
+        case THEME.DARK:
+          return `color: ${props.theme.palette.primary.main} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
 `;
 
 interface INextLinkWrapper {
   children: React.ReactNode;
   href: string;
-  Component?: React.FunctionComponent;
+  Component?: React.FunctionComponent<any>;
 }
 
 export const TNextLinkWrapper = ({
   children,
   href,
   Component,
-}: INextLinkWrapper) => (
-  <Link href={href} passHref>
-    {Component ? <Component>{children}</Component> : <a>{children}</a>}
-  </Link>
-);
+}: INextLinkWrapper) => {
+  const router = useRouter();
+
+  const activeState = router.pathname === href ? 'navActive' : '';
+
+  console.log(
+    `nextlinkwrapper: activestate is ${activeState}, ${href} is equal to ${router.pathname}`
+  );
+
+  return (
+    <Link href={href} passHref>
+      {Component ? (
+        <Component className={activeState}>{children}</Component>
+      ) : (
+        <TLink className={activeState}>{children}</TLink>
+      )}
+    </Link>
+  );
+};
 
 export const TOutboundLinkText = styled(ReactGA.OutboundLink)`
   &:hover {

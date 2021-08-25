@@ -32,20 +32,34 @@ import {
 import portrait from '../../images/display-portrait.png';
 import { INav } from './types';
 
+const SCollapsedDivider = styled(SNavDivider)`
+  margin: 20px 0;
+`;
+
 const SIcon = styled(MDBIcon)`
   color: white;
-  margin: 22px 0;
+  margin: 20px 0;
+  :hover {
+    color: lightgray !important;
+  }
+`;
+
+const SAirplaneIcon = styled(SIcon)`
+  margin-top: 12px;
 `;
 
 const SRichenLogo = styled.div`
   width: 25px;
+  height: 25px;
   color: white;
   font-weight: bold;
   font-size: 35px;
-  margin-bottom: -10px;
+  margin: 10px 22px 10px 22px;
+  :hover {
+    color: lightgray !important;
+  }
 `;
 
-// TODO ADD Socials menu
 // TODO ADD ThemeChanger Menu
 
 const SideNavCollapsed: React.FunctionComponent<INav> = ({
@@ -56,9 +70,9 @@ const SideNavCollapsed: React.FunctionComponent<INav> = ({
       <TNextLinkWrapper href="/">
         <SRichenLogo>R</SRichenLogo>
       </TNextLinkWrapper>
-      <SNavDivider />
+      <SCollapsedDivider />
       <Socials collapsed={sidebarCollapsed} />
-      <SNavDivider />
+      <SCollapsedDivider />
       <SNavLinkContainer>
         <TNextLinkWrapper href="/">
           <SIcon fas icon="user-alt" size="lg" />
@@ -73,9 +87,9 @@ const SideNavCollapsed: React.FunctionComponent<INav> = ({
           <SIcon fas icon="envelope-open-text" size="lg" />
         </TNextLinkWrapper>
       </SNavLinkContainer>
-      <SNavDivider />
+      <SCollapsedDivider />
       <TNextLinkWrapper href="/contact">
-        <SIcon fas icon="paper-plane" size="lg" />
+        <SAirplaneIcon fas icon="paper-plane" size="lg" />
       </TNextLinkWrapper>
     </SNavContentContainer>
   </>
@@ -127,6 +141,7 @@ const SideNav: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
 
       <SNavDivider />
       <ThemeChanger isnav />
+
       <SNavFooter>© {new Date().getFullYear()} Richard Henninger</SNavFooter>
     </>
   );

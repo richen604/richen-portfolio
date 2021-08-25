@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   faArrowCircleRight,
   faFileAlt,
@@ -19,6 +19,11 @@ import {
   TNextLinkWrapper,
   TLink,
 } from '../components/ThemedComponents';
+import Goo from 'gooey-react';
+import useMouse from '@react-hook/mouse-position';
+import NoSsr from '../components/NoSsr';
+import GooeyNav from '../components/Nav/GooeyNav';
+import AnimatedPageHeader from '../components/AnimatedPageHeader';
 
 const SAboutHeaderIntro = styled(MDBContainer)`
   background-color: transparent;
@@ -154,6 +159,7 @@ const IndexPage = () => (
     </PageHeader>
     <PageMain>
       <AboutContent />
+
       <SAboutFooter>
         <SAboutFooterText>Icons provided by </SAboutFooterText>
         <TOutboundLinkText

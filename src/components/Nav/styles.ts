@@ -9,12 +9,14 @@ import {
   TNavLink,
   TNavToggle,
 } from '../ThemedComponents';
+import { THEME } from '../../styled.d';
 
 // TODO Separate Nav / SideNav / Etc
 
 export const SNavContentContainer = styled.div`
   @media only screen and (max-width: 1000px) {
     display: none;
+    height: 100%;
   }
 
   @media only screen and (min-width: 1000px) {
@@ -33,6 +35,7 @@ export const SNavLink = styled(TNavLink)`
 `;
 
 export const SNavBrand = styled(SNavLink)`
+  color: ${props => props.theme.palette.common.white} !important;
   letter-spacing: 2px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -48,6 +51,7 @@ export const SNavBrand = styled(SNavLink)`
 `;
 
 export const SNavBarBrand = styled(SNavLink)`
+  color: ${props => props.theme.palette.common.white} !important;
   font-weight: bold;
   @media only screen and (min-width: 1000px) {
     display: none;
@@ -87,6 +91,19 @@ export const SNavDivider = styled(TNavDivider)`
 `;
 
 export const SNavLinkContainerLink = styled(TNavLink)`
+  &.navActive {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.textMuted} !important;`;
+        case THEME.DARK:
+          return `color: ${props.theme.palette.primary.main} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
   display: inline-grid;
   grid-template-columns: 17px 1fr;
   align-items: center;

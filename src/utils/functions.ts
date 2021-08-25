@@ -1,6 +1,14 @@
-/* eslint-disable import/prefer-default-export */
-export const timeConverter = (UNIX_timestamp: number) => {
-  const a = new Date(UNIX_timestamp * 1000);
+/**
+ * Converts UNIX timestamp to Date String
+ *
+ * @remarks
+ * This function is used for the PocketFeed Component
+ *
+ * @param {number} timestamp UNIX timestamp
+ * @returns {string} Date String
+ * */
+export const timeConverter = (timestamp: number): string => {
+  const a = new Date(timestamp * 1000);
   const months = [
     'Jan',
     'Feb',
@@ -24,7 +32,17 @@ export const timeConverter = (UNIX_timestamp: number) => {
   return time;
 };
 
-export const hexToHSL = (hex: string) => {
+/**
+ * Converts hex string to an hsl object
+ *
+ * @remarks
+ * Function is used for the ThemeChanger Component
+ *
+ * @param {string} hex Hex string
+ * @returns {object} hsl object
+ *
+ * */
+export const hexToHSL = (hex: string): object => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!result) throw new Error('Hex Result is null, bad request');
 
@@ -70,12 +88,25 @@ export const hexToHSL = (hex: string) => {
   return HSL;
 };
 
-export const generateColorRange = () =>
-  // TODO handle if + / - num is (> 0 / < 255)
-  /*
-    ? Max Lumosity 55, min 22, step can be 11 - 13 to be noticeable
-
-    Example:
-      input: 
-  */
-  ({});
+/**
+ * Takes an HSL object and returns an object with 5 HSL strings with luminosity relative to the hsl param
+ *
+ * @remarks Function is used for the ThemeChanger Component
+ *
+ * @param {object} hsl HSL object
+ * @returns {object} HSL object with 5 HSL strings
+ * */
+export const generateHSLShades = (hsl: {
+  h: number;
+  s: number;
+  l: number;
+}): object => {
+  const { h, s, l } = hsl;
+  return {
+    lightest: `hsl(${h}, ${s}, ${l * 1.2})`,
+    lighter: `hsl(${h}, ${s}, ${l * 1.1})`,
+    main: `hsl(${h}, ${s}, ${l * 1})`,
+    darker: `hsl(${h}, ${s}, ${l * 0.9})`,
+    darkest: `hsl(${h}, ${s}, ${l * 0.8})`,
+  };
+};

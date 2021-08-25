@@ -1,6 +1,5 @@
-import { MDBBtn } from 'mdb-react-ui-kit';
 import styled, { ThemeProps, DefaultTheme } from 'styled-components';
-import { TLayoutChildrenSpacer } from '../ThemedComponents';
+import { TLayoutChildrenSpacer, TButtonPrimary } from '../ThemedComponents';
 import { THEME } from '../../styled.d';
 
 export const SLayoutContainer = styled.div<ThemeProps<DefaultTheme>>`
@@ -84,8 +83,14 @@ export const SLayoutChildrenSpacer = styled(TLayoutChildrenSpacer)`
   height: 20px;
 `;
 
-export const SCollapseButton = styled(MDBBtn)<{ collapse: boolean }>`
-  transition: 0.5s ease-in-out;
+export const SCollapseButton = styled(TButtonPrimary)<{ collapse: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  box-shadow: none;
+  border-radius: 0;
+  transition: 0.5s;
   position: fixed;
   z-index: 2;
   top: 0;
@@ -93,4 +98,5 @@ export const SCollapseButton = styled(MDBBtn)<{ collapse: boolean }>`
   @media only screen and (max-width: 1000px) {
     display: none;
   }
+  margin: 0;
 `;

@@ -8,81 +8,23 @@ import {
   faStackOverflow,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  MDBDropdown,
-  MDBIcon,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-} from 'mdb-react-ui-kit';
-import styled from 'styled-components';
 import { TOutBoundLink } from '../ThemedComponents';
-import { SSocialsContainer, SSocialsBorder, SSocialsIcon } from './styles';
+import {
+  SSocialsContainer,
+  SSocialsBorder,
+  SSocialsIcon,
+  SSocialsCollapsed,
+  SSocialsCollapsedIcon,
+  SSocialsCollapsedToggle,
+  SSocialsDropRight,
+  SSocialsDropRightMenu,
+  SSocialsNewBtn,
+  SSocialsNewIcon,
+} from './styles';
 import { SocialsProp } from './types';
 import { siteMetadata } from '../../constants';
 
 // TODO ADD Socials menu
-
-const SSocialsCollapsed = styled.div`
-  width: 50px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const SSocialsDropRight = styled(MDBDropdown)`
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  color: white;
-  z-index: 100;
-`;
-
-const SSocialsCollapsedToggle = styled(MDBDropdownToggle)`
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  min-height: 28px;
-  max-width: 28px;
-  max-height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white !important;
-  color: black;
-  &:active {
-    background-color: white;
-  }
-  &:hover {
-    background-color: gray !important;
-  }
-  &:after {
-    font-size: larger;
-    position: fixed;
-    top: 81px;
-    left: 38px;
-    color: white;
-    margin-left: 10px;
-    z-index: 100;
-  }
-`;
-
-const SSocialsCollapsedIcon = styled(MDBIcon)`
-  color: black;
-  margin-right: 0px;
-`;
-
-const SSocialsDropRightMenu = styled(MDBDropdownMenu)`
-  max-width: 50px;
-  width: 50px;
-  margin: -23px 10px;
-  background-color: transparent;
-  z-index: 100000;
-`;
 
 // TODO Add Tooltips
 
@@ -95,7 +37,64 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
             <SSocialsCollapsedIcon fab icon="github" size="2x" />
           </SSocialsCollapsedToggle>
           <SSocialsDropRightMenu>
-            <Socials />
+            <SSocialsContainer isnav={isnav}>
+              <TOutBoundLink
+                eventLabel="outbound-github"
+                to={siteMetadata.socials.github}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="github" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+              <TOutBoundLink
+                eventLabel="outbound-linkedin"
+                to={siteMetadata.socials.linkedin}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="linkedin" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+              <TOutBoundLink
+                eventLabel="outbound-medium"
+                to={siteMetadata.socials.medium}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="medium" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+              <TOutBoundLink
+                eventLabel="outbound-stackoverflow"
+                to={siteMetadata.socials.stackoverflow}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="stack-overflow" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+              <TOutBoundLink
+                eventLabel="outbound-codepen"
+                to={siteMetadata.socials.codepen}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="codepen" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+              <TOutBoundLink
+                eventLabel="outbound-twitter"
+                to={siteMetadata.socials.twitter}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="twitter" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+              <TOutBoundLink
+                eventLabel="outbound-instagram"
+                to={siteMetadata.socials.instagram}
+              >
+                <SSocialsNewBtn floating>
+                  <SSocialsNewIcon fab icon="instagram" size="2x" />
+                </SSocialsNewBtn>
+              </TOutBoundLink>
+            </SSocialsContainer>
           </SSocialsDropRightMenu>
         </SSocialsDropRight>
       </SSocialsCollapsed>
