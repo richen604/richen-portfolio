@@ -7,9 +7,9 @@ import {
   TButtonPrimary,
   TButtonSecondary,
   TPageMain,
-} from '../../ThemedComponents';
-import { PageMain } from '..';
-import { THEME } from '../../../styled.d';
+} from '../ThemedComponents';
+import { PageMain } from '../pages';
+import { THEME } from '../../styled.d';
 
 // ! Index Page Styled Components
 
@@ -175,12 +175,13 @@ export const SContactHeaderText = styled(TTextPrimary)`
 `;
 
 export const SContactContainer = styled(TPageMain)`
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 345px;
+  margin-bottom: 100px;
 `;
 
 export const SContactH3 = styled(TTextPrimary)`

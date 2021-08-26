@@ -11,26 +11,30 @@ import {
   SAboutFooter,
   SAboutFooterText,
 } from './styles';
+import FadeInWhenVisable from 'components/FadeInWhenVisable';
 
 function Resume() {
   return (
     <>
       <PageHeader id="resume">
-        <SResumeHeaderContainer>
-          <SResumeHeaderH2 variant="h2">Resume</SResumeHeaderH2>
-          {/*           <SPrimaryButton
+        <FadeInWhenVisable>
+          <SResumeHeaderContainer>
+            <SResumeHeaderH2 variant="h2">Resume</SResumeHeaderH2>
+            {/*           <SPrimaryButton
             href="../images/Richard Henninger Resume.pdf"
             download
           >
             Download PDF Version
           </SPrimaryButton> */}
-        </SResumeHeaderContainer>
+          </SResumeHeaderContainer>
+        </FadeInWhenVisable>
       </PageHeader>
       <PageMain>
-        <SResumeContainer>
-          <SResume src={resume} alt="Richard Henninger Resume" />
-        </SResumeContainer>
-
+        <FadeInWhenVisable>
+          <SResumeContainer>
+            <SResume src={resume} alt="Richard Henninger Resume" />
+          </SResumeContainer>
+        </FadeInWhenVisable>
         <SAboutFooter>
           <SAboutFooterText>Icons provided by </SAboutFooterText>
           <TOutboundLinkText

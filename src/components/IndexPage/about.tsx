@@ -10,10 +10,10 @@ import PageHeader from 'components/pages/PageHeader';
 import { PageMain } from 'components/pages';
 import {
   TButtonLink,
-  TOutboundLinkText,
   TNextLinkWrapper,
   TLink,
 } from 'components/ThemedComponents';
+import FadeInWhenVisable from 'components/FadeInWhenVisable';
 import {
   SAboutHeaderIntro,
   SAboutIntroH1,
@@ -25,8 +25,6 @@ import {
   SAboutContentText,
   SAboutContentTitle,
   SAboutContentSubtext,
-  SAboutFooter,
-  SAboutFooterText,
 } from './styles';
 
 const AboutHeaderContent = () => (
@@ -55,23 +53,27 @@ const AboutHeaderContent = () => (
 
 const AboutContent = () => (
   <>
-    <SAboutContentText>
-      <SAboutContentTitle variant="h2">What I Do</SAboutContentTitle>
-      <SAboutContentSubtext variant="p">
-        Below is a quick overview of my main technical skill sets and
-        technologies I use. Want to find out more about my experience? Check out
-        my{' '}
-        <TNextLinkWrapper href="/resume" Component={TLink}>
-          online resume{' '}
-        </TNextLinkWrapper>
-        and{' '}
-        <TNextLinkWrapper href="/portfolio" Component={TLink}>
-          projects
-        </TNextLinkWrapper>
-        .
-      </SAboutContentSubtext>
-    </SAboutContentText>
-    <SkillsGroup />
+    <FadeInWhenVisable>
+      <SAboutContentText>
+        <SAboutContentTitle variant="h2">What I Do</SAboutContentTitle>
+        <SAboutContentSubtext variant="p">
+          Below is a quick overview of my main technical skill sets and
+          technologies I use. Want to find out more about my experience? Check
+          out my{' '}
+          <TNextLinkWrapper href="/resume" Component={TLink}>
+            online resume{' '}
+          </TNextLinkWrapper>
+          and{' '}
+          <TNextLinkWrapper href="/portfolio" Component={TLink}>
+            projects
+          </TNextLinkWrapper>
+          .
+        </SAboutContentSubtext>
+      </SAboutContentText>
+    </FadeInWhenVisable>
+    <FadeInWhenVisable>
+      <SkillsGroup />
+    </FadeInWhenVisable>
   </>
 );
 
@@ -79,7 +81,9 @@ const About = () => (
   <>
     <SEO title="About Me" />
     <PageHeader>
-      <AboutHeaderContent />
+      <FadeInWhenVisable>
+        <AboutHeaderContent />
+      </FadeInWhenVisable>
     </PageHeader>
     <PageMain>
       <AboutContent />

@@ -1,5 +1,5 @@
 import React from 'react';
-import IndexPage from '../components/pages/IndexPage';
+import IndexPage from '../components/IndexPage';
 
 const Index = () => <IndexPage />;
 
