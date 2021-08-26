@@ -1,7 +1,5 @@
 import React from 'react';
 
-const SideNavHover = () => {
-  return <div></div>;
-};
+const SideNavHover = () => <div />;
 
 export default SideNavHover;

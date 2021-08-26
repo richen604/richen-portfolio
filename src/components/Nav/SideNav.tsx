@@ -122,20 +122,20 @@ const SideNav: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
         <SNavDivider />
       </SNavProfileContainer>
       <SNavLinkContainer>
-        <TNextLinkWrapper href="/" Component={SNavLinkContainerLink}>
+        <TNextLinkWrapper href="#/" Component={SNavLinkContainerLink}>
           <SUserIcon icon={faUser} /> About Me
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="/portfolio" Component={SNavLinkContainerLink}>
+        <TNextLinkWrapper href="#portfolio" Component={SNavLinkContainerLink}>
           <SLaptopIcon icon={faLaptopCode} /> Portfolio
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="/resume" Component={SNavLinkContainerLink}>
+        <TNextLinkWrapper href="#resume" Component={SNavLinkContainerLink}>
           <SFileIcon icon={faFileAlt} /> Resume
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="/contact" Component={SNavLinkContainerLink}>
+        <TNextLinkWrapper href="#contact" Component={SNavLinkContainerLink}>
           <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
         </TNextLinkWrapper>
       </SNavLinkContainer>
-      <TNextLinkWrapper href="/contact" Component={SHireMeButton}>
+      <TNextLinkWrapper href="#contact" Component={SHireMeButton}>
         <SPlaneIcon icon={faPaperPlane} /> Hire Me
       </TNextLinkWrapper>
 

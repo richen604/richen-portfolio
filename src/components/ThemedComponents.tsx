@@ -19,8 +19,8 @@ import styled, {
   createGlobalStyle,
 } from 'styled-components';
 import Link from 'next/link';
-import { THEME } from '../styled.d';
 import { useRouter } from 'next/router';
+import { THEME } from '../styled.d';
 
 // Common Components
 
@@ -210,10 +210,6 @@ export const TNextLinkWrapper = ({
   const router = useRouter();
 
   const activeState = router.pathname === href ? 'navActive' : '';
-
-  console.log(
-    `nextlinkwrapper: activestate is ${activeState}, ${href} is equal to ${router.pathname}`
-  );
 
   return (
     <Link href={href} passHref>

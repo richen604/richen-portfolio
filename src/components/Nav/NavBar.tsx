@@ -30,7 +30,7 @@ const NavBar: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
       </SNavbarLeftContainer>
       <SNavBarRightContainer>
         <ThemeChanger />
-        <TNextLinkWrapper href="/" Component={SNavBarBrand}>
+        <TNextLinkWrapper href="#/" Component={SNavBarBrand}>
           richen.dev
         </TNextLinkWrapper>
       </SNavBarRightContainer>

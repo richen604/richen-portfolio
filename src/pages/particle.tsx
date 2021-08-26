@@ -1,8 +1,8 @@
 import React from 'react';
-import PageHeader from '../components/Page/PageHeader';
+import PageHeader from '../components/pages/PageHeader';
 import SEO from '../components/Seo';
 import Particle from '../components/Particle';
-import { PageMain } from '../components/Page';
+import { PageMain } from '../components/pages';
 
 const particle = () => (
   <>

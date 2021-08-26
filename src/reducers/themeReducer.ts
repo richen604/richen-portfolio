@@ -21,8 +21,7 @@ const handleThemeChange = (themeArg: THEME) => {
   }
 };
 
-export const changeTheme = (themeArg: THEME) => {
-  return async (dispatch) => {
+export const changeTheme = (themeArg: THEME) => async (dispatch) => {
     const theme = handleThemeChange(themeArg);
     return dispatch({
       type: 'CHANGE_THEME',
@@ -31,21 +30,16 @@ export const changeTheme = (themeArg: THEME) => {
       },
     });
   };
-};
 
-export const resetTheme = () => {
-  return async (dispatch) => {
+export const resetTheme = () => async (dispatch) => {
     dispatch({
       type: 'RESET_THEME',
     });
   };
-};
 
-export const changeAccent = (accent) => {
-  return async (dispatch) => {
+export const changeAccent = (accent) => async (dispatch) => {
     dispatch({ type: 'CHANGE_ACCENT', data: { accent } });
   };
-};
 
 export const hexToHSL = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

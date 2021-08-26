@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const siteMetadata = {
   title: `richen.dev`,
   description: `I'm a software engineer specialized in frontend and backend development for complex scalable web apps. Check out my project portfolio and online resume!`,
