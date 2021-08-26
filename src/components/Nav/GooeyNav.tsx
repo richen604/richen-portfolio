@@ -1,4 +1,4 @@
-import useMouse, { MousePosition } from '@react-hook/mouse-position';
+import useMouse from '@react-hook/mouse-position';
 import Goo from 'gooey-react';
 import React from 'react';
 import styled from 'styled-components';
@@ -45,7 +45,7 @@ const STestHoverAction = styled.div`
 // TODO add handler for finding max page width for handleMouseLeft
 // TODO position mouse left based on 1/5th of page width
 
-const GooeyNav = (props: Props) => {
+const GooeyNav = () => {
   const ref = React.useRef(null);
   const mouse = useMouse(ref, {
     enterDelay: 100,
@@ -60,7 +60,7 @@ const GooeyNav = (props: Props) => {
   };
 
   const handleMouseTop = () => {
-    const oldTop = mouse.y;
+    // const oldTop = mouse.y;
     if (!mouse.y || mouse.y - 75 <= 0) return 0;
     if (mouse.y <= 0) return 0;
     if (mouse.y >= mouse.elementHeight - 75) return mouse.elementHeight - 150;

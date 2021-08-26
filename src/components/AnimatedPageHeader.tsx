@@ -1,16 +1,8 @@
 /* eslint-disable no-plusplus */
 import { motion, useAnimation } from 'framer-motion';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useResizeObserver from '@react-hook/resize-observer';
-import NoSsr from './NoSsr';
-
-/*
-TODO Box layers
-TODO Box layers set based on available page height
-*/
-
-interface Props {}
 
 const SAnimatedPageHeader = styled.div`
   width: 100%;
@@ -48,10 +40,16 @@ const SAnimatedBoxGroup = styled(motion.div)<{
   padding: 0;
 `;
 
-const AnimatedBox = ({ dimensions, children }) => {
-  const controls = useAnimation();
+interface IAnimatedBox {
+  dimensions: any; // TODO add types
+  children: React.ReactNode;
+}
 
-  console.log(dimensions);
+const AnimatedBox: React.FunctionComponent<IAnimatedBox> = ({
+  dimensions,
+  children,
+}: IAnimatedBox) => {
+  const controls = useAnimation();
 
   useEffect(() => {
     controls.stop();
@@ -66,6 +64,7 @@ const AnimatedBox = ({ dimensions, children }) => {
         type: 'spring',
       },
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dimensions]);
 
   return (
@@ -75,11 +74,21 @@ const AnimatedBox = ({ dimensions, children }) => {
   );
 };
 
-const AnimatedBoxRow = ({ children }) => (
-  <SAnimatedBoxRow>{children}</SAnimatedBoxRow>
-);
+interface IAnimatedBoxRow {
+  children: React.ReactNode;
+}
 
-const AnimatedBoxGroup = ({ dimensions }) => {
+const AnimatedBoxRow: React.FunctionComponent<IAnimatedBoxRow> = ({
+  children,
+}: IAnimatedBoxRow) => <SAnimatedBoxRow>{children}</SAnimatedBoxRow>;
+
+interface IAnimatedBoxGroup {
+  dimensions: any; // TODO add types
+}
+
+const AnimatedBoxGroup: React.FunctionComponent<IAnimatedBoxGroup> = ({
+  dimensions,
+}: IAnimatedBoxGroup) => {
   const [divisable, setDivisable] = useState({ height: 0, width: 0 });
 
   useEffect(() => {
@@ -87,6 +96,7 @@ const AnimatedBoxGroup = ({ dimensions }) => {
       height: Math.floor(dimensions.height / 80) + 1, // 80 is the height of the box
       width: Math.floor(dimensions.width / 200) + 3, // 200 is the width of the box
     });
+    // eslint-disable-next-line no-param-reassign
     dimensions.padding = {
       width: dimensions.width % 200,
       height: dimensions.height % 80,
@@ -94,7 +104,7 @@ const AnimatedBoxGroup = ({ dimensions }) => {
   }, [dimensions]);
 
   // generates a test matrix using array fill
-  const generateMatrix = (rows, columns) => {
+  const generateMatrix = (rows: number, columns: number) => {
     const matrix = [];
     for (let i = 0; i < rows; i++) {
       const row = [];
@@ -119,8 +129,8 @@ const AnimatedBoxGroup = ({ dimensions }) => {
   );
 };
 
-const AnimatedPageHeader = (props: Props) => {
-  const useSize = target => {
+const AnimatedPageHeader = () => {
+  const useSize = (target: React.MutableRefObject<any>) => {
     const [size, setSize] = React.useState<any>();
 
     React.useLayoutEffect(() => {

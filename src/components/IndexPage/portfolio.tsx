@@ -7,13 +7,13 @@ import {
   TNextLinkWrapper,
   TLink,
 } from 'components/ThemedComponents';
+import FadeInWhenVisable from 'components/FadeInWhenVisable';
 import { siteMetadata } from '../../constants';
 import {
   SPortfolioIntro,
   SPortfolioIntroH2,
   SPortfolioIntroText,
 } from './styles';
-import FadeInWhenVisable from 'components/FadeInWhenVisable';
 
 function Portfolio() {
   return (

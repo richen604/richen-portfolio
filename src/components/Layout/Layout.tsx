@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
 import { MDBIcon } from 'mdb-react-ui-kit';
-import { RootState } from '../../redux';
+import { RootState } from '../../../redux';
 import {
   SLayoutContainer,
   SLayoutNav,

@@ -11,7 +11,13 @@ const FadeInWhenVisableWrapper = styled(motion.div)`
   align-items: center;
 `;
 
-const FadeInWhenVisable = ({ children }) => {
+interface IFadeInWhenVisableProps {
+  children: React.ReactNode;
+}
+
+const FadeInWhenVisable: React.FunctionComponent<IFadeInWhenVisableProps> = ({
+  children,
+}: IFadeInWhenVisableProps) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 

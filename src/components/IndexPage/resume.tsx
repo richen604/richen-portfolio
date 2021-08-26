@@ -3,6 +3,7 @@ import PageHeader from 'components/pages/PageHeader';
 import { PageMain } from 'components/pages';
 import resume from 'images/Richard Henninger Resume.svg';
 import { TOutboundLinkText } from 'components/ThemedComponents';
+import FadeInWhenVisable from 'components/FadeInWhenVisable';
 import {
   SResumeHeaderContainer,
   SResumeHeaderH2,
@@ -11,7 +12,6 @@ import {
   SAboutFooter,
   SAboutFooterText,
 } from './styles';
-import FadeInWhenVisable from 'components/FadeInWhenVisable';
 
 function Resume() {
   return (

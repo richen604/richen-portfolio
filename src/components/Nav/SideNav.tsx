@@ -5,7 +5,6 @@ import {
   faEnvelopeOpenText,
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import { MDBIcon } from 'mdb-react-ui-kit';

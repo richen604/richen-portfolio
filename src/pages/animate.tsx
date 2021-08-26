@@ -3,9 +3,7 @@ import AnimatedPageHeader from '../components/AnimatedPageHeader';
 import { PageMain } from '../components/pages';
 import SEO from '../components/Seo';
 
-interface Props {}
-
-const animate = (props: Props) => (
+const animate = () => (
   <>
     <SEO title="Animate" />
 
