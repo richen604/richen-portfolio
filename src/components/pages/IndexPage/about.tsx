@@ -30,7 +30,7 @@ import {
 } from './styles';
 
 const AboutHeaderContent = () => (
-  <SAboutHeaderIntro id="/">
+  <SAboutHeaderIntro id="#">
     <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
     <SAboutIntroH5 variant="h5">Full Stack JavaScript Developer</SAboutIntroH5>
     <SAboutIntroP variant="p">
@@ -38,13 +38,13 @@ const AboutHeaderContent = () => (
       development for complex scalable web apps. Check out my project portfolio
       and online resume for more!
     </SAboutIntroP>
-    <TNextLinkWrapper href="/portfolio" Component={TButtonLink}>
+    <TNextLinkWrapper href="#portfolio" Component={TButtonLink}>
       <SAboutHeaderBtnPrimary>
         <SAboutButtonIcon icon={faArrowCircleRight} />
         View Portfolio
       </SAboutHeaderBtnPrimary>
     </TNextLinkWrapper>
-    <TNextLinkWrapper href="/resume" Component={TButtonLink}>
+    <TNextLinkWrapper href="#resume" Component={TButtonLink}>
       <SAboutHeaderBtnSecondary>
         <SAboutButtonIcon icon={faFileAlt} />
         View Resume
@@ -83,16 +83,6 @@ const About = () => (
     </PageHeader>
     <PageMain>
       <AboutContent />
-
-      <SAboutFooter>
-        <SAboutFooterText>Icons provided by </SAboutFooterText>
-        <TOutboundLinkText
-          eventLabel="outbound-icons8"
-          to="https://icons8.com/"
-        >
-          icons8.com
-        </TOutboundLinkText>
-      </SAboutFooter>
     </PageMain>
   </>
 );

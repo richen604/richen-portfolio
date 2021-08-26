@@ -74,21 +74,21 @@ const SideNavCollapsed: React.FunctionComponent<INav> = ({
       <Socials collapsed={sidebarCollapsed} />
       <SCollapsedDivider />
       <SNavLinkContainer>
-        <TNextLinkWrapper href="/">
+        <TNextLinkWrapper href="#">
           <SIcon fas icon="user-alt" size="lg" />
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="/portfolio">
+        <TNextLinkWrapper href="#portfolio">
           <SIcon fas icon="laptop-code" size="lg" />
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="/resume">
-          <SIcon fas icon="file-invoice" size="lg" />
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="/contact">
+        <TNextLinkWrapper href="#contact">
           <SIcon fas icon="envelope-open-text" size="lg" />
+        </TNextLinkWrapper>
+        <TNextLinkWrapper href="#resume">
+          <SIcon fas icon="file-invoice" size="lg" />
         </TNextLinkWrapper>
       </SNavLinkContainer>
       <SCollapsedDivider />
-      <TNextLinkWrapper href="/contact">
+      <TNextLinkWrapper href="#contact">
         <SAirplaneIcon fas icon="paper-plane" size="lg" />
       </TNextLinkWrapper>
     </SNavContentContainer>
@@ -102,37 +102,32 @@ const SideNav: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
   return (
     <>
       <SNavProfileContainer>
-        <TNextLinkWrapper href="/" Component={SNavBrand}>
+        <TNextLinkWrapper href="#" Component={SNavBrand}>
           richen.dev
         </TNextLinkWrapper>
-        <Link href="/" passHref>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a>
-            <Image
-              src={portrait}
-              width={200}
-              height={200}
-              alt="Richard Henninger Portrait"
-            />
-          </a>
-        </Link>
+        <Image
+          src={portrait}
+          width={200}
+          height={200}
+          alt="Richard Henninger Portrait"
+        />
 
         <SNavIntroText>Full Stack JavaScript Developer</SNavIntroText>
         <Socials isnav />
         <SNavDivider />
       </SNavProfileContainer>
       <SNavLinkContainer>
-        <TNextLinkWrapper href="#/" Component={SNavLinkContainerLink}>
+        <TNextLinkWrapper href="#" Component={SNavLinkContainerLink}>
           <SUserIcon icon={faUser} /> About Me
         </TNextLinkWrapper>
         <TNextLinkWrapper href="#portfolio" Component={SNavLinkContainerLink}>
           <SLaptopIcon icon={faLaptopCode} /> Portfolio
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="#resume" Component={SNavLinkContainerLink}>
-          <SFileIcon icon={faFileAlt} /> Resume
-        </TNextLinkWrapper>
         <TNextLinkWrapper href="#contact" Component={SNavLinkContainerLink}>
           <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
+        </TNextLinkWrapper>
+        <TNextLinkWrapper href="#resume" Component={SNavLinkContainerLink}>
+          <SFileIcon icon={faFileAlt} /> Resume
         </TNextLinkWrapper>
       </SNavLinkContainer>
       <TNextLinkWrapper href="#contact" Component={SHireMeButton}>

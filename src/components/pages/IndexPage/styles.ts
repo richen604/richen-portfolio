@@ -9,7 +9,7 @@ import {
   TPageMain,
 } from '../../ThemedComponents';
 import { PageMain } from '..';
-import { THEME } from '../../../styled';
+import { THEME } from '../../../styled.d';
 
 // ! Index Page Styled Components
 

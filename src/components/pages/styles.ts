@@ -11,8 +11,9 @@ export const SPageMain = styled(TPageMain)`
 
 export const SPageHeaderContainer = styled.div<ThemeProps<DefaultTheme>>`
   display: flex;
-  padding: 30px 40px;
+  height: max-content;
   margin: 0;
+  padding: 10rem 5rem;
   background-color: ${props => props.theme.palette.common.pageBackgroundAlt};
   width: 100%;
 `;

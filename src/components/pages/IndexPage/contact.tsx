@@ -42,8 +42,8 @@ const Contact = () => {
   };
   return (
     <>
-      <PageHeader>
-        <SContactHeaderContainer id="contact">
+      <PageHeader id="contact">
+        <SContactHeaderContainer>
           <SContactHeaderH2 variant="h2">Contact Me</SContactHeaderH2>
           <SContactHeaderText variant="p">
             Interested in hiring me for your project or just want to say hi? You

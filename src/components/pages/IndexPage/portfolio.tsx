@@ -17,8 +17,8 @@ import {
 function Portfolio() {
   return (
     <>
-      <PageHeader>
-        <SPortfolioIntro id="portfolio">
+      <PageHeader id="portfolio">
+        <SPortfolioIntro>
           <SPortfolioIntroH2>Portfolio</SPortfolioIntroH2>
           <SPortfolioIntroText>
             Welcome to my portfolio. All of these projects can be seen on my
