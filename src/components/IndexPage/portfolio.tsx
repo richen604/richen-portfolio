@@ -26,6 +26,7 @@ function Portfolio() {
               Welcome to my portfolio. All of these projects can be seen on my
               github{' '}
               <TOutboundLinkText
+                target="_blank"
                 eventLabel="outbound-github"
                 to={siteMetadata.socials.github}
               >
@@ -34,7 +35,7 @@ function Portfolio() {
               .<br />
               If you want and application or website similar to what you see,
               feel free to contact me{' '}
-              <TNextLinkWrapper href="/contact" Component={TLink}>
+              <TNextLinkWrapper href="#contact" Component={TLink}>
                 here
               </TNextLinkWrapper>
               .

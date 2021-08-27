@@ -209,10 +209,10 @@ export const TNextLinkWrapper = ({
 }: INextLinkWrapper) => {
   const router = useRouter();
 
-  const activeState = router.pathname === href ? 'navActive' : '';
+  const activeState = router.asPath.slice(1) === href ? 'navActive' : '';
 
   return (
-    <Link href={href} passHref>
+    <Link href={`/${href}`} passHref>
       {Component ? (
         <Component className={activeState}>{children}</Component>
       ) : (

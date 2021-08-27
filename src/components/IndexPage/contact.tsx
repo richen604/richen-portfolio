@@ -51,6 +51,7 @@ const Contact = () => {
               Interested in hiring me for your project or just want to say hi?
               You can fill in the contact form below or send me an email to{' '}
               <TOutboundLinkText
+                target="_blank"
                 eventLabel="outbound-email"
                 to="mailto:richard@richen.dev"
               >

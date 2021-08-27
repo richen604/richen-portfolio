@@ -39,6 +39,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
           <SSocialsDropRightMenu>
             <SSocialsContainer isnav={isnav}>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-github"
                 to={siteMetadata.socials.github}
               >
@@ -47,6 +48,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
                 </SSocialsNewBtn>
               </TOutBoundLink>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-linkedin"
                 to={siteMetadata.socials.linkedin}
               >
@@ -55,6 +57,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
                 </SSocialsNewBtn>
               </TOutBoundLink>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-medium"
                 to={siteMetadata.socials.medium}
               >
@@ -63,6 +66,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
                 </SSocialsNewBtn>
               </TOutBoundLink>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-stackoverflow"
                 to={siteMetadata.socials.stackoverflow}
               >
@@ -71,6 +75,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
                 </SSocialsNewBtn>
               </TOutBoundLink>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-codepen"
                 to={siteMetadata.socials.codepen}
               >
@@ -79,6 +84,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
                 </SSocialsNewBtn>
               </TOutBoundLink>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-twitter"
                 to={siteMetadata.socials.twitter}
               >
@@ -87,6 +93,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
                 </SSocialsNewBtn>
               </TOutBoundLink>
               <TOutBoundLink
+                target="_blank"
                 eventLabel="outbound-instagram"
                 to={siteMetadata.socials.instagram}
               >
@@ -103,6 +110,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
   return (
     <SSocialsContainer isnav={isnav}>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-github"
         to={siteMetadata.socials.github}
       >
@@ -111,6 +119,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         </SSocialsBorder>
       </TOutBoundLink>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-linkedin"
         to={siteMetadata.socials.linkedin}
       >
@@ -119,6 +128,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         </SSocialsBorder>
       </TOutBoundLink>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-medium"
         to={siteMetadata.socials.medium}
       >
@@ -127,6 +137,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         </SSocialsBorder>
       </TOutBoundLink>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-stackoverflow"
         to={siteMetadata.socials.stackoverflow}
       >
@@ -135,6 +146,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         </SSocialsBorder>
       </TOutBoundLink>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-codepen"
         to={siteMetadata.socials.codepen}
       >
@@ -143,6 +155,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         </SSocialsBorder>
       </TOutBoundLink>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-twitter"
         to={siteMetadata.socials.twitter}
       >
@@ -151,6 +164,7 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         </SSocialsBorder>
       </TOutBoundLink>
       <TOutBoundLink
+        target="_blank"
         eventLabel="outbound-instagram"
         to={siteMetadata.socials.instagram}
       >

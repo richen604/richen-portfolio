@@ -156,6 +156,7 @@ const ProjectCardGroup = () => (
       <SCard key={project.title}>
         {project.live ? (
           <TOutboundLinkText
+            target="_blank"
             eventLabel={`outbound-${project.alt}`}
             to={project.live}
           >

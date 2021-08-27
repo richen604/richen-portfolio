@@ -66,7 +66,7 @@ const SideNavCollapsed: React.FunctionComponent<INav> = ({
 }: INav) => (
   <>
     <SNavContentContainer>
-      <TNextLinkWrapper href="/">
+      <TNextLinkWrapper href="#">
         <SRichenLogo>R</SRichenLogo>
       </TNextLinkWrapper>
       <SCollapsedDivider />

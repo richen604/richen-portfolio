@@ -38,6 +38,7 @@ function Resume() {
         <SAboutFooter>
           <SAboutFooterText>Icons provided by </SAboutFooterText>
           <TOutboundLinkText
+            target="_blank"
             eventLabel="outbound-icons8"
             to="https://icons8.com/"
           >
