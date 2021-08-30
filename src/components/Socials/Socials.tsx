@@ -1,18 +1,7 @@
 import React from 'react';
-import {
-  faCodepen,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faMediumM,
-  faStackOverflow,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
 import { TOutBoundLink } from '../ThemedComponents';
 import {
   SSocialsContainer,
-  SSocialsBorder,
-  SSocialsIcon,
   SSocialsCollapsed,
   SSocialsCollapsedIcon,
   SSocialsCollapsedToggle,
@@ -114,63 +103,63 @@ const Socials: React.FC<SocialsProp> = ({ isnav, collapsed }: SocialsProp) => {
         eventLabel="outbound-github"
         to={siteMetadata.socials.github}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faGithub} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="github" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
       <TOutBoundLink
         target="_blank"
         eventLabel="outbound-linkedin"
         to={siteMetadata.socials.linkedin}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faLinkedin} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="linkedin" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
       <TOutBoundLink
         target="_blank"
         eventLabel="outbound-medium"
         to={siteMetadata.socials.medium}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faMediumM} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="medium" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
       <TOutBoundLink
         target="_blank"
         eventLabel="outbound-stackoverflow"
         to={siteMetadata.socials.stackoverflow}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faStackOverflow} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="stack-overflow" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
       <TOutBoundLink
         target="_blank"
         eventLabel="outbound-codepen"
         to={siteMetadata.socials.codepen}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faCodepen} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="codepen" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
       <TOutBoundLink
         target="_blank"
         eventLabel="outbound-twitter"
         to={siteMetadata.socials.twitter}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faTwitter} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="twitter" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
       <TOutBoundLink
         target="_blank"
         eventLabel="outbound-instagram"
         to={siteMetadata.socials.instagram}
       >
-        <SSocialsBorder>
-          <SSocialsIcon icon={faInstagram} />
-        </SSocialsBorder>
+        <SSocialsNewBtn floating>
+          <SSocialsNewIcon fab icon="instagram" size="2x" />
+        </SSocialsNewBtn>
       </TOutBoundLink>
     </SSocialsContainer>
   );

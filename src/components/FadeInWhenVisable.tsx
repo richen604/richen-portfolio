@@ -35,8 +35,8 @@ const FadeInWhenVisable: React.FunctionComponent<IFadeInWhenVisableProps> = ({
     <FadeInWhenVisableWrapper
       ref={ref}
       animate={controls}
-      initial={false}
-      transition={{ delay: 0.1, duration: 0.3 }}
+      initial="hidden"
+      transition={{ duration: 0.3 }}
       variants={{
         visible: { opacity: 1, scale: 1, x: 0 },
         hidden: { opacity: 0, scale: 0.5, x: 100 },

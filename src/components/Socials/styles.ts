@@ -129,12 +129,14 @@ export const SSocialsNewBtn = styled(TButtonPrimary)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 4px;
+  margin: 4px 4px;
+  box-shadow: none;
 `;
 
 export const SSocialsCollapsedIcon = styled(MDBIcon)`
   color: white;
-  margin-right: 0px;
+  width: 100%;
+  margin-right: 2px;
   :hover {
     color: lightgray !important;
   }

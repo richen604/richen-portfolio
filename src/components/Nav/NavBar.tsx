@@ -1,5 +1,4 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MDBIcon } from 'mdb-react-ui-kit';
 import React, { useState } from 'react';
 import ThemeChanger from '../ThemeChanger';
 import { TNextLinkWrapper } from '../ThemedComponents';
@@ -24,7 +23,7 @@ const NavBar: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
     <SNavContainer>
       <SNavbarLeftContainer>
         <SNavToggle onClick={toggleNavbar}>
-          <FontAwesomeIcon icon={faBars} />
+          <MDBIcon fas icon="bars" size="lg" />
         </SNavToggle>
         <SNavBarName tag="p">Richard Henninger</SNavBarName>
       </SNavbarLeftContainer>

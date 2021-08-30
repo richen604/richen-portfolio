@@ -1,5 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MDBContainer, MDBInput, MDBTypography } from 'mdb-react-ui-kit';
+import {
+  MDBContainer,
+  MDBInput,
+  MDBTypography,
+  MDBIcon,
+} from 'mdb-react-ui-kit';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Image from 'next/image';
 import {
@@ -45,9 +49,7 @@ export const SAboutIntroP = styled(TTextPrimary)`
   font-weight: 400;
 `;
 
-export const SAboutButtonIcon = styled(FontAwesomeIcon)`
-  margin-right: 10px;
-`;
+export const SAboutButtonIcon = styled(MDBIcon)``;
 
 export const SAboutContentText = styled(MDBContainer)`
   padding: 50px 90px;
@@ -83,12 +85,24 @@ export const SAboutFooterText = styled(TTextPrimary)`
   margin-right: 8px;
 `;
 
+export const SAboutButtonGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+`;
+
 export const SAboutHeaderBtnPrimary = styled(TButtonPrimary)`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 144.8px;
   height: 35px;
 `;
 
 export const SAboutHeaderBtnSecondary = styled(TButtonSecondary)`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 144.8px;
   height: 35px;
 `;

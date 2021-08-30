@@ -2,7 +2,6 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   MDBBtn,
   MDBCard,
@@ -11,6 +10,7 @@ import {
   MDBCardTitle,
   MDBNavbar,
   MDBTypography,
+  MDBIcon,
 } from 'mdb-react-ui-kit';
 import ReactGA from 'react-ga';
 import styled, {
@@ -462,7 +462,7 @@ export const TSocialsBorder = styled.div`
   }
 `;
 
-export const TSocialsIcon = styled(FontAwesomeIcon)`
+export const TSocialsIcon = styled(MDBIcon)`
   ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:

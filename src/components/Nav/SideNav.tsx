@@ -1,50 +1,28 @@
-import {
-  faUser,
-  faLaptopCode,
-  faFileAlt,
-  faEnvelopeOpenText,
-  faPaperPlane,
-} from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import React from 'react';
-import { MDBIcon } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
 import { Socials } from '../Socials';
 import ThemeChanger from '../ThemeChanger';
-import { TNextLinkWrapper } from '../ThemedComponents';
+import { TNavLink, TNextLinkWrapper } from '../ThemedComponents';
 import {
   SNavContentContainer,
   SNavBrand,
-  SEnvelopeIcon,
-  SFileIcon,
   SHireMeButton,
-  SLaptopIcon,
   SNavDivider,
   SNavFooter,
   SNavIntroText,
   SNavLinkContainer,
-  SNavLinkContainerLink,
   SNavProfileContainer,
-  SPlaneIcon,
-  SUserIcon,
+  SNavLinkContainerLink,
+  SNavIcon,
+  SNavLinkGrid,
+  SSideNavCollapsedLinks,
 } from './styles';
 import portrait from '../../images/display-portrait.png';
 import { INav } from './types';
 
 const SCollapsedDivider = styled(SNavDivider)`
   margin: 20px 0;
-`;
-
-const SIcon = styled(MDBIcon)`
-  color: white;
-  margin: 20px 0;
-  :hover {
-    color: lightgray !important;
-  }
-`;
-
-const SAirplaneIcon = styled(SIcon)`
-  margin-top: 12px;
 `;
 
 const SRichenLogo = styled.div`
@@ -73,22 +51,22 @@ const SideNavCollapsed: React.FunctionComponent<INav> = ({
       <Socials collapsed={sidebarCollapsed} />
       <SCollapsedDivider />
       <SNavLinkContainer>
-        <TNextLinkWrapper href="#">
-          <SIcon fas icon="user-alt" size="lg" />
+        <TNextLinkWrapper href="#" Component={SSideNavCollapsedLinks}>
+          <SNavIcon fas icon="user-alt" size="lg" />
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="#portfolio">
-          <SIcon fas icon="laptop-code" size="lg" />
+        <TNextLinkWrapper href="#portfolio" Component={SSideNavCollapsedLinks}>
+          <SNavIcon fas icon="laptop-code" size="lg" />
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="#contact">
-          <SIcon fas icon="envelope-open-text" size="lg" />
+        <TNextLinkWrapper href="#contact" Component={SSideNavCollapsedLinks}>
+          <SNavIcon fas icon="envelope-open-text" size="lg" />
         </TNextLinkWrapper>
-        <TNextLinkWrapper href="#resume">
-          <SIcon fas icon="file-invoice" size="lg" />
+        <TNextLinkWrapper href="#resume" Component={SSideNavCollapsedLinks}>
+          <SNavIcon fas icon="file-invoice" size="lg" />
         </TNextLinkWrapper>
       </SNavLinkContainer>
       <SCollapsedDivider />
-      <TNextLinkWrapper href="#contact">
-        <SAirplaneIcon fas icon="paper-plane" size="lg" />
+      <TNextLinkWrapper href="#contact" Component={TNavLink}>
+        <SNavIcon fas icon="paper-plane" size="lg" />
       </TNextLinkWrapper>
     </SNavContentContainer>
   </>
@@ -116,21 +94,23 @@ const SideNav: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
         <SNavDivider />
       </SNavProfileContainer>
       <SNavLinkContainer>
-        <TNextLinkWrapper href="#" Component={SNavLinkContainerLink}>
-          <SUserIcon icon={faUser} /> About Me
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="#portfolio" Component={SNavLinkContainerLink}>
-          <SLaptopIcon icon={faLaptopCode} /> Portfolio
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="#contact" Component={SNavLinkContainerLink}>
-          <SEnvelopeIcon icon={faEnvelopeOpenText} /> Contact
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="#resume" Component={SNavLinkContainerLink}>
-          <SFileIcon icon={faFileAlt} /> Resume
-        </TNextLinkWrapper>
+        <SNavLinkGrid>
+          <TNextLinkWrapper href="#" Component={SNavLinkContainerLink}>
+            <SNavIcon fas icon="user-alt" size="lg" /> About Me
+          </TNextLinkWrapper>
+          <TNextLinkWrapper href="#portfolio" Component={SNavLinkContainerLink}>
+            <SNavIcon fas icon="laptop-code" size="lg" /> Portfolio
+          </TNextLinkWrapper>
+          <TNextLinkWrapper href="#contact" Component={SNavLinkContainerLink}>
+            <SNavIcon fas icon="envelope-open-text" size="lg" /> Contact
+          </TNextLinkWrapper>
+          <TNextLinkWrapper href="#resume" Component={SNavLinkContainerLink}>
+            <SNavIcon fas icon="file-invoice" size="lg" /> Resume
+          </TNextLinkWrapper>
+        </SNavLinkGrid>
       </SNavLinkContainer>
       <TNextLinkWrapper href="#contact" Component={SHireMeButton}>
-        <SPlaneIcon icon={faPaperPlane} /> Hire Me
+        <SNavIcon fas icon="paper-plane" /> Hire Me
       </TNextLinkWrapper>
 
       <SNavDivider />

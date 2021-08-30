@@ -1,8 +1,4 @@
 import React from 'react';
-import {
-  faArrowCircleRight,
-  faFileAlt,
-} from '@fortawesome/free-solid-svg-icons';
 
 import SEO from 'components/Seo';
 import SkillsGroup from 'components/SkillsGroup';
@@ -25,6 +21,7 @@ import {
   SAboutContentText,
   SAboutContentTitle,
   SAboutContentSubtext,
+  SAboutButtonGroup,
 } from './styles';
 
 const AboutHeaderContent = () => (
@@ -36,18 +33,20 @@ const AboutHeaderContent = () => (
       development for complex scalable web apps. Check out my project portfolio
       and online resume for more!
     </SAboutIntroP>
-    <TNextLinkWrapper href="#portfolio" Component={TButtonLink}>
-      <SAboutHeaderBtnPrimary>
-        <SAboutButtonIcon icon={faArrowCircleRight} />
-        View Portfolio
-      </SAboutHeaderBtnPrimary>
-    </TNextLinkWrapper>
-    <TNextLinkWrapper href="#resume" Component={TButtonLink}>
-      <SAboutHeaderBtnSecondary>
-        <SAboutButtonIcon icon={faFileAlt} />
-        View Resume
-      </SAboutHeaderBtnSecondary>
-    </TNextLinkWrapper>
+    <SAboutButtonGroup>
+      <TNextLinkWrapper href="#portfolio" Component={TButtonLink}>
+        <SAboutHeaderBtnPrimary>
+          <SAboutButtonIcon fas icon="angle-double-right" size="lg" />
+          View Portfolio
+        </SAboutHeaderBtnPrimary>
+      </TNextLinkWrapper>
+      <TNextLinkWrapper href="#resume" Component={TButtonLink}>
+        <SAboutHeaderBtnSecondary>
+          <SAboutButtonIcon far icon="file-alt" size="lg" />
+          View Resume
+        </SAboutHeaderBtnSecondary>
+      </TNextLinkWrapper>
+    </SAboutButtonGroup>
   </SAboutHeaderIntro>
 );
 

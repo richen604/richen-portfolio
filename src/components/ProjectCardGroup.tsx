@@ -10,12 +10,12 @@ import {
   TCardBody,
   TOutboundLinkText,
 } from './ThemedComponents';
-import bloglistImage from '../images/bloglist-mockup.png';
-import libraryImage from '../images/library-mockup.png';
-import raterepoImage from '../images/raterepo-mockup.png';
-import patientorImage from '../images/patientor-mockup.png';
-import anecdotesImage from '../images/anecdotes-mockup.png';
-import phonebookImage from '../images/phonebook-mockup.png';
+import bloglistImage from '../images/bloglist-mockup.svg';
+import libraryImage from '../images/library-mockup.svg';
+import raterepoImage from '../images/raterepo-mockup.svg';
+import patientorImage from '../images/patientor-mockup.svg';
+import anecdotesImage from '../images/anecdotes-mockup.svg';
+import phonebookImage from '../images/phonebook-mockup.svg';
 import eskobotImage from '../images/discord-mockup.svg';
 import richendevImage from '../images/richen-image.png';
 

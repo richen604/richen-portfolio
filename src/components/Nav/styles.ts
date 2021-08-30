@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MDBCollapse, MDBNavbarNav, MDBNavbarItem } from 'mdb-react-ui-kit';
+import {
+  MDBCollapse,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBIcon,
+} from 'mdb-react-ui-kit';
 import {
   THireMeButton,
   TNavContainer,
@@ -105,45 +109,52 @@ export const SNavLinkContainerLink = styled(TNavLink)`
     }}
   }
   display: inline-grid;
-  grid-template-columns: 17px 1fr;
+  grid-template-areas: 'icon text';
+  grid-template-columns: 50px 1fr;
+  justify-items: start;
+  width: 100%;
+  height: 50px;
   align-items: center;
-  height: auto;
-  font-weight: bold;
+`;
+
+export const SSideNavCollapsedLinks = styled(TNavLink)`
+  &.navActive {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.textMuted} !important;`;
+        case THEME.DARK:
+          return `color: ${props.theme.palette.primary.main} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `color: ${props.theme.palette.primary.darker} !important;`;
+      }
+    }}
+  }
   margin: 10px;
-  text-align: left;
 `;
 
-export const SNavIcon = styled(FontAwesomeIcon)`
-  position: relative;
-  top: 0;
-  right: 10px;
+export const SNavLinkGrid = styled.div`
+  width: 150px;
+  display: inline-grid;
+  grid-template-areas: 'about' 'portfolio' 'contact' 'resume';
 `;
 
-export const SUserIcon = styled(SNavIcon)`
-  right: 4px;
-`;
-
-export const SLaptopIcon = styled(SNavIcon)`
-  right: 10px;
-`;
-
-export const SFileIcon = styled(SNavIcon)`
-  right: 8px;
-`;
-
-export const SEnvelopeIcon = styled(SNavIcon)``;
-
-export const SPlaneIcon = styled(SNavIcon)`
-  right: 4px;
+export const SNavIcon = styled(MDBIcon)`
+  place-self: center;
 `;
 
 export const SNavFooter = styled(TNavFooter)`
   font-weight: lighter;
   font-size: smaller;
   text-align: center;
+  position: absolute;
+  bottom: 0;
   @media only screen and (max-width: 1000px) {
     font-weight: lighter;
     font-size: smaller;
+    position: absolute;
+    bottom: 0;
     margin-top: 10px;
     text-align: center;
   }
@@ -171,8 +182,6 @@ export const SNavLinkContainer = styled(MDBNavbarNav)`
 `;
 
 export const SHireMeButton = styled(THireMeButton)`
-  justify-self: center;
-  align-self: center;
   margin: 10px;
   padding: 10px 10px;
   @media only screen and (max-width: 1000px) {

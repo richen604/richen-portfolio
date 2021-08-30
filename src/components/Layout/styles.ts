@@ -87,9 +87,9 @@ export const SCollapseButton = styled(TButtonPrimary)<{ collapse: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  padding: 7px;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 0 10px 10px 0px;
   transition: 0.5s;
   position: fixed;
   z-index: 2;
