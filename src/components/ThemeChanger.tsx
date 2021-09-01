@@ -2,10 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MDBContainer, MDBBtnGroup } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
+import { THEME } from 'theme';
 import { changeTheme } from '../reducers/themeReducer';
-import { THEME } from '../styled.d';
 import { RootState } from '../store';
-import { TButtonPrimary, TTextSecondary } from './ThemedComponents';
+
+import { TTextSecondary } from './Typography';
+import { TButtonPrimary } from './ThemedComponents';
 
 const SThemeChanger = styled(MDBContainer)<{ isnav: boolean }>`
   min-width: 250px;

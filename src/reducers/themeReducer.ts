@@ -1,5 +1,4 @@
-import { DefaultTheme } from 'styled-components';
-import { THEME } from '../styled.d';
+import { DefaultTheme, THEME } from 'styled-components';
 
 import {
   darkDefaultTheme,
@@ -21,25 +20,25 @@ const handleThemeChange = (themeArg: THEME) => {
   }
 };
 
-export const changeTheme = (themeArg: THEME) => async (dispatch) => {
-    const theme = handleThemeChange(themeArg);
-    return dispatch({
-      type: 'CHANGE_THEME',
-      data: {
-        theme,
-      },
-    });
-  };
+export const changeTheme = (themeArg: THEME) => async dispatch => {
+  const theme = handleThemeChange(themeArg);
+  return dispatch({
+    type: 'CHANGE_THEME',
+    data: {
+      theme,
+    },
+  });
+};
 
-export const resetTheme = () => async (dispatch) => {
-    dispatch({
-      type: 'RESET_THEME',
-    });
-  };
+export const resetTheme = () => async dispatch => {
+  dispatch({
+    type: 'RESET_THEME',
+  });
+};
 
-export const changeAccent = (accent) => async (dispatch) => {
-    dispatch({ type: 'CHANGE_ACCENT', data: { accent } });
-  };
+export const changeAccent = accent => async dispatch => {
+  dispatch({ type: 'CHANGE_ACCENT', data: { accent } });
+};
 
 export const hexToHSL = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -87,7 +86,7 @@ export const hexToHSL = (hex: string) => {
 };
 
 // takes a single hsla and outputs 4 colors, 2 lighter and 2 darker
-const generatePalette = (HSL) => {
+const generatePalette = HSL => {
   // TODO handle if + / - num is (> 0 / < 255)
   /*
     ? Max Lumosity 55, min 22, step can be 11 - 13 to be noticeable 
@@ -146,7 +145,7 @@ const handleAccentChange = (hex: string, state: ThemeState) => {
 };
 
 const themeReducer = (
-  state: ThemeState = lightDefaultTheme,
+  state: ThemeState = darkDefaultTheme,
   action
 ): ThemeState => {
   switch (action.type) {

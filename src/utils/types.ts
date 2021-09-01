@@ -1,3 +1,5 @@
+// ! PocketApi Types
+
 export const instanceOfArticles = (
   articlesArg: Article[] | Promise<void>
 ): articlesArg is Article[] => (articlesArg as Article[]).length !== undefined;

@@ -6,22 +6,28 @@ import {
 } from 'mdb-react-ui-kit';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Image from 'next/image';
+import { TTextPrimary } from 'components/Typography';
+import { THEME } from 'theme';
 import {
-  TTextPrimary,
   TButtonPrimary,
   TButtonSecondary,
   TPageMain,
 } from '../ThemedComponents';
 import { PageMain } from '../pages';
-import { THEME } from '../../styled.d';
 
 // ! Index Page Styled Components
 
-export const SAboutHeaderIntro = styled(MDBContainer)`
+export const SAboutHeaderIntro = styled.div`
   background-color: transparent;
-  margin: 30px;
-  justify-content: left;
-  align-items: left;
+  display: grid;
+  grid-template-areas: 'build name';
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: clamp(10px, 4vw, 2rem) clamp(10px, 4vw, 10rem);
 `;
 
 export const SAboutIntroH1 = styled(TTextPrimary)`

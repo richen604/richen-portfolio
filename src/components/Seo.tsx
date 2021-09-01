@@ -7,7 +7,7 @@ interface ISEO {
   description?: string;
   lang?: string;
   meta?: Array<any>;
-  title: string;
+  title?: string;
 }
 
 const SEO: React.FC<ISEO> = ({ description, lang, meta, title }: ISEO) => {
@@ -81,6 +81,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: 'About Me',
 };
 
 export default SEO;

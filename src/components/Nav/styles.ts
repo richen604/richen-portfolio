@@ -5,6 +5,7 @@ import {
   MDBNavbarItem,
   MDBIcon,
 } from 'mdb-react-ui-kit';
+import { THEME } from 'theme';
 import {
   THireMeButton,
   TNavContainer,
@@ -13,7 +14,6 @@ import {
   TNavLink,
   TNavToggle,
 } from '../ThemedComponents';
-import { THEME } from '../../styled.d';
 
 // TODO Separate Nav / SideNav / Etc
 

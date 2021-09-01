@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /**
  * Converts UNIX timestamp to Date String
  *
@@ -33,60 +34,44 @@ export const timeConverter = (timestamp: number): string => {
 };
 
 /**
- * Converts hex string to an hsl object
+ * @description creates a hsl object from a hex string input
  *
- * @remarks
- * Function is used for the ThemeChanger Component
+ * @remarks used for converting hex to hsl for the theme state
  *
- * @param {string} hex Hex string
+ * @param {string} hex - the hex string to convert
+ *
  * @returns {object} hsl object
  *
- * */
-export const hexToHSL = (hex: string): object => {
+ */
+export function hexToHsl(hex: string): object {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (!result) throw new Error('Hex Result is null, bad request');
-
-  let r = parseInt(result[1], 16);
-  let g = parseInt(result[2], 16);
-  let b = parseInt(result[3], 16);
-  r /= 255;
-  g /= 255;
-  b /= 255;
+  const r = parseInt(result[1], 16);
+  const g = parseInt(result[2], 16);
+  const b = parseInt(result[3], 16);
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
-  let h;
-  let s;
   const l = (max + min) / 2;
-  if (max === min) {
-    // achromatic
-    h = 0;
-    s = 0;
-  } else {
-    const d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    switch (max) {
-      case r:
-        h = (g - b) / d + (g < b ? 6 : 0);
-        break;
-      case g:
-        h = (b - r) / d + 2;
-        break;
-      case b:
-        h = (r - g) / d + 4;
-        break;
-      default:
-        // TODO untested case
-        h = (r - g) / d + 4;
-    }
-    h /= 6;
-  }
-  const HSL = {
-    h,
-    s,
-    l,
+  const s =
+    max === min
+      ? 0
+      : l < 0.5
+      ? (max - min) / (max + min)
+      : (max - min) / (2 - max - min);
+  const h =
+    max === min
+      ? 0
+      : r === max
+      ? (g - b) / (max - min)
+      : g === max
+      ? 2 + (b - r) / (max - min)
+      : 4 + (r - g) / (max - min);
+  const hsl = {
+    h: Math.round(h * 60),
+    s: Math.round(s * 100),
+    l: Math.round(l * 100),
   };
-  return HSL;
-};
+  return hsl;
+}
 
 /**
  * Takes an HSL object and returns an object with 5 HSL strings with luminosity relative to the hsl param

@@ -1,5 +1,10 @@
-import { DefaultTheme } from 'styled-components';
-import { THEME } from './styled.d';
+import { DefaultTheme, DefaultThemeEnum } from 'styled-components';
+
+export enum THEME {
+  LIGHT,
+  DARK,
+  MONOCHROMATIC,
+}
 
 /*
     Major themes
@@ -19,6 +24,8 @@ import { THEME } from './styled.d';
       - dark theme has lighter accent backgrounds
 */
 
+// TODO refactor hex to hsl !important
+
 export const defaultStyling = {
   layout: {
     borderRadius: '6px',
@@ -26,6 +33,8 @@ export const defaultStyling = {
     outerComponentMargins: '20px',
   },
 };
+
+console.log('IMPORTANT, ENUM', DefaultThemeEnum);
 
 export const lightDefaultTheme: DefaultTheme = {
   name: THEME.LIGHT,

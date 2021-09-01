@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled, { ThemeProvider } from 'styled-components';
 import { MDBIcon } from 'mdb-react-ui-kit';
+import SEO from 'components/Seo';
 import { RootState } from '../../../redux';
 import {
   SLayoutContainer,
@@ -28,23 +29,24 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   const { theme } = useSelector((state: RootState) => state);
-  const [collapse, setCollapse] = useState(false);
+  const [collapsed, setCollapse] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
+      <SEO />
       <SLayoutContainer>
-        <SLayoutNav collapse={collapse}>
-          <Nav sidebarCollapsed={collapse} />
+        <SLayoutNav collapse={collapsed}>
+          <Nav sidebarCollapsed={collapsed} />
         </SLayoutNav>
         <SCollapseButton
-          collapse={collapse}
-          onClick={() => setCollapse(!collapse)}
+          collapse={collapsed}
+          onClick={() => setCollapse(!collapsed)}
         >
           <SCollapseIcon fas icon="bars" size="2x" />
-          {collapse && <SCaret fas icon="caret-right" size="lg" />}
-          {!collapse && <SCaret fas icon="caret-left" size="lg" />}
+          {collapsed && <SCaret fas icon="caret-right" size="lg" />}
+          {!collapsed && <SCaret fas icon="caret-left" size="lg" />}
         </SCollapseButton>
-        <SLayoutChildrenContainer collapse={collapse}>
+        <SLayoutChildrenContainer collapse={collapsed}>
           {children}
           <SLayoutChildrenSpacer />
         </SLayoutChildrenContainer>

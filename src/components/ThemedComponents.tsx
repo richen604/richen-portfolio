@@ -9,7 +9,6 @@ import {
   MDBCardText,
   MDBCardTitle,
   MDBNavbar,
-  MDBTypography,
   MDBIcon,
 } from 'mdb-react-ui-kit';
 import ReactGA from 'react-ga';
@@ -20,7 +19,8 @@ import styled, {
 } from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { THEME } from '../styled.d';
+
+import { THEME } from 'theme';
 
 // Common Components
 
@@ -109,49 +109,6 @@ export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
   &:focus {
     box-shadow: none !important;
   }
-`;
-
-export const TTextPrimary = styled(MDBTypography)`
-  ${props => {
-    switch (props.theme.name) {
-      case THEME.MONOCHROMATIC:
-        return `color: ${props.theme.palette.common.white};`;
-      case THEME.DARK:
-        return `color: ${props.theme.palette.common.white};`;
-      case THEME.LIGHT:
-      default:
-        return `color: ${props.theme.palette.common.black};`;
-    }
-  }}
-`;
-
-export const TTextMuted = styled(MDBTypography)`
-  ${props => {
-    switch (props.theme.name) {
-      case THEME.MONOCHROMATIC:
-        return `color: ${props.theme.palette.common.textMuted};`;
-      case THEME.DARK:
-        return `color: ${props.theme.palette.common.textMuted};`;
-      case THEME.LIGHT:
-      default:
-        return `color: ${props.theme.palette.common.textMuted};`;
-    }
-  }}
-`;
-
-// TODO change color for themes
-export const TTextSecondary = styled(MDBTypography)`
-  ${props => {
-    switch (props.theme.name) {
-      case THEME.MONOCHROMATIC:
-        return `color: ${props.theme.palette.common.white};`;
-      case THEME.DARK:
-        return `color: ${props.theme.palette.common.white};`;
-      case THEME.LIGHT:
-      default:
-        return `color: ${props.theme.palette.common.white};`;
-    }
-  }}
 `;
 
 // TODO change color for themes
