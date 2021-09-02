@@ -46,5 +46,3 @@ export const TTextSecondary = styled(MDBTypography)<ThemeProps<DefaultTheme>>`
     }
   }}
 `;
-
-const Typography = styled(TTextPrimary)``;

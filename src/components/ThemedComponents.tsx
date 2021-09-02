@@ -41,11 +41,6 @@ export const GlobalStyle = createGlobalStyle<ThemeProps<DefaultTheme>>`
 `;
 
 export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
-  margin: 10px;
-  min-height: 35px;
-  padding: 5px 10px;
-  max-width: 150px;
-  max-height: 36px;
   ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
@@ -77,11 +72,6 @@ export const TButtonPrimary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
 
 // TODO change Secondary Color for themes
 export const TButtonSecondary = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
-  margin: 10px;
-  min-height: 35px;
-  padding: 5px 10px;
-  max-width: 150px;
-  max-height: 36px;
   ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:

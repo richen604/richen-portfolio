@@ -5,6 +5,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createMemoryHistory, History } from 'history';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import layoutReducer from 'reducers/layoutReducer';
 import themeReducer from './reducers/themeReducer';
 
 const persistConfig = {
@@ -16,6 +17,7 @@ const createRootReducer = (history: History<any>) =>
   combineReducers({
     router: connectRouter(history),
     theme: themeReducer,
+    layout: layoutReducer,
   });
 
 export const history = createMemoryHistory();

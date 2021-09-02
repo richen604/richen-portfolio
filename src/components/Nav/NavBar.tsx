@@ -25,7 +25,6 @@ const NavBar: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
         <SNavToggle onClick={toggleNavbar}>
           <MDBIcon fas icon="bars" size="lg" />
         </SNavToggle>
-        <SNavBarName tag="p">Richard Henninger</SNavBarName>
       </SNavbarLeftContainer>
       <SNavBarRightContainer>
         <ThemeChanger />

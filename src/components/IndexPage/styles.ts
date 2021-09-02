@@ -19,24 +19,38 @@ import { PageMain } from '../pages';
 
 export const SAboutHeaderIntro = styled.div`
   background-color: transparent;
-  display: grid;
-  grid-template-areas: 'build name';
-  grid-template-columns: 1fr 1fr;
-  flex-direction: row;
-  place-items: center;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
+  margin: 10%;
   margin: 0;
-  padding: clamp(10px, 4vw, 2rem) clamp(10px, 4vw, 10rem);
+  background-color: ${props => props.theme.palette.common.pageBackgroundAlt};
+  width: 100%;
+
+  @media only screen and (max-width: 1000px) {
+    padding: 2%;
+  }
+  @media only screen and (min-width: 1000px) {
+    padding: 10%;
+  }
 `;
 
 export const SAboutIntroH1 = styled(TTextPrimary)`
   text-align: left;
-  margin: 5px 13px;
   font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
   line-height: 1.2;
   font-weight: 700;
+  @media only screen and (min-width: 1000px) {
+    font-size: 4rem;
+    margin: 5px 13px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 2rem;
+    margin: 10px 18px;
+  }
 `;
 
 export const SAboutIntroH5 = styled(TTextPrimary)`
@@ -54,8 +68,6 @@ export const SAboutIntroP = styled(TTextPrimary)`
   line-height: 24px;
   font-weight: 400;
 `;
-
-export const SAboutButtonIcon = styled(MDBIcon)``;
 
 export const SAboutContentText = styled(MDBContainer)`
   padding: 50px 90px;
@@ -93,24 +105,55 @@ export const SAboutFooterText = styled(TTextPrimary)`
 
 export const SAboutButtonGroup = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 40%;
+  margin: 50px 0;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 500px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const SAboutHeaderBtnPrimary = styled(TButtonPrimary)`
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  width: 144.8px;
-  height: 35px;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  margin: 20px;
 `;
 
 export const SAboutHeaderBtnSecondary = styled(TButtonSecondary)`
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  width: 144.8px;
-  height: 35px;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  margin: 20px;
+`;
+
+export const SAboutButtonIcon = styled(MDBIcon)`
+  margin: 0 20px 0 0;
+`;
+
+export const SAboutButtonText = styled(MDBTypography)`
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
 `;
 
 // ! Portfolio Page Styled Components

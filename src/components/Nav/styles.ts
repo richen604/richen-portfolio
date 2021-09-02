@@ -168,7 +168,7 @@ export const SNavLinkContainer = styled(MDBNavbarNav)`
   margin: 0;
   display: flex;
   flex-direction: column;
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 900px) {
     padding-left: 65px;
     width: 70%;
     justify-content: space-around;

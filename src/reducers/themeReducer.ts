@@ -1,10 +1,10 @@
-import { DefaultTheme, THEME } from 'styled-components';
-
+import { DefaultTheme } from 'styled-components';
 import {
+  THEME,
   darkDefaultTheme,
   lightDefaultTheme,
   monochromaticDefaultTheme,
-} from '../theme';
+} from 'theme';
 
 export interface ThemeState extends DefaultTheme {}
 
