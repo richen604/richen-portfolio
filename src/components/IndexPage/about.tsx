@@ -2,7 +2,7 @@ import React from 'react';
 
 import SEO from 'components/Seo';
 import SkillsGroup from 'components/SkillsGroup';
-import { PageHeader, PageMain } from 'components/pages';
+import { PageMain } from 'components/pages';
 import {
   TButtonLink,
   TNextLinkWrapper,
@@ -10,6 +10,7 @@ import {
   TFlexColumn,
 } from 'components/ThemedComponents';
 import FadeInViewDiv from 'components/FadeInViewDiv';
+import Emoji from 'components/Emoji';
 import {
   SAboutHeaderIntro,
   SAboutIntroH1,
@@ -31,11 +32,14 @@ const AboutHeaderContent = () => (
     <FadeInViewDiv>
       <TFlexColumn>
         <SAboutIntroText>
-          <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
+          <SAboutIntroH1 variant="h1">
+            Hi <Emoji label="waving hand" symbol="👋" />, <br /> I&apos;m{' '}
+            Richard Henninger
+          </SAboutIntroH1>
           <SAboutIntroH5 variant="h5">
-            Full Stack JavaScript Developer
+            <code>Full Stack Developer</code>
           </SAboutIntroH5>
-          <SAboutIntroP variant="p">
+          <SAboutIntroP note variant="p">
             I&apos;m a software engineer specialized in frontend and backend
             development for complex scalable web apps. Check out my project
             portfolio and online resume for more!
@@ -65,7 +69,7 @@ const AboutContent = () => (
     <FadeInViewDiv>
       <SAboutContentText>
         <SAboutContentTitle variant="h2">What I Do</SAboutContentTitle>
-        <SAboutContentSubtext variant="p">
+        <SAboutContentSubtext note variant="p">
           Below is a quick overview of my main technical skill sets and
           technologies I use. Want to find out more about my experience? Check
           out my{' '}

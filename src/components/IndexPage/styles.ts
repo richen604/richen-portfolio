@@ -34,7 +34,7 @@ export const SAboutHeaderIntro = styled(SPageHeaderContainer)`
 export const SAboutIntroH1 = styled(TTextPrimary)`
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 700;
   @media only screen and (min-width: 1000px) {
     font-size: 4rem;
@@ -43,7 +43,7 @@ export const SAboutIntroH1 = styled(TTextPrimary)`
 
   @media only screen and (max-width: 1000px) {
     font-size: 2rem;
-    margin: 10px 18px;
+    margin: 10px 15px;
   }
 `;
 
@@ -56,21 +56,27 @@ export const SAboutIntroH5 = styled(TTextPrimary)`
 `;
 
 export const SAboutIntroP = styled(TTextPrimary)`
-  margin: 15px 16px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  margin: 25px 16px;
+  padding-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 0.5vw, 2.5rem);
+  line-height: 32px;
   font-weight: 400;
 `;
 
 export const SAboutIntroText = styled.div`
   padding-left: 2%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
   @media only screen and (max-width: 1000px) {
     padding: 0%;
-    margin: 5% 5%;
+    margin: 1% 5%;
   }
   @media only screen and (min-width: 1000px) {
-    margin: 8%;
+    margin: 1% 8%;
   }
 `;
 
@@ -83,16 +89,25 @@ export const SAboutContentText = styled(MDBContainer)`
 export const SAboutContentTitle = styled(TTextPrimary)`
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 700;
+  @media only screen and (min-width: 1000px) {
+    font-size: 3rem;
+    margin: 5px 13px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 2rem;
+    margin: 10px 15px;
+  }
 `;
 
 export const SAboutContentSubtext = styled(TTextPrimary)`
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  margin: 25px 16px;
+  padding-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 0.5vw, 2.5rem);
+  line-height: 32px;
   font-weight: 400;
 `;
 
@@ -111,7 +126,7 @@ export const SAboutFooterText = styled(TTextPrimary)`
 
 export const SAboutButtonGroup = styled.div`
   display: flex;
-  margin: 50px 0;
+  align-self: center;
 
   @media only screen and (max-width: 500px) {
     flex-direction: column;
@@ -119,6 +134,7 @@ export const SAboutButtonGroup = styled.div`
     justify-content: center;
     align-items: center;
     height: auto;
+    margin: 25px 0;
   }
 
   @media only screen and (min-width: 500px) {
@@ -127,6 +143,7 @@ export const SAboutButtonGroup = styled.div`
     justify-content: space-evenly;
     width: 60%;
     height: auto;
+    margin: 50px 0;
   }
 `;
 
@@ -137,6 +154,35 @@ export const SAboutHeaderBtnPrimary = styled(TButtonPrimary)`
   width: 300px;
   height: auto;
   margin: 20px;
+  border-radius: 15px;
+  &:hover {
+    border-radius: 0;
+    scale: 1.03;
+  }
+  ${props => {
+    switch (props.theme.name) {
+      case THEME.MONOCHROMATIC:
+        return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
+      case THEME.DARK:
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
+      case THEME.LIGHT:
+      default:
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
+    }
+  }}
+  &:hover {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
+        case THEME.DARK:
+          return `background-color: ${props.theme.palette.primary.main} !important; border-color: ${props.theme.palette.primary.main} !important; color: ${props.theme.palette.primary.darkest} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `background-color: ${props.theme.palette.primary.darkest} !important; border-color: ${props.theme.palette.primary.darkest} !important; color: ${props.theme.palette.common.white} !important;`;
+      }
+    }}
+  }
 `;
 
 export const SAboutHeaderBtnSecondary = styled(TButtonSecondary)`
@@ -146,6 +192,35 @@ export const SAboutHeaderBtnSecondary = styled(TButtonSecondary)`
   width: 300px;
   height: auto;
   margin: 20px;
+  border-radius: 15px;
+  &:hover {
+    border-radius: 0;
+    scale: 1.03;
+  }
+  ${props => {
+    switch (props.theme.name) {
+      case THEME.MONOCHROMATIC:
+        return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
+      case THEME.DARK:
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
+      case THEME.LIGHT:
+      default:
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
+    }
+  }}
+  &:hover {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
+        case THEME.DARK:
+          return `background-color: ${props.theme.palette.primary.main} !important; border-color: ${props.theme.palette.primary.main} !important; color: ${props.theme.palette.primary.darkest} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `background-color: ${props.theme.palette.primary.darkest} !important; border-color: ${props.theme.palette.primary.darkest} !important; color: ${props.theme.palette.common.white} !important;`;
+      }
+    }}
+  }
 `;
 
 export const SAboutButtonIcon = styled(MDBIcon)`
@@ -174,38 +249,60 @@ export const SPortfolioIntro = styled(MDBContainer)`
 `;
 
 export const SPortfolioIntroH2 = styled(TTextPrimary)`
-  text-align: center;
-  margin: 5px 13px;
+  text-align: left;
   font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 700;
+  @media only screen and (min-width: 1000px) {
+    font-size: 3rem;
+    margin: 5px 13px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 2rem;
+    margin: 10px 15px;
+  }
 `;
 
 export const SPortfolioIntroText = styled(TTextPrimary)`
-  text-align: center;
-  margin: 15px 16px;
-  margin-top: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  margin: 25px 16px;
+  padding-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 0.5vw, 2.5rem);
+  line-height: 32px;
   font-weight: 400;
 `;
 
 // ! Resume Page Styled Components
 
-export const SResumeHeaderContainer = styled(MDBContainer)`
+export const SResumeHeaderContainer = styled(SPageHeaderContainer)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-export const SResumeHeaderH2 = styled(TTextPrimary)``;
+export const SResumeHeaderH2 = styled(TTextPrimary)`
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  font-weight: 700;
+  @media only screen and (min-width: 1000px) {
+    font-size: 3rem;
+    margin: 5px 13px;
+  }
 
-export const SResumeContainer = styled.div`
-  object-fit: contain;
-  margin: 50px 100px;
+  @media only screen and (max-width: 1000px) {
+    font-size: 2rem;
+    margin: 10px 15px;
+  }
+`;
+
+export const SResumeContainer = styled(MDBContainer)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 300px;
   max-width: 1000px;
   margin-bottom: 200px;
@@ -228,20 +325,27 @@ export const SContactHeaderContainer = styled(MDBContainer)`
 
 export const SContactHeaderH2 = styled(TTextPrimary)`
   text-align: left;
-  margin: 5px 13px;
   font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 700;
+  @media only screen and (min-width: 1000px) {
+    font-size: 3rem;
+    margin: 5px 13px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 2rem;
+    margin: 10px 15px;
+  }
 `;
 
 export const SContactHeaderText = styled(TTextPrimary)`
-  margin: 15px 16px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  margin: 25px 16px;
+  padding-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 0.5vw, 2.5rem);
+  line-height: 32px;
   font-weight: 400;
-  text-align: center;
 `;
 
 export const SContactContainer = styled(TPageMain)`

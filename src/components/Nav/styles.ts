@@ -131,6 +131,9 @@ export const SSideNavCollapsedLinks = styled(TNavLink)`
       }
     }}
   }
+  &:hover {
+    scale: 1.1;
+  }
   margin: 10px;
 `;
 

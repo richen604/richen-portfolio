@@ -48,7 +48,7 @@ const Contact = () => {
         <FadeInViewDiv>
           <SContactHeaderContainer>
             <SContactHeaderH2 variant="h2">Contact Me</SContactHeaderH2>
-            <SContactHeaderText variant="p">
+            <SContactHeaderText note variant="p">
               Interested in hiring me for your project or just want to say hi?
               You can fill in the contact form below or send me an email to{' '}
               <TOutboundLinkText

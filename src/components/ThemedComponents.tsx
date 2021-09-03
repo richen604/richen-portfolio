@@ -255,6 +255,9 @@ export const TNavLink = styled.a<ThemeProps<DefaultTheme>>`
       }
     }}
   }
+  &:hover {
+    scale: 1.1;
+  }
 `;
 
 export const TNavDivider = styled.div<ThemeProps<DefaultTheme>>`
@@ -303,19 +306,17 @@ export const TNavFooter = styled.footer<ThemeProps<DefaultTheme>>`
 `;
 
 export const THireMeButton = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  border-radius: 15px;
+  &:hover {
+    border-radius: 0;
+    scale: 1.03;
+  }
   ${props => {
     switch (props.theme.name) {
       case THEME.MONOCHROMATIC:
         return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
       case THEME.DARK:
-        return `background-color: ${props.theme.palette.primary.darkest} !important; border-color: ${props.theme.palette.primary.main} !important; color: ${props.theme.palette.common.white} !important;`;
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
       case THEME.LIGHT:
       default:
         return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
@@ -327,7 +328,7 @@ export const THireMeButton = styled(MDBBtn)<ThemeProps<DefaultTheme>>`
         case THEME.MONOCHROMATIC:
           return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
         case THEME.DARK:
-          return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.main} !important; color: ${props.theme.palette.common.white} !important;`;
+          return `background-color: ${props.theme.palette.primary.main} !important; border-color: ${props.theme.palette.primary.main} !important; color: ${props.theme.palette.primary.darkest} !important;`;
         case THEME.LIGHT:
         default:
           return `background-color: ${props.theme.palette.primary.darkest} !important; border-color: ${props.theme.palette.primary.darkest} !important; color: ${props.theme.palette.common.white} !important;`;

@@ -73,7 +73,7 @@ export const SSocialsDropRight = styled(MDBDropdown)`
   justify-content: center;
   position: fixed;
   animation: ${IconTransition} 0.5s ease-in-out both;
-  top: 83px;
+  top: 82px;
   left: 0;
   color: white;
   z-index: 100;
@@ -145,7 +145,7 @@ export const SSocialsCollapsedIcon = styled(MDBIcon)`
 export const SSocialsDropRightMenu = styled(MDBDropdownMenu)`
   max-width: 50px;
   width: 50px;
-  margin: -18px 10px;
+  margin: -22px 10px;
   background-color: transparent;
   z-index: 100000;
   box-shadow: none;

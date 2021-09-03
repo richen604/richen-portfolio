@@ -8,8 +8,7 @@ export const SPageMain = styled(TPageMain)`
 
 export const SPageHeaderContainer = styled.div<ThemeProps<DefaultTheme>>`
   height: max-content;
-  margin: 0;
-  padding: 10rem 5rem;
-  background-color: ${props => props.theme.palette.common.pageBackgroundAlt};
+  padding: 10px;
+  background-color: ${props => props.theme.palette.common.pageBackground};
   width: 100%;
 `;

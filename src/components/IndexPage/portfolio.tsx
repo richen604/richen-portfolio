@@ -22,7 +22,7 @@ function Portfolio() {
         <FadeInViewDiv>
           <SPortfolioIntro>
             <SPortfolioIntroH2>Portfolio</SPortfolioIntroH2>
-            <SPortfolioIntroText>
+            <SPortfolioIntroText note>
               Welcome to my portfolio. All of these projects can be seen on my
               github{' '}
               <TOutboundLinkText

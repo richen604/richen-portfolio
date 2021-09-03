@@ -22,7 +22,7 @@ import portrait from '../../images/display-portrait.png';
 import { INav } from './types';
 
 const SCollapsedDivider = styled(SNavDivider)`
-  margin: 20px 0;
+  margin: 20px 0 !important;
 `;
 
 const SRichenLogo = styled.div`
@@ -88,8 +88,6 @@ const SideNav: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
           height={200}
           alt="Richard Henninger Portrait"
         />
-
-        <SNavIntroText>Full Stack JavaScript Developer</SNavIntroText>
         <Socials isnav />
         <SNavDivider />
       </SNavProfileContainer>
