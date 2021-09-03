@@ -10,6 +10,7 @@ import {
   MDBCardTitle,
   MDBNavbar,
   MDBIcon,
+  MDBContainer,
 } from 'mdb-react-ui-kit';
 import ReactGA from 'react-ga';
 import styled, {
@@ -225,6 +226,15 @@ export const TButtonLink = styled.a<ThemeProps<DefaultTheme>>`
         return `color: ${props.theme.palette.common.white};`;
     }
   }}
+`;
+
+export const TFlexColumn = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 `;
 
 // Nav Components

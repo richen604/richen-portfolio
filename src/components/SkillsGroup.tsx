@@ -96,8 +96,7 @@ const SCardGroup = styled(MDBContainer)`
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
-  padding: 0 50px;
-  margin: 50px;
+  margin: 75px 0 100px 0;
   min-width: 100%;
   height: auto;
 `;

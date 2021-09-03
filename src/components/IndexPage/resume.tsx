@@ -3,7 +3,7 @@ import PageHeader from 'components/pages/PageHeader';
 import { PageMain } from 'components/pages';
 import resume from 'images/Richard Henninger Resume.svg';
 import { TOutboundLinkText } from 'components/ThemedComponents';
-import FadeInWhenVisable from 'components/FadeInWhenVisable';
+import FadeInViewDiv from 'components/FadeInViewDiv';
 import {
   SResumeHeaderContainer,
   SResumeHeaderH2,
@@ -17,7 +17,7 @@ function Resume() {
   return (
     <>
       <PageHeader id="resume">
-        <FadeInWhenVisable>
+        <FadeInViewDiv>
           <SResumeHeaderContainer>
             <SResumeHeaderH2 variant="h2">Resume</SResumeHeaderH2>
             {/*           <SPrimaryButton
@@ -27,14 +27,14 @@ function Resume() {
             Download PDF Version
           </SPrimaryButton> */}
           </SResumeHeaderContainer>
-        </FadeInWhenVisable>
+        </FadeInViewDiv>
       </PageHeader>
       <PageMain>
-        <FadeInWhenVisable>
+        <FadeInViewDiv>
           <SResumeContainer>
             <SResume src={resume} alt="Richard Henninger Resume" />
           </SResumeContainer>
-        </FadeInWhenVisable>
+        </FadeInViewDiv>
         <SAboutFooter>
           <SAboutFooterText>Icons provided by </SAboutFooterText>
           <TOutboundLinkText

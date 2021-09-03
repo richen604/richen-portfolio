@@ -14,27 +14,21 @@ import {
   TPageMain,
 } from '../ThemedComponents';
 import { PageMain } from '../pages';
+import { SPageHeaderContainer } from 'components/pages/styles';
 
 // ! Index Page Styled Components
 
-export const SAboutHeaderIntro = styled.div`
+export const SAboutHeaderIntro = styled(SPageHeaderContainer)`
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
-  margin: 10%;
+  height: 100vh;
+  padding: 0;
   margin: 0;
   background-color: ${props => props.theme.palette.common.pageBackgroundAlt};
-  width: 100%;
-
-  @media only screen and (max-width: 1000px) {
-    padding: 2%;
-  }
-  @media only screen and (min-width: 1000px) {
-    padding: 10%;
-  }
 `;
 
 export const SAboutIntroH1 = styled(TTextPrimary)`
@@ -69,9 +63,21 @@ export const SAboutIntroP = styled(TTextPrimary)`
   font-weight: 400;
 `;
 
+export const SAboutIntroText = styled.div`
+  padding-left: 2%;
+  @media only screen and (max-width: 1000px) {
+    padding: 0%;
+    margin: 5% 5%;
+  }
+  @media only screen and (min-width: 1000px) {
+    margin: 8%;
+  }
+`;
+
 export const SAboutContentText = styled(MDBContainer)`
   padding: 50px 90px;
   padding-bottom: 20px;
+  margin-top: 100px;
 `;
 
 export const SAboutContentTitle = styled(TTextPrimary)`
@@ -119,7 +125,7 @@ export const SAboutButtonGroup = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 100%;
+    width: 60%;
     height: auto;
   }
 `;
@@ -154,6 +160,7 @@ export const SAboutButtonText = styled(MDBTypography)`
   justify-content: center;
   width: 100%;
   height: auto;
+  margin-right: 35px;
 `;
 
 // ! Portfolio Page Styled Components

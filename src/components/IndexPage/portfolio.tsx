@@ -7,7 +7,7 @@ import {
   TNextLinkWrapper,
   TLink,
 } from 'components/ThemedComponents';
-import FadeInWhenVisable from 'components/FadeInWhenVisable';
+import FadeInViewDiv from 'components/FadeInViewDiv';
 import { siteMetadata } from '../../constants';
 import {
   SPortfolioIntro,
@@ -19,7 +19,7 @@ function Portfolio() {
   return (
     <>
       <PageHeader id="portfolio">
-        <FadeInWhenVisable>
+        <FadeInViewDiv>
           <SPortfolioIntro>
             <SPortfolioIntroH2>Portfolio</SPortfolioIntroH2>
             <SPortfolioIntroText>
@@ -41,12 +41,12 @@ function Portfolio() {
               .
             </SPortfolioIntroText>
           </SPortfolioIntro>
-        </FadeInWhenVisable>
+        </FadeInViewDiv>
       </PageHeader>
       <PageMain>
-        <FadeInWhenVisable>
+        <FadeInViewDiv>
           <ProjectCardGroup />
-        </FadeInWhenVisable>
+        </FadeInViewDiv>
       </PageMain>
     </>
   );

@@ -4,8 +4,8 @@ import { Formik } from 'formik';
 import PageHeader from 'components/pages/PageHeader';
 import Socials from 'components/Socials/Socials';
 import { postContact } from 'services/contact';
-import { TOutboundLinkText } from 'components/ThemedComponents';
-import FadeInWhenVisable from 'components/FadeInWhenVisable';
+import { TFlexColumn, TOutboundLinkText } from 'components/ThemedComponents';
+import FadeInViewDiv from 'components/FadeInViewDiv';
 import { SPageMain } from '../pages/styles';
 import {
   SContactHeaderContainer,
@@ -24,6 +24,7 @@ import {
   SContactInputMessage,
   SContactButton,
 } from './styles';
+import styled from 'styled-components';
 
 interface FormErrors {
   name: string;
@@ -44,8 +45,8 @@ const Contact = () => {
   return (
     <>
       <PageHeader id="contact">
-        <SContactHeaderContainer>
-          <FadeInWhenVisable>
+        <FadeInViewDiv>
+          <SContactHeaderContainer>
             <SContactHeaderH2 variant="h2">Contact Me</SContactHeaderH2>
             <SContactHeaderText variant="p">
               Interested in hiring me for your project or just want to say hi?
@@ -61,15 +62,20 @@ const Contact = () => {
               Want to get connected? Follow me on the social channels below.
             </SContactHeaderText>
             <Socials />
-          </FadeInWhenVisable>
-        </SContactHeaderContainer>
+          </SContactHeaderContainer>
+        </FadeInViewDiv>
       </PageHeader>
       <SPageMain>
-        <FadeInWhenVisable>
+        <FadeInViewDiv>
           <SContactContainer>
             <SContactH3 variant="h3">Get In Touch</SContactH3>
             <Formik
-              initialValues={{ name: '', email: '', subject: '', message: '' }}
+              initialValues={{
+                name: '',
+                email: '',
+                subject: '',
+                message: '',
+              }}
               validate={values => {
                 const errors: FormErrors = {
                   name: '',
@@ -217,7 +223,7 @@ const Contact = () => {
               )}
             </Formik>
           </SContactContainer>
-        </FadeInWhenVisable>
+        </FadeInViewDiv>
       </SPageMain>
     </>
   );

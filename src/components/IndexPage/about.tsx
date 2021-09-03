@@ -2,13 +2,14 @@ import React from 'react';
 
 import SEO from 'components/Seo';
 import SkillsGroup from 'components/SkillsGroup';
-import { PageMain } from 'components/pages';
+import { PageHeader, PageMain } from 'components/pages';
 import {
   TButtonLink,
   TNextLinkWrapper,
   TLink,
+  TFlexColumn,
 } from 'components/ThemedComponents';
-import FadeInWhenVisable from 'components/FadeInWhenVisable';
+import FadeInViewDiv from 'components/FadeInViewDiv';
 import {
   SAboutHeaderIntro,
   SAboutIntroH1,
@@ -22,43 +23,46 @@ import {
   SAboutContentSubtext,
   SAboutButtonGroup,
   SAboutButtonText,
+  SAboutIntroText,
 } from './styles';
 
 const AboutHeaderContent = () => (
-  <FadeInWhenVisable>
-    <SAboutHeaderIntro id="#">
-      <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
-      <SAboutIntroH5 variant="h5">
-        Full Stack JavaScript Developer
-      </SAboutIntroH5>
-      <SAboutIntroP variant="p">
-        I&apos;m a software engineer specialized in frontend and backend
-        development for complex scalable web apps. Check out my project
-        portfolio and online resume for more!
-      </SAboutIntroP>
-      <SAboutButtonGroup>
-        <TNextLinkWrapper href="#portfolio" Component={TButtonLink}>
-          <SAboutHeaderBtnPrimary size="lg">
-            <SAboutButtonIcon fas icon="angle-double-right" size="lg" />
-            View Portfolio
-          </SAboutHeaderBtnPrimary>
-        </TNextLinkWrapper>
-        <TNextLinkWrapper href="#contact" Component={TButtonLink}>
-          <SAboutHeaderBtnSecondary size="lg">
-            <SAboutButtonText>
+  <SAboutHeaderIntro id="#">
+    <FadeInViewDiv>
+      <TFlexColumn>
+        <SAboutIntroText>
+          <SAboutIntroH1 variant="h1">Richard Henninger</SAboutIntroH1>
+          <SAboutIntroH5 variant="h5">
+            Full Stack JavaScript Developer
+          </SAboutIntroH5>
+          <SAboutIntroP variant="p">
+            I&apos;m a software engineer specialized in frontend and backend
+            development for complex scalable web apps. Check out my project
+            portfolio and online resume for more!
+          </SAboutIntroP>
+        </SAboutIntroText>
+        <SAboutButtonGroup>
+          <TNextLinkWrapper href="#portfolio" Component={TButtonLink}>
+            <SAboutHeaderBtnPrimary size="lg">
+              <SAboutButtonIcon fas icon="angle-double-right" size="lg" />
+              <SAboutButtonText>View Portfolio</SAboutButtonText>
+            </SAboutHeaderBtnPrimary>
+          </TNextLinkWrapper>
+          <TNextLinkWrapper href="#contact" Component={TButtonLink}>
+            <SAboutHeaderBtnSecondary size="lg">
               <SAboutButtonIcon far icon="paper-plane" size="lg" />
-              Hire Me
-            </SAboutButtonText>
-          </SAboutHeaderBtnSecondary>
-        </TNextLinkWrapper>
-      </SAboutButtonGroup>
-    </SAboutHeaderIntro>
-  </FadeInWhenVisable>
+              <SAboutButtonText>Hire Me</SAboutButtonText>
+            </SAboutHeaderBtnSecondary>
+          </TNextLinkWrapper>
+        </SAboutButtonGroup>
+      </TFlexColumn>
+    </FadeInViewDiv>
+  </SAboutHeaderIntro>
 );
 
 const AboutContent = () => (
   <>
-    <FadeInWhenVisable>
+    <FadeInViewDiv>
       <SAboutContentText>
         <SAboutContentTitle variant="h2">What I Do</SAboutContentTitle>
         <SAboutContentSubtext variant="p">
@@ -75,10 +79,12 @@ const AboutContent = () => (
           .
         </SAboutContentSubtext>
       </SAboutContentText>
-    </FadeInWhenVisable>
-    <FadeInWhenVisable>
-      <SkillsGroup />
-    </FadeInWhenVisable>
+    </FadeInViewDiv>
+    <FadeInViewDiv>
+      <TFlexColumn>
+        <SkillsGroup />
+      </TFlexColumn>
+    </FadeInViewDiv>
   </>
 );
 

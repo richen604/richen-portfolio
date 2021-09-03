@@ -3,21 +3,15 @@ import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
-const FadeInWhenVisableWrapper = styled(motion.div)`
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const FadeInViewDivWrapper = styled(motion.div)``;
 
-interface IFadeInWhenVisableProps {
+interface IFadeInViewDivProps {
   children: React.ReactNode;
 }
 
-const FadeInWhenVisable: React.FunctionComponent<IFadeInWhenVisableProps> = ({
+const FadeOnViewDiv: React.FunctionComponent<IFadeInViewDivProps> = ({
   children,
-}: IFadeInWhenVisableProps) => {
+}: IFadeInViewDivProps) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -32,7 +26,7 @@ const FadeInWhenVisable: React.FunctionComponent<IFadeInWhenVisableProps> = ({
   }, [controls, inView]);
 
   return (
-    <FadeInWhenVisableWrapper
+    <FadeInViewDivWrapper
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -43,8 +37,8 @@ const FadeInWhenVisable: React.FunctionComponent<IFadeInWhenVisableProps> = ({
       }}
     >
       {children}
-    </FadeInWhenVisableWrapper>
+    </FadeInViewDivWrapper>
   );
 };
 
-export default FadeInWhenVisable;
+export default FadeOnViewDiv;
