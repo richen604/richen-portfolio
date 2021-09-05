@@ -1,4 +1,4 @@
-import { DefaultTheme, DefaultThemeEnum } from 'styled-components';
+import { DefaultTheme } from 'styled-components';
 
 export enum THEME {
   LIGHT,
@@ -33,8 +33,6 @@ export const defaultStyling = {
     outerComponentMargins: '20px',
   },
 };
-
-console.log('IMPORTANT, ENUM', DefaultThemeEnum);
 
 export const lightDefaultTheme: DefaultTheme = {
   name: THEME.LIGHT,

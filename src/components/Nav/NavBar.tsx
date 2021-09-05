@@ -7,7 +7,6 @@ import {
   SNavBarBrand,
   SNavBarContainer,
   SNavbarLeftContainer,
-  SNavBarName,
   SNavBarRightContainer,
   SNavContainer,
   SNavContentContainer,

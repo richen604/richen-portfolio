@@ -8,13 +8,13 @@ import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Image from 'next/image';
 import { TTextPrimary } from 'components/Typography';
 import { THEME } from 'theme';
+import { SPageHeaderContainer } from 'components/pages/styles';
 import {
   TButtonPrimary,
   TButtonSecondary,
   TPageMain,
 } from '../ThemedComponents';
 import { PageMain } from '../pages';
-import { SPageHeaderContainer } from 'components/pages/styles';
 
 // ! Index Page Styled Components
 
@@ -84,6 +84,13 @@ export const SAboutContentText = styled(MDBContainer)`
   padding: 50px 90px;
   padding-bottom: 20px;
   margin-top: 100px;
+  @media only screen and (max-width: 1000px) {
+    padding: 50px 30px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 `;
 
 export const SAboutContentTitle = styled(TTextPrimary)`
@@ -98,7 +105,7 @@ export const SAboutContentTitle = styled(TTextPrimary)`
 
   @media only screen and (max-width: 1000px) {
     font-size: 2rem;
-    margin: 10px 15px;
+    margin: 0px 15px;
   }
 `;
 
@@ -109,6 +116,10 @@ export const SAboutContentSubtext = styled(TTextPrimary)`
   font-size: clamp(1rem, 0.5vw, 2.5rem);
   line-height: 32px;
   font-weight: 400;
+  @media only screen and (max-width: 1000px) {
+    line-height: 1.5;
+    margin: 25px 10px 0px 10px;
+  }
 `;
 
 export const SAboutFooter = styled.footer`
@@ -241,11 +252,15 @@ export const SAboutButtonText = styled(MDBTypography)`
 // ! Portfolio Page Styled Components
 
 export const SPortfolioIntro = styled(MDBContainer)`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  padding: 50px 90px;
+  padding-bottom: 20px;
+  @media only screen and (max-width: 1000px) {
+    padding: 50px 30px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 `;
 
 export const SPortfolioIntroH2 = styled(TTextPrimary)`
@@ -260,7 +275,7 @@ export const SPortfolioIntroH2 = styled(TTextPrimary)`
 
   @media only screen and (max-width: 1000px) {
     font-size: 2rem;
-    margin: 10px 15px;
+    margin: 0px 15px;
   }
 `;
 
@@ -271,15 +286,24 @@ export const SPortfolioIntroText = styled(TTextPrimary)`
   font-size: clamp(1rem, 0.5vw, 2.5rem);
   line-height: 32px;
   font-weight: 400;
+  @media only screen and (max-width: 1000px) {
+    line-height: 1.5;
+    margin: 25px 10px 0px 10px;
+  }
 `;
 
 // ! Resume Page Styled Components
 
 export const SResumeHeaderContainer = styled(SPageHeaderContainer)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 50px 90px;
+  padding-bottom: 20px;
+  @media only screen and (max-width: 1000px) {
+    padding: 50px 30px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 `;
 
 export const SResumeHeaderH2 = styled(TTextPrimary)`
@@ -306,6 +330,7 @@ export const SResumeContainer = styled(MDBContainer)`
   min-width: 300px;
   max-width: 1000px;
   margin-bottom: 200px;
+  margin-top: 50px;
 `;
 
 export const SResume = styled(Image)``;
@@ -317,10 +342,15 @@ export const SPageMain = styled(PageMain)`
 `;
 
 export const SContactHeaderContainer = styled(MDBContainer)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 50px 90px;
+  padding-bottom: 20px;
+  @media only screen and (max-width: 1000px) {
+    padding: 50px 30px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 `;
 
 export const SContactHeaderH2 = styled(TTextPrimary)`
@@ -328,9 +358,10 @@ export const SContactHeaderH2 = styled(TTextPrimary)`
   font-family: 'Roboto', sans-serif;
   line-height: 1.4;
   font-weight: 700;
+  width: 100%;
   @media only screen and (min-width: 1000px) {
     font-size: 3rem;
-    margin: 5px 13px;
+    margin: 5px 5px;
   }
 
   @media only screen and (max-width: 1000px) {
@@ -349,13 +380,13 @@ export const SContactHeaderText = styled(TTextPrimary)`
 `;
 
 export const SContactContainer = styled(TPageMain)`
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
 
 export const SContactH3 = styled(TTextPrimary)`

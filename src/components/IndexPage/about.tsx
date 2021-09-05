@@ -84,11 +84,9 @@ const AboutContent = () => (
         </SAboutContentSubtext>
       </SAboutContentText>
     </FadeInViewDiv>
-    <FadeInViewDiv>
-      <TFlexColumn>
-        <SkillsGroup />
-      </TFlexColumn>
-    </FadeInViewDiv>
+    <TFlexColumn>
+      <SkillsGroup />
+    </TFlexColumn>
   </>
 );
 

@@ -95,3 +95,16 @@ export const generateHSLShades = (hsl: {
     darkest: `hsl(${h}, ${s}, ${l * 0.8})`,
   };
 };
+
+// get complementary color from hex return hex
+export const getComplementaryColor = (hex: string): string => {
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+  return `#${
+    // eslint-disable-next-line no-bitwise
+    ((0xffffff ^ (r << 16)) | (0xffffff ^ (g << 8)) | (0xffffff ^ b)).toString(
+      16
+    )
+  }`;
+};

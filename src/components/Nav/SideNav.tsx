@@ -10,7 +10,6 @@ import {
   SHireMeButton,
   SNavDivider,
   SNavFooter,
-  SNavIntroText,
   SNavLinkContainer,
   SNavProfileContainer,
   SNavLinkContainerLink,

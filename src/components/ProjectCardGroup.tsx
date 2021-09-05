@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MDBContainer } from 'mdb-react-ui-kit';
 import Image from 'next/image';
+import { THEME } from 'theme';
 import {
   TCard,
   TCardTitle,
@@ -18,6 +19,7 @@ import anecdotesImage from '../images/anecdotes-mockup.svg';
 import phonebookImage from '../images/phonebook-mockup.svg';
 import eskobotImage from '../images/discord-mockup.svg';
 import richendevImage from '../images/richen-image.png';
+import FadeOnViewDiv from './FadeInViewDiv';
 
 const projectCardData = [
   {
@@ -94,6 +96,7 @@ const SProjectContainer = styled(MDBContainer)`
   flex-wrap: wrap;
   padding: 50px;
   max-width: 100%;
+  min-width: 200px;
 `;
 
 const SCard = styled(TCard)`
@@ -101,42 +104,114 @@ const SCard = styled(TCard)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  margin: 15px;
-  max-width: 400px;
-  min-width: 330px;
+  max-width: 800px;
+  min-width: 200px;
+  margin: 20px 0;
   height: auto;
   border: none;
   border-radius: 10px;
+  background-color: ${props => props.theme.palette.common.pageBackground};
+
   @media only screen and (max-width: 1251px) {
     max-width: 1000px;
   }
 `;
 
 const SCardTitleContainer = styled.div`
-  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 10px 0 -20px 0;
+  margin-bottom: 25px;
 `;
 
 const SCardTitle = styled(TCardTitle)`
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat Thin', sans-serif;
   font-size: 1.5rem;
-  line-height: 1.2;
-  font-weight: 700;
-  margin: 0 15px;
+  letter-spacing: 0.1rem;
+  line-height: 35px;
+  font-weight: 500;
+  margin: 15px 0;
+  margin-left: 20px;
+  height: 40px;
+  color: #d63384;
+  text-align: left;
+  width: max-content;
+`;
+
+const SCardTitleDivider = styled.div`
+  border-top: 1px solid #d63384;
+  margin: 0 10px;
+  padding-bottom: 1px;
+
+  @media only screen and (max-width: 1000px) {
+    width: 55%;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    width: 75%;
+  }
+`;
+
+const SCardButtonGroup = styled.div`
+  display: flex;
+  align-self: center;
+  width: 100%;
+  margin: 25px 0 0 0;
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 500px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+  }
 `;
 
 const SCardButton = styled(TButtonPrimary)`
-  min-height: 30px;
-  text-align: center;
-  margin: 15px 5px;
-  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  border-radius: 15px;
+  &:hover {
+    border-radius: 0;
+    scale: 1.03;
+  }
+  ${props => {
+    switch (props.theme.name) {
+      case THEME.MONOCHROMATIC:
+        return `background-color: ${props.theme.palette.common.white} !important; border-color: ${props.theme.palette.common.white} !important; color: ${props.theme.palette.common.black} !important;`;
+      case THEME.DARK:
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
+      case THEME.LIGHT:
+      default:
+        return `background-color: ${props.theme.palette.primary.darker} !important; border-color: ${props.theme.palette.primary.darker} !important; color: ${props.theme.palette.common.white} !important;`;
+    }
+  }}
+  &:hover {
+    ${props => {
+      switch (props.theme.name) {
+        case THEME.MONOCHROMATIC:
+          return `color: ${props.theme.palette.common.black} !important; background-color: #b8b8b8 !important; border-color: #b8b8b8 !important;`;
+        case THEME.DARK:
+          return `background-color: ${props.theme.palette.primary.main} !important; border-color: ${props.theme.palette.primary.main} !important; color: ${props.theme.palette.primary.darkest} !important;`;
+        case THEME.LIGHT:
+        default:
+          return `background-color: ${props.theme.palette.primary.darkest} !important; border-color: ${props.theme.palette.primary.darkest} !important; color: ${props.theme.palette.common.white} !important;`;
+      }
+    }}
+  }
 `;
 
 const SCardBody = styled(TCardBody)`
@@ -144,57 +219,74 @@ const SCardBody = styled(TCardBody)`
 `;
 
 const SCardText = styled(TCardText)`
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.875rem;
-  line-height: 21px;
+  margin: 25px 16px;
+  padding-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 0.5vw, 2.5rem);
+  line-height: 32px;
   font-weight: 400;
+  @media only screen and (max-width: 1000px) {
+    line-height: 1.5;
+    margin: 25px 10px 0px 10px;
+  }
+`;
+
+const SCardImg = styled.div`
+  min-width: 200px;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  display: block;
 `;
 
 const ProjectCardGroup = () => (
   <SProjectContainer>
     {projectCardData.map(project => (
-      <SCard key={project.title}>
-        {project.live ? (
-          <TOutboundLinkText
-            target="_blank"
-            eventLabel={`outbound-${project.alt}`}
-            to={project.live}
-          >
+      <FadeOnViewDiv>
+        <SCard key={project.title}>
+          <SCardTitleContainer>
+            <SCardTitle>{project?.title}</SCardTitle>
+            <SCardTitleDivider />
+          </SCardTitleContainer>
+          {project.live ? (
+            <TOutboundLinkText
+              target="_blank"
+              eventLabel={`outbound-${project.alt}`}
+              to={project.live}
+            >
+              <SCardImg>
+                <Image
+                  quality={100}
+                  layout="intrinsic"
+                  src={project?.src}
+                  alt={project?.alt}
+                />
+              </SCardImg>
+            </TOutboundLinkText>
+          ) : (
             <Image
               quality={100}
-              width={500}
-              height={300}
-              objectFit="contain"
+              width={800}
+              height={350}
               src={project?.src}
               alt={project?.alt}
             />
-          </TOutboundLinkText>
-        ) : (
-          <Image
-            quality={100}
-            objectFit="contain"
-            width={500}
-            height={300}
-            src={project?.src}
-            alt={project?.alt}
-          />
-        )}
+          )}
 
-        <SCardBody>
-          <SCardTitleContainer>
-            <SCardTitle>{project?.title}</SCardTitle>
-            {project.live ? (
-              <>
-                <SCardButton href={project?.live}>Live</SCardButton>
-              </>
-            ) : null}
-            <SCardButton href={project.github}>Github</SCardButton>
-          </SCardTitleContainer>
-
-          <br />
-          <SCardText>{project?.text}</SCardText>
-        </SCardBody>
-      </SCard>
+          <SCardBody>
+            <SCardButtonGroup>
+              {project.live ? (
+                <>
+                  <SCardButton href={project?.live}>Live</SCardButton>
+                </>
+              ) : null}
+              <SCardButton href={project.github}>Github</SCardButton>
+            </SCardButtonGroup>
+            <br />
+            <SCardText>{project?.text}</SCardText>
+          </SCardBody>
+        </SCard>
+      </FadeOnViewDiv>
     ))}
   </SProjectContainer>
 );

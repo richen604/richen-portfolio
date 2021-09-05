@@ -10,7 +10,6 @@ import {
   MDBCardTitle,
   MDBNavbar,
   MDBIcon,
-  MDBContainer,
 } from 'mdb-react-ui-kit';
 import ReactGA from 'react-ga';
 import styled, {

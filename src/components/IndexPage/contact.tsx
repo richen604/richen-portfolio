@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import PageHeader from 'components/pages/PageHeader';
 import Socials from 'components/Socials/Socials';
 import { postContact } from 'services/contact';
-import { TFlexColumn, TOutboundLinkText } from 'components/ThemedComponents';
+import { TOutboundLinkText } from 'components/ThemedComponents';
 import FadeInViewDiv from 'components/FadeInViewDiv';
 import { SPageMain } from '../pages/styles';
 import {
@@ -24,7 +24,6 @@ import {
   SContactInputMessage,
   SContactButton,
 } from './styles';
-import styled from 'styled-components';
 
 interface FormErrors {
   name: string;

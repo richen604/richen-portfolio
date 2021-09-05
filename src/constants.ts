@@ -6,7 +6,7 @@ export const siteMetadata = {
     name: 'Richard Henninger',
     email: 'richard@richen.dev',
   },
-  image: `/static/richen-image.png`,
+  image: `/images/richen-image.png`,
   socials: {
     twitter: 'https://twitter.com/_richenn',
     linkedin: 'https://www.linkedin.com/in/richenn/',

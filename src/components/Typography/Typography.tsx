@@ -1,9 +1,5 @@
 import React from 'react';
 
-interface Props {}
-
-const Typography = (props: Props) => {
-  return <div></div>;
-};
+const Typography = () => <div />;
 
 export default Typography;

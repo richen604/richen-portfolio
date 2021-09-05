@@ -44,9 +44,7 @@ function Portfolio() {
         </FadeInViewDiv>
       </PageHeader>
       <PageMain>
-        <FadeInViewDiv>
-          <ProjectCardGroup />
-        </FadeInViewDiv>
+        <ProjectCardGroup />
       </PageMain>
     </>
   );
