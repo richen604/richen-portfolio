@@ -2,7 +2,7 @@
 
 Visit a production view of the website here at [richen.dev](https://www.richen.dev/)
 
-A portfolio with a project list, resume, and validated contact form. This application was built with the using [NexTJS](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/en/), [ReactJS](https://reactjs.org/), [MongoDB](https://www.mongodb.com/), [ReduxJS](https://redux.js.org/), [ExpressJS](https://expressjs.com/) and also includes the following frameworks:
+A portfolio with a project list, resume, and validated contact form. This application was built with the using [NextJS](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [NodeJS](https://nodejs.org/en/), [ReactJS](https://reactjs.org/), [MongoDB](https://www.mongodb.com/), [ReduxJS](https://redux.js.org/), [ExpressJS](https://expressjs.com/) and also includes the following frameworks:
 
 - [mdb-react-ui-kit](https://www.npmjs.com/package/mdb-react-ui-kit) React 17 & Bootstrap 5 & Material Design 2.0 UI Kit
 - [formik](https://formik.org/docs/overview) for handling and displaying forms
