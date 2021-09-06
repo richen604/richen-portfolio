@@ -294,7 +294,7 @@ export const SPortfolioIntroText = styled(TTextPrimary)`
 
 // ! Resume Page Styled Components
 
-export const SResumeHeaderContainer = styled(SPageHeaderContainer)`
+export const SResumeHeaderContainer = styled(MDBContainer)`
   padding: 50px 90px;
   padding-bottom: 20px;
   @media only screen and (max-width: 1000px) {
