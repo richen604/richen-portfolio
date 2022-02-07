@@ -1,20 +1,20 @@
+import { SPageHeaderContainer } from 'components/pages/styles';
+import { TTextPrimary } from 'components/Typography';
 import {
   MDBContainer,
+  MDBIcon,
   MDBInput,
   MDBTypography,
-  MDBIcon,
 } from 'mdb-react-ui-kit';
-import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Image from 'next/image';
-import { TTextPrimary } from 'components/Typography';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import { THEME } from 'theme';
-import { SPageHeaderContainer } from 'components/pages/styles';
+import { PageMain } from '../pages';
 import {
   TButtonPrimary,
   TButtonSecondary,
   TPageMain,
 } from '../ThemedComponents';
-import { PageMain } from '../pages';
 
 // ! Index Page Styled Components
 
@@ -132,7 +132,7 @@ export const SAboutFooter = styled.footer`
 `;
 
 export const SAboutFooterText = styled(TTextPrimary)`
-  margin-right: 8px;
+  margin: 0 8px;
 `;
 
 export const SAboutButtonGroup = styled.div`
@@ -342,6 +342,10 @@ export const SPageMain = styled(PageMain)`
 `;
 
 export const SContactHeaderContainer = styled(MDBContainer)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 50px 90px;
   padding-bottom: 20px;
   @media only screen and (max-width: 1000px) {

@@ -7,6 +7,10 @@ export const SPageMain = styled(TPageMain)`
 `;
 
 export const SPageHeaderContainer = styled.div<ThemeProps<DefaultTheme>>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: max-content;
   padding: 10px;
   background-color: ${props => props.theme.palette.common.pageBackground};

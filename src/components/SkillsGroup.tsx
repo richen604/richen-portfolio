@@ -1,34 +1,26 @@
-import React from 'react';
 import { MDBContainer } from 'mdb-react-ui-kit';
-import styled from 'styled-components';
 import Image from 'next/image';
-import { TCard, TCardTitle, TCardBody } from './ThemedComponents';
-
-import node from '../images/icons8-nodejs.svg';
-import mongo from '../images/icons8-mongodb.svg';
+import React from 'react';
+import styled from 'styled-components';
+import cypress from '../images/cypress-logo.svg';
+import adobexd from '../images/icons8-adobe-xd.svg';
+import apollo from '../images/icons8-apollo.svg';
+import bash from '../images/icons8-bash.svg';
+import css from '../images/icons8-css3.svg';
+import github from '../images/icons8-github.svg';
 import graphql from '../images/icons8-graphql.svg';
-import typescript from '../images/icons8-typescript.svg';
-
+import html from '../images/icons8-html-5.svg';
+import javascript from '../images/icons8-javascript.svg';
+import mongo from '../images/icons8-mongodb.svg';
+import node from '../images/icons8-nodejs.svg';
+import npm from '../images/icons8-npm.svg';
+import reactnative from '../images/icons8-react-native.svg';
 import react from '../images/icons8-react.svg';
 import redux from '../images/icons8-redux.svg';
-import apollo from '../images/icons8-apollo.svg';
-
-import cypress from '../images/cypress-logo.svg';
+import typescript from '../images/icons8-typescript.svg';
 import jest from '../images/jest-logo.svg';
 import reacttesting from '../images/react-testing-library.png';
-
-import github from '../images/icons8-github.svg';
-
-import reactnative from '../images/icons8-react-native.svg';
-
-import npm from '../images/icons8-npm.svg';
-import bash from '../images/icons8-bash.svg';
-
-import html from '../images/icons8-html-5.svg';
-import css from '../images/icons8-css3.svg';
-import javascript from '../images/icons8-javascript.svg';
-import adobexd from '../images/icons8-adobe-xd.svg';
-import FadeOnViewDiv from './FadeInViewDiv';
+import { TCard, TCardBody, TCardTitle } from './ThemedComponents';
 
 const skillsCardData = [
   {
@@ -106,18 +98,18 @@ const SCard = styled(TCard)`
   height: 300px;
   margin: 10px;
   padding: 20px;
-  border: 1px solid #d63384;
+  border: 1.2px solid #d63384;
 `;
 
 const SCardTitle = styled(TCardTitle)`
-  font-family: 'Montserrat Thin', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   line-height: 18px;
   font-weight: 500;
   margin: 8px 0px;
   height: 40px;
-  color: #d63384;
+  color: #d63384 !important;
 `;
 
 const SCardImageContainer = styled(MDBContainer)`
@@ -147,23 +139,21 @@ const SCardText = styled(TCardBody)`
 const SkillsGroup: React.FC = () => (
   <SCardGroup>
     {skillsCardData.map(skill => (
-      <FadeOnViewDiv>
-        <SCard key={skill.title}>
-          <SCardTitle>{skill?.title}</SCardTitle>
-          <SCardText>{skill?.text}</SCardText>
-          <SCardImageContainer>
-            {skill.icons.map(icon => (
-              <SCardImage
-                key={icon.alt}
-                width={30}
-                height={30}
-                src={icon.src}
-                alt={icon.alt}
-              />
-            ))}
-          </SCardImageContainer>
-        </SCard>
-      </FadeOnViewDiv>
+      <SCard key={skill.title}>
+        <SCardTitle>{skill?.title}</SCardTitle>
+        <SCardText>{skill?.text}</SCardText>
+        <SCardImageContainer>
+          {skill.icons.map(icon => (
+            <SCardImage
+              key={icon.alt}
+              width={30}
+              height={30}
+              src={icon.src}
+              alt={icon.alt}
+            />
+          ))}
+        </SCardImageContainer>
+      </SCard>
     ))}
   </SCardGroup>
 );

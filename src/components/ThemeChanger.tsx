@@ -1,12 +1,10 @@
+import { MDBBtnGroup, MDBContainer } from 'mdb-react-ui-kit';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { MDBContainer, MDBBtnGroup } from 'mdb-react-ui-kit';
 import styled from 'styled-components';
 import { THEME } from 'theme';
 import { changeTheme } from '../reducers/themeReducer';
 import { RootState } from '../store';
-
-import { TTextSecondary } from './Typography';
 import { TButtonPrimary } from './ThemedComponents';
 
 const SThemeChanger = styled(MDBContainer)<{ isnav: boolean }>`
@@ -58,14 +56,6 @@ const SButton = styled(TButtonPrimary)`
   }}
 `;
 
-const SThemeText = styled(TTextSecondary)`
-  font-style: italic;
-
-  @media only screen and (min-width: 1000px) {
-    margin-bottom: 5px;
-  }
-`;
-
 interface ThemeChangerProps {
   isnav?: boolean;
 }
@@ -82,9 +72,6 @@ const ThemeChanger: React.FC<ThemeChangerProps> = ({
 
   return (
     <SThemeChanger isnav={isnav}>
-      {isnav && (
-        <SThemeText variant="p">pssst... select a theme here</SThemeText>
-      )}
       <MDBBtnGroup>
         <SButton
           active={theme.name === THEME.LIGHT}

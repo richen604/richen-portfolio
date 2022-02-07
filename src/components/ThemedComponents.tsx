@@ -1,25 +1,24 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
 import {
   MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardText,
   MDBCardTitle,
-  MDBNavbar,
   MDBIcon,
+  MDBNavbar,
 } from 'mdb-react-ui-kit';
-import ReactGA from 'react-ga';
-import styled, {
-  ThemeProps,
-  DefaultTheme,
-  createGlobalStyle,
-} from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import React from 'react';
+import ReactGA from 'react-ga';
+import styled, {
+  createGlobalStyle,
+  DefaultTheme,
+  ThemeProps,
+} from 'styled-components';
 import { THEME } from 'theme';
 
 // Common Components

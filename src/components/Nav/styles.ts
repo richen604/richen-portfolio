@@ -1,10 +1,10 @@
-import styled from 'styled-components';
 import {
   MDBCollapse,
-  MDBNavbarNav,
-  MDBNavbarItem,
   MDBIcon,
+  MDBNavbarItem,
+  MDBNavbarNav,
 } from 'mdb-react-ui-kit';
+import styled from 'styled-components';
 import { THEME } from 'theme';
 import {
   THireMeButton,
@@ -73,7 +73,7 @@ export const SNavProfileContainer = styled.div`
   @media only screen and (min-width: 1000px) {
   }
   @media only screen and (max-width: 1000px) {
-    margin-top: 35px;
+    margin-top: 10px;
   }
 `;
 
@@ -207,7 +207,6 @@ export const SNavContainer = styled(TNavContainer)`
   display: flex;
   width: 100%;
   height: 100%;
-  align-items: center;
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     flex-direction: row;
@@ -255,7 +254,7 @@ export const SNavToggle = styled(TNavToggle)`
   }
 `;
 
-export const SNavBarContainer = styled(MDBCollapse)`
+export const SNavBarContainer = styled(MDBCollapse)<{ show: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -1,23 +1,22 @@
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
+import portrait from '../../images/display-portrait.png';
 import { Socials } from '../Socials';
 import ThemeChanger from '../ThemeChanger';
 import { TNavLink, TNextLinkWrapper } from '../ThemedComponents';
 import {
-  SNavContentContainer,
-  SNavBrand,
   SHireMeButton,
+  SNavBrand,
+  SNavContentContainer,
   SNavDivider,
-  SNavFooter,
-  SNavLinkContainer,
-  SNavProfileContainer,
-  SNavLinkContainerLink,
   SNavIcon,
+  SNavLinkContainer,
+  SNavLinkContainerLink,
   SNavLinkGrid,
+  SNavProfileContainer,
   SSideNavCollapsedLinks,
 } from './styles';
-import portrait from '../../images/display-portrait.png';
 import { INav } from './types';
 
 const SCollapsedDivider = styled(SNavDivider)`
@@ -112,8 +111,6 @@ const SideNav: React.FunctionComponent<INav> = ({ sidebarCollapsed }: INav) => {
 
       <SNavDivider />
       <ThemeChanger isnav />
-
-      <SNavFooter>© {new Date().getFullYear()} Richard Henninger</SNavFooter>
     </>
   );
 };

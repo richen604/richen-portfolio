@@ -1,27 +1,43 @@
-import React from 'react';
-import styled from 'styled-components';
 import { MDBContainer } from 'mdb-react-ui-kit';
 import Image from 'next/image';
+import React from 'react';
+import styled from 'styled-components';
 import { THEME } from 'theme';
+import anecdotesImage from '../images/anecdotes-mockup.svg';
+import bloglistImage from '../images/bloglist-mockup.svg';
+import eskobotImage from '../images/discord-mockup.svg';
+import inspireTo from '../images/hero_product_display_dark.svg';
+import libraryImage from '../images/library-mockup.svg';
+import patientorImage from '../images/patientor-mockup.svg';
+import phonebookImage from '../images/phonebook-mockup.svg';
+import raterepoImage from '../images/raterepo-mockup.svg';
+import richendevImage from '../images/richen-image.png';
 import {
-  TCard,
-  TCardTitle,
   TButtonPrimary,
-  TCardText,
+  TCard,
   TCardBody,
+  TCardText,
+  TCardTitle,
   TOutboundLinkText,
 } from './ThemedComponents';
-import bloglistImage from '../images/bloglist-mockup.svg';
-import libraryImage from '../images/library-mockup.svg';
-import raterepoImage from '../images/raterepo-mockup.svg';
-import patientorImage from '../images/patientor-mockup.svg';
-import anecdotesImage from '../images/anecdotes-mockup.svg';
-import phonebookImage from '../images/phonebook-mockup.svg';
-import eskobotImage from '../images/discord-mockup.svg';
-import richendevImage from '../images/richen-image.png';
-import FadeOnViewDiv from './FadeInViewDiv';
 
 const projectCardData = [
+  {
+    title: 'InspireTo',
+    src: inspireTo,
+    alt: 'InspireTo App Mockup',
+    text: 'InspireTo is a production cross platform desktop application that allows users to read books, gather selections, and leverage their knowledge to create their own content in our markdown editor. Currently in a closed beta, contact me for more information.',
+    live: 'https://www.inspireto.app/',
+    github: undefined,
+  },
+  {
+    title: 'richen.dev',
+    src: richendevImage,
+    alt: 'richen.dev Mockup',
+    text: 'My portfolio website built with NextJS, ReactJS, and NodeJS. A static website outlining client and server Form Validation, communicating with Express servers, Sanitization, and Validation.',
+    live: '/',
+    github: 'https://github.com/richen604/richen-portfolio',
+  },
   {
     title: 'BlogList',
     src: bloglistImage,
@@ -79,14 +95,6 @@ const projectCardData = [
     live: null,
     github: 'https://github.com/richen604/Eskobot',
   },
-  {
-    title: 'richen.dev',
-    src: richendevImage,
-    alt: 'richen.dev Mockup',
-    text: 'My portfolio website built with GatsbyJS, ReactJS, NodeJS, and GraphQL. A static website outlining client and server Form Validation, communicating with Express servers, Sanitization, and Validation.',
-    live: '/',
-    github: 'https://github.com/richen604/richen-portfolio',
-  },
 ];
 
 const SProjectContainer = styled(MDBContainer)`
@@ -128,11 +136,11 @@ const SCardTitleContainer = styled.div`
 `;
 
 const SCardTitle = styled(TCardTitle)`
-  font-family: 'Montserrat Thin', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   line-height: 35px;
-  font-weight: 500;
+  font-weight: bold !important;
   margin: 15px 0;
   margin-left: 20px;
   height: 40px;
@@ -242,51 +250,53 @@ const SCardImg = styled.div`
 const ProjectCardGroup = () => (
   <SProjectContainer>
     {projectCardData.map(project => (
-      <FadeOnViewDiv>
-        <SCard key={project.title}>
-          <SCardTitleContainer>
-            <SCardTitle>{project?.title}</SCardTitle>
-            <SCardTitleDivider />
-          </SCardTitleContainer>
-          {project.live ? (
-            <TOutboundLinkText
-              target="_blank"
-              eventLabel={`outbound-${project.alt}`}
-              to={project.live}
-            >
-              <SCardImg>
-                <Image
-                  quality={100}
-                  layout="intrinsic"
-                  src={project?.src}
-                  alt={project?.alt}
-                />
-              </SCardImg>
-            </TOutboundLinkText>
-          ) : (
-            <Image
-              quality={100}
-              width={800}
-              height={350}
-              src={project?.src}
-              alt={project?.alt}
-            />
-          )}
+      <SCard key={project.title}>
+        <SCardTitleContainer>
+          <SCardTitle>{project?.title}</SCardTitle>
+          <SCardTitleDivider />
+        </SCardTitleContainer>
+        {project.live ? (
+          <TOutboundLinkText
+            target="_blank"
+            eventLabel={`outbound-${project.alt}`}
+            to={project.live}
+          >
+            <SCardImg>
+              <Image
+                quality={100}
+                layout="intrinsic"
+                src={project?.src}
+                alt={project?.alt}
+              />
+            </SCardImg>
+          </TOutboundLinkText>
+        ) : (
+          <Image
+            quality={100}
+            width={800}
+            height={350}
+            src={project?.src}
+            alt={project?.alt}
+          />
+        )}
 
-          <SCardBody>
-            <SCardButtonGroup>
-              {project.live ? (
-                <>
-                  <SCardButton href={project?.live}>Live</SCardButton>
-                </>
-              ) : null}
-              <SCardButton href={project.github}>Github</SCardButton>
-            </SCardButtonGroup>
-            <br />
-            <SCardText>{project?.text}</SCardText>
-          </SCardBody>
-        </SCard>
-      </FadeOnViewDiv>
+        <SCardBody>
+          <SCardButtonGroup>
+            {project.live ? (
+              <>
+                <SCardButton href={project?.live}>Live</SCardButton>
+              </>
+            ) : null}
+            {project.github ? (
+              <>
+                <SCardButton href={project?.github}>Github</SCardButton>
+              </>
+            ) : null}
+          </SCardButtonGroup>
+          <br />
+          <SCardText>{project?.text}</SCardText>
+        </SCardBody>
+      </SCard>
     ))}
   </SProjectContainer>
 );
