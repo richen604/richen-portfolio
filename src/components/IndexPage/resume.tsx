@@ -28,7 +28,9 @@ function Resume() {
       </PageHeader>
       <PageMain>
         <SResumeContainer>
-          <SResume src={resume} alt="Richard Henninger Resume" />
+          <a href="/resume.pdf" download>
+            <SResume src={resume} alt="Richard Henninger Resume" />
+          </a>
         </SResumeContainer>
 
         <SAboutFooter>
