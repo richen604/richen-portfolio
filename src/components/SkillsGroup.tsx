@@ -98,18 +98,18 @@ const SCard = styled(TCard)`
   height: 300px;
   margin: 10px;
   padding: 20px;
-  border: 1px solid #d63384;
+  border: 1.2px solid #d63384;
 `;
 
 const SCardTitle = styled(TCardTitle)`
-  font-family: 'Montserrat Thin', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.1rem;
   line-height: 18px;
   font-weight: 500;
   margin: 8px 0px;
   height: 40px;
-  color: #d63384;
+  color: #d63384 !important;
 `;
 
 const SCardImageContainer = styled(MDBContainer)`

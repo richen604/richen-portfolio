@@ -2,8 +2,9 @@
   "name": "richen-portfolio",
   "private": true,
   "description": "",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "author": "Richard Henninger",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

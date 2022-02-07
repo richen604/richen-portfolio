@@ -127,11 +127,11 @@ const SCardTitleContainer = styled.div`
 `;
 
 const SCardTitle = styled(TCardTitle)`
-  font-family: 'Montserrat Thin', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   line-height: 35px;
-  font-weight: 500;
+  font-weight: bold !important;
   margin: 15px 0;
   margin-left: 20px;
   height: 40px;
