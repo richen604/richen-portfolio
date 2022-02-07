@@ -6,6 +6,7 @@ import { THEME } from 'theme';
 import anecdotesImage from '../images/anecdotes-mockup.svg';
 import bloglistImage from '../images/bloglist-mockup.svg';
 import eskobotImage from '../images/discord-mockup.svg';
+import inspireTo from '../images/hero_product_display_dark.svg';
 import libraryImage from '../images/library-mockup.svg';
 import patientorImage from '../images/patientor-mockup.svg';
 import phonebookImage from '../images/phonebook-mockup.svg';
@@ -21,6 +22,22 @@ import {
 } from './ThemedComponents';
 
 const projectCardData = [
+  {
+    title: 'InspireTo',
+    src: inspireTo,
+    alt: 'InspireTo App Mockup',
+    text: 'InspireTo is a production cross platform desktop application that allows users to read books, gather selections, and leverage their knowledge to create their own content in our markdown editor. Currently in a closed beta, contact me for more information.',
+    live: 'https://www.inspireto.app/',
+    github: undefined,
+  },
+  {
+    title: 'richen.dev',
+    src: richendevImage,
+    alt: 'richen.dev Mockup',
+    text: 'My portfolio website built with NextJS, ReactJS, and NodeJS. A static website outlining client and server Form Validation, communicating with Express servers, Sanitization, and Validation.',
+    live: '/',
+    github: 'https://github.com/richen604/richen-portfolio',
+  },
   {
     title: 'BlogList',
     src: bloglistImage,
@@ -77,14 +94,6 @@ const projectCardData = [
     text: 'A discord bot for use with moderation, logging, games, and much more! Built to support multiple servers, local development, and production deployment. This application outlines the knowledge of building an application based on user feedback. Technologies used are NodeJS, Event Listeners, Refactoring, Sequelize, ES6 Array Methods',
     live: null,
     github: 'https://github.com/richen604/Eskobot',
-  },
-  {
-    title: 'richen.dev',
-    src: richendevImage,
-    alt: 'richen.dev Mockup',
-    text: 'My portfolio website built with GatsbyJS, ReactJS, NodeJS, and GraphQL. A static website outlining client and server Form Validation, communicating with Express servers, Sanitization, and Validation.',
-    live: '/',
-    github: 'https://github.com/richen604/richen-portfolio',
   },
 ];
 
@@ -278,7 +287,11 @@ const ProjectCardGroup = () => (
                 <SCardButton href={project?.live}>Live</SCardButton>
               </>
             ) : null}
-            <SCardButton href={project.github}>Github</SCardButton>
+            {project.github ? (
+              <>
+                <SCardButton href={project?.github}>Github</SCardButton>
+              </>
+            ) : null}
           </SCardButtonGroup>
           <br />
           <SCardText>{project?.text}</SCardText>

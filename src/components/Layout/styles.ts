@@ -1,6 +1,6 @@
-import styled, { ThemeProps, DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import { THEME } from 'theme';
-import { TLayoutChildrenSpacer, TButtonPrimary } from '../ThemedComponents';
+import { TButtonPrimary, TLayoutChildrenSpacer } from '../ThemedComponents';
 
 export const SLayoutContainer = styled.div<ThemeProps<DefaultTheme>>`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&family=Roboto&display=swap');

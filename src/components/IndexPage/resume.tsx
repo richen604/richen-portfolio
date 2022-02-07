@@ -32,6 +32,8 @@ function Resume() {
         </SResumeContainer>
 
         <SAboutFooter>
+          <p>© {new Date().getFullYear()} Richard Henninger</p>
+
           <SAboutFooterText>Icons provided by </SAboutFooterText>
           <TOutboundLinkText
             target="_blank"
